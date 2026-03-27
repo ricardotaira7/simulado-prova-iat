@@ -258,7 +258,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
       <div class="pc-niv">Fácil / Médio</div>
       <p class="pc-desc">Questões baseadas em prova real de credenciamento IAT da PF — legislação, fundamentos do tiro, armamento, munições, balística e segurança.</p>
       <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🟢 Verde</span></div>
-      <div class="pc-autor">Questões elaboradas por <strong>Ricardo Taira</strong></div>
+      <div class="pc-autor">Questões elaboradas pela <strong>Combat Tático</strong></div>
       <button class="pc-btn">INICIAR →</button>
     </div>
     <div class="pc-card" data-cor="n" onclick="iniciar(2)">
@@ -985,7 +985,7 @@ function iniciar(p){
   PA=p;RESP=new Array(50).fill(null);RESP_SET=new Set();
   setCor(p);
   document.getElementById('htitle').textContent=CFG[p].nome;
-  document.getElementById('hmeta').textContent='Ricardo Taira — IAT';
+  document.getElementById('hmeta').textContent=p===1?'Questões elaboradas pela Combat Tático':'Ricardo Taira — IAT';
   document.getElementById('btn-hdr-ini').style.display='block';
   renderProva();show('t-prova');
 }
@@ -1074,7 +1074,7 @@ function mostrarRes(){
   document.getElementById('sc-frac').textContent=`${ok} / 50`;
   document.getElementById('st-ok').textContent=ok;
   document.getElementById('st-nok').textContent=50-ok;
-  document.getElementById('assin-txt').textContent='Ricardo Taira — Instrutor de Armamento e Tiro (IAT)';
+  document.getElementById('assin-txt').textContent=PA===1?'Questões elaboradas pela Combat Tático | Ricardo Taira — IAT':'Ricardo Taira — Instrutor de Armamento e Tiro (IAT)';
 
   const ring=document.getElementById('sc-ring');
   const corR=pct>=70?CFG[PA].cor:(pct>=50?'#B8840A':'#8B1212');
