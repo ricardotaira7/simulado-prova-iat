@@ -304,7 +304,7 @@ body[data-prova="4"]{background-color:#DCDCDC;}
     Quatro provas com 50 questões cada, cobrindo todo o conteúdo da prova de credenciamento IAT da Polícia Federal.</p>
     <div class="regra-box" style="background:rgba(255,222,33,.10);border-color:rgba(255,222,33,.35);border-left-color:#FFDE21;color:rgba(255,255,255,.9);">
       ⚠️ <strong style="color:#FFDE21;">SISTEMA DE PONTUAÇÃO OFICIAL PF:</strong> Cada questão vale <strong>2 pontos</strong> (total 100). A cada 4 questões <strong>erradas</strong>, 1 acerto é descontado.<br>
-      <strong style="color:#FFDE21;">Questão em branco NÃO perde nota</strong> — só as respondidas erradas descontam. Mínimo para aprovação: <strong>70 pontos</strong>.
+      <strong style="color:#FFDE21;">Questão em branco NÃO perde nota</strong> — só as respondidas erradas descontam. Mínimo para aprovação: <strong>70%</strong>.
     </div>
   </div>
 </div>
@@ -394,10 +394,10 @@ body[data-prova="4"]{background-color:#DCDCDC;}
       <div class="chip desc">− <span id="st-desc">0</span> Desconto</div>
     </div>
     <div class="score-final-box">
-      <div class="score-final-label">PONTUAÇÃO FINAL · CRITÉRIO PF (APROVADO ≥ 70 pts)</div>
+      <div class="score-final-label">RESULTADO FINAL · CRITÉRIO PF (APROVADO ≥ 70%)</div>
       <div class="score-final-val" id="sc-final">—</div>
     </div>
-    <div class="regra-res">⚠️ Cada questão = 2 pts &nbsp;·&nbsp; 4 ERRADAS = −2 pts &nbsp;·&nbsp; Branco = sem desconto &nbsp;·&nbsp; Aprovado ≥ 70 pts</div>
+    <div class="regra-res">⚠️ Resultado em % &nbsp;·&nbsp; Cada questão = 2 pts &nbsp;·&nbsp; 4 ERRADAS = −2 pts &nbsp;·&nbsp; Branco = sem desconto &nbsp;·&nbsp; Aprovado ≥ 70%</div>
   </div>
   <div class="humor" id="humor">
     <span class="h-em" id="h-em">⏳</span>
@@ -1389,12 +1389,12 @@ function mostrarRes(){
   const pct=pontuacao; // já é 0-100
 
   document.getElementById('res-kicker').textContent=CFG[PA].kicker;
-  document.getElementById('sc-pct').textContent=pontuacao+' pts';
-  document.getElementById('sc-frac').textContent=pontuacao+'/100';
+  document.getElementById('sc-pct').textContent=pontuacao+'%';
+  document.getElementById('sc-frac').textContent=pontuacao>=70?'APROVADO':'REPROVADO';
   document.getElementById('st-ok').textContent=acertos;
   document.getElementById('st-nok').textContent=errados;
   document.getElementById('st-desc').textContent=desconto;
-  document.getElementById('sc-final').textContent=pontuacao>=70?'✅ APROVADO — '+pontuacao+' pts':'❌ REPROVADO — '+pontuacao+' pts';
+  document.getElementById('sc-final').textContent=(pontuacao>=70?'✅ APROVADO':'❌ REPROVADO')+' — '+pontuacao+'% ('+pontuacao+' pts)';
 
   const assinArr=['Elaborada por Fillipe Mendes Lago · Combat Tático','Fornecido pela Combat Tático · Ricardo Taira — IAT','Ricardo Taira — Instrutor de Armamento e Tiro (IAT)','Ricardo Taira — Instrutor de Armamento e Tiro (IAT)'];
   document.getElementById('assin-txt').textContent=assinArr[PA-1];
