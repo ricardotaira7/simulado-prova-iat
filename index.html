@@ -8,99 +8,114 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --bg:#F4F0E8;--card:#FFFCF7;
+  --bg:#E8E2D8;--card:#F5F0E8;
   --gold:#B8840A;--gold2:#D4A012;
   --text:#14100A;--muted:#3A3020;--light:#7A6A50;
   --bd:#D0C8B0;
   --ok:#155A1E;--okbg:#E8F5EA;
   --err:#8B1212;--errbg:#FCEAEA;
   --shd:rgba(20,16,10,.10);--r:10px;
-  --pc:#1D3E14;--pc2:#2A5A1C;--pcbg:rgba(29,62,20,.07);
+  --pc:#C49000;--pc2:#E0A800;--pcbg:rgba(255,222,33,.13);
 }
 html{font-size:clamp(15px,1.85vw,17px);scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Crect width='6' height='6' fill='%23F4F0E8'/%3E%3Ccircle cx='1' cy='1' r='.7' fill='%23DDD8CC' opacity='.5'/%3E%3Ccircle cx='4' cy='4' r='.7' fill='%23DDD8CC' opacity='.5'/%3E%3C/svg%3E");
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='6'%3E%3Crect width='6' height='6' fill='%23E8E2D8'/%3E%3Ccircle cx='1' cy='1' r='.7' fill='%23CBC4B8' opacity='.5'/%3E%3Ccircle cx='4' cy='4' r='.7' fill='%23CBC4B8' opacity='.5'/%3E%3C/svg%3E");
   background-size:6px 6px;color:var(--text);min-height:100vh;}
-
-/* ── WATERMARK ── */
 .wm{position:fixed;bottom:13px;right:13px;z-index:9999;pointer-events:none;}
 .wm a{pointer-events:auto;display:inline-flex;align-items:center;gap:5px;text-decoration:none;opacity:.4;transition:opacity .3s;}
 .wm a:hover{opacity:.9;}
 .wm svg{width:14px;height:14px;fill:var(--pc);}
 .wm span{font-family:'Roboto Condensed',sans-serif;font-size:.65rem;letter-spacing:1.5px;color:var(--pc);}
-
-/* ── HEADER ── */
-.hdr{background:var(--pc);padding:.8rem 1.3rem;
-  display:flex;align-items:center;justify-content:space-between;
-  box-shadow:0 3px 18px rgba(0,0,0,.28);position:sticky;top:0;z-index:100;transition:background .35s;}
+.hdr{background:var(--pc);padding:.8rem 1.3rem;display:flex;align-items:center;justify-content:space-between;box-shadow:0 3px 18px rgba(0,0,0,.28);position:sticky;top:0;z-index:100;transition:background .35s;}
 .hdr-l{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
 .badge{background:var(--gold);color:#fff;font-family:'Bebas Neue',sans-serif;font-size:.7rem;letter-spacing:2.5px;padding:.2rem .55rem;border-radius:4px;}
 .htitle{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:3px;color:#fff;}
 .hmeta{font-size:.63rem;color:rgba(255,255,255,.5);font-family:'Roboto Condensed',sans-serif;letter-spacing:.7px;text-align:right;line-height:1.5;}
-.btn-hdr-ini{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;
-  font-family:'Roboto Condensed',sans-serif;font-size:.72rem;letter-spacing:1px;
-  padding:.32rem .75rem;border-radius:6px;cursor:pointer;transition:all .2s;display:none;}
+.btn-hdr-ini{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;font-family:'Roboto Condensed',sans-serif;font-size:.72rem;letter-spacing:1px;padding:.32rem .75rem;border-radius:6px;cursor:pointer;transition:all .2s;display:none;}
 .btn-hdr-ini:hover{background:rgba(255,255,255,.22);}
+.tela{display:none;}.tela.on{display:block;}
 
-/* ── TELAS ── */
-.tela{display:none;} .tela.on{display:block;}
-
-/* ── HOME ── */
-.hw{max-width:900px;margin:0 auto;padding:2.5rem 1.3rem 4rem;}
+/* HOME */
+.hw{max-width:960px;margin:0 auto;padding:2.5rem 1.3rem 4rem;}
+/* HOME HEADER BANNER */
+.home-banner{
+  background:linear-gradient(135deg,#1A2A1A 0%,#0D1F0D 50%,#161616 100%);
+  padding:2.8rem 1.3rem 2.2rem;
+  margin-bottom:0;
+}
+.home-banner .hkicker{color:#FFDE21;}
+.home-banner .hh1{color:#fff;}
+.home-banner .hh1 em{color:#FFDE21;}
+.home-banner .hdiv{background:#FFDE21;}
+.home-banner .hsub{color:rgba(255,255,255,.75);}
+.home-banner .hsub strong{color:#FFDE21;}
+.home-content{max-width:960px;margin:0 auto;padding:1.8rem 1.3rem 3rem;}
+.home-banner-inner{max-width:960px;margin:0 auto;}
 .hkicker{font-family:'Roboto Condensed',sans-serif;font-size:.72rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem;}
 .hh1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,5.5vw,3.4rem);letter-spacing:2px;color:var(--pc);line-height:1.05;margin-bottom:.35rem;}
 .hh1 em{color:var(--gold);font-style:normal;}
 .hdiv{width:50px;height:3px;background:var(--gold);border-radius:2px;margin:.8rem 0 1rem;}
-.hsub{font-size:.95rem;line-height:1.7;color:var(--muted);max-width:640px;margin-bottom:2rem;}
-.hsub strong{color:#1D3E14;}
-.pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;}
-@media(max-width:760px){.pgrid{grid-template-columns:1fr;}}
-@media(min-width:480px) and (max-width:760px){.pgrid{grid-template-columns:1fr 1fr;}}
-
-.pc-card{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);
-  padding:1.4rem 1.3rem;cursor:pointer;transition:all .22s;box-shadow:0 2px 12px var(--shd);
-  position:relative;overflow:hidden;display:flex;flex-direction:column;}
+.hsub{font-size:.95rem;line-height:1.7;color:var(--muted);max-width:680px;margin-bottom:1rem;}
+.hsub strong{color:#0D4A3A;}
+/* REGRA PONTUAÇÃO — HOME */
+.regra-box{
+  background:rgba(139,18,18,.06);border:1.5px solid rgba(139,18,18,.18);
+  border-left:4px solid #8B1212;border-radius:0 var(--r) var(--r) 0;
+  padding:.85rem 1rem;margin-bottom:1.8rem;
+  font-size:.84rem;color:#6A0808;line-height:1.6;
+}
+.regra-box strong{color:#8B1212;}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;}
+@media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:500px){.pgrid{grid-template-columns:1fr;}}
+.pc-card{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.2rem 1.1rem;cursor:pointer;transition:all .22s;box-shadow:0 2px 12px var(--shd);position:relative;overflow:hidden;display:flex;flex-direction:column;}
 .pc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;transition:height .22s;}
-.pc-card[data-cor="g"]::before{background:#1D3E14;}
-.pc-card[data-cor="n"]::before{background:#142850;}
-.pc-card[data-cor="w"]::before{background:#6B1A1A;}
+.pc-card[data-cor="t"]::before{background:#FFDE21;}
+.pc-card[data-cor="g"]::before{background:#14520A;}
+.pc-card[data-cor="n"]::before{background:#0D2E6A;}
+.pc-card[data-cor="w"]::before{background:#1A1A1A;}
 .pc-card:hover{transform:translateY(-3px);box-shadow:0 8px 26px var(--shd);}
-.pc-card[data-cor="g"]:hover{border-color:#1D3E14;}
-.pc-card[data-cor="n"]:hover{border-color:#142850;}
-.pc-card[data-cor="w"]:hover{border-color:#6B1A1A;}
-.pc-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;color:var(--bd);margin-bottom:.4rem;}
-.pc-nome{font-family:'Bebas Neue',sans-serif;font-size:1.12rem;letter-spacing:1.5px;margin-bottom:.25rem;}
-.pc-card[data-cor="g"] .pc-nome{color:#1D3E14;}
-.pc-card[data-cor="n"] .pc-nome{color:#142850;}
-.pc-card[data-cor="w"] .pc-nome{color:#6B1A1A;}
-.pc-niv{display:inline-block;font-family:'Roboto Condensed',sans-serif;font-size:.62rem;letter-spacing:2px;text-transform:uppercase;padding:.13rem .48rem;border-radius:30px;margin-bottom:.7rem;}
-.pc-card[data-cor="g"] .pc-niv{background:rgba(29,62,20,.08);color:#1D3E14;}
-.pc-card[data-cor="n"] .pc-niv{background:rgba(20,40,80,.08);color:#142850;}
-.pc-card[data-cor="w"] .pc-niv{background:rgba(107,26,26,.08);color:#6B1A1A;}
-.pc-desc{font-size:.84rem;color:var(--muted);line-height:1.5;margin-bottom:.8rem;flex:1;}
-.pc-tags{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.7rem;}
-.pc-tag{font-size:.72rem;color:var(--light);font-family:'Roboto Condensed',sans-serif;}
-.pc-autor{font-family:'Roboto Condensed',sans-serif;font-size:.66rem;letter-spacing:.5px;color:var(--light);margin-bottom:.8rem;padding:.3rem 0;border-top:1px solid var(--bd);}
-.pc-btn{width:100%;padding:.7rem;border:none;border-radius:8px;font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:2px;color:#fff;cursor:pointer;transition:filter .2s;}
-.pc-card[data-cor="g"] .pc-btn{background:#1D3E14;}
-.pc-card[data-cor="n"] .pc-btn{background:#142850;}
-.pc-card[data-cor="w"] .pc-btn{background:#6B1A1A;}
+.pc-card[data-cor="t"]:hover{border-color:#FFDE21;}
+.pc-card[data-cor="g"]:hover{border-color:#14520A;}
+.pc-card[data-cor="n"]:hover{border-color:#0D2E6A;}
+.pc-card[data-cor="w"]:hover{border-color:#1A1A1A;}
+.pc-num{font-family:'Bebas Neue',sans-serif;font-size:2.5rem;line-height:1;color:var(--bd);margin-bottom:.35rem;}
+.pc-nome{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:1.5px;margin-bottom:.22rem;}
+.pc-card[data-cor="t"] .pc-nome{color:#6B5000;}
+.pc-card[data-cor="g"] .pc-nome{color:#14520A;}
+.pc-card[data-cor="n"] .pc-nome{color:#0D2E6A;}
+.pc-card[data-cor="w"] .pc-nome{color:#1A1A1A;}
+.pc-niv{display:inline-block;font-family:'Roboto Condensed',sans-serif;font-size:.6rem;letter-spacing:2px;text-transform:uppercase;padding:.12rem .44rem;border-radius:30px;margin-bottom:.6rem;}
+.pc-card[data-cor="t"] .pc-niv{background:rgba(255,222,33,.18);color:#6B5000;}
+.pc-card[data-cor="g"] .pc-niv{background:rgba(20,82,10,.1);color:#14520A;}
+.pc-card[data-cor="n"] .pc-niv{background:rgba(13,46,106,.1);color:#0D2E6A;}
+.pc-card[data-cor="w"] .pc-niv{background:rgba(26,26,26,.1);color:#1A1A1A;}
+.pc-desc{font-size:.8rem;color:var(--muted);line-height:1.5;margin-bottom:.7rem;flex:1;}
+.pc-tags{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.6rem;}
+.pc-tag{font-size:.7rem;color:var(--light);font-family:'Roboto Condensed',sans-serif;}
+.pc-autor{font-family:'Roboto Condensed',sans-serif;font-size:.64rem;letter-spacing:.4px;color:var(--light);margin-bottom:.7rem;padding:.28rem 0;border-top:1px solid var(--bd);}
+.pc-btn{width:100%;padding:.65rem;border:none;border-radius:8px;font-family:'Bebas Neue',sans-serif;font-size:.95rem;letter-spacing:2px;color:#fff;cursor:pointer;transition:filter .2s;}
+.pc-card[data-cor="t"] .pc-btn{background:#FFDE21;color:#2A1E00;}
+.pc-card[data-cor="g"] .pc-btn{background:#14520A;}
+.pc-card[data-cor="n"] .pc-btn{background:#0D2E6A;}
+.pc-card[data-cor="w"] .pc-btn{background:#1A1A1A;}
 .pc-btn:hover{filter:brightness(1.2);}
-
-.home-note{margin-top:1.5rem;padding:.85rem 1rem;background:rgba(184,132,10,.07);
-  border:1px solid rgba(184,132,10,.2);border-left:4px solid var(--gold);
-  border-radius:0 var(--r) var(--r) 0;font-size:.82rem;color:#6A4E00;line-height:1.55;}
+.home-note{margin-top:1.5rem;padding:.85rem 1rem;background:rgba(184,132,10,.07);border:1px solid rgba(184,132,10,.2);border-left:4px solid var(--gold);border-radius:0 var(--r) var(--r) 0;font-size:.82rem;color:#6A4E00;line-height:1.55;}
 .home-note a{color:var(--gold);}
 
-/* ── TOPBAR ── */
-.topbar{background:rgba(244,240,232,.97);backdrop-filter:blur(6px);border-bottom:2px solid var(--bd);padding:.5rem 0;position:sticky;top:56px;z-index:50;}
-.tbi{max-width:840px;margin:0 auto;padding:0 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:.8rem;}
+/* TOPBAR */
+.topbar{background:rgba(244,240,232,.97);backdrop-filter:blur(6px);border-bottom:2px solid var(--bd);position:sticky;top:56px;z-index:50;}
+.tbi{max-width:840px;margin:0 auto;padding:.45rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:.7rem;}
 .tb-lbl{font-family:'Roboto Condensed',sans-serif;font-size:.68rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);white-space:nowrap;}
 .tb-track{flex:1;height:5px;background:var(--bd);border-radius:10px;overflow:hidden;}
 .tb-fill{height:100%;border-radius:10px;transition:width .4s;background:linear-gradient(90deg,var(--pc2),var(--gold2));}
 .tb-count{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--pc);letter-spacing:1px;white-space:nowrap;}
+/* REGRA BANNER — DENTRO DA PROVA */
+.regra-banner{background:rgba(139,18,18,.07);border-bottom:2px solid rgba(139,18,18,.18);padding:.42rem 0;}
+.regra-banner-inner{max-width:840px;margin:0 auto;padding:0 1.2rem;font-family:'Roboto Condensed',sans-serif;font-size:.72rem;letter-spacing:.8px;color:#8B1212;text-align:center;}
+.regra-banner{background:rgba(139,18,18,.07);border-bottom:2px solid rgba(139,18,18,.18);padding:.42rem 0;}
 
-/* ── PROVA ── */
+/* PROVA */
 .pw{max-width:840px;margin:0 auto;padding:1.6rem 1.2rem 6rem;}
 .qb{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.3rem 1.4rem;margin-bottom:.85rem;box-shadow:0 2px 9px var(--shd);}
 .qb-topo{display:flex;align-items:flex-start;gap:.8rem;margin-bottom:.8rem;}
@@ -125,20 +140,17 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .opt.errada,.vfb.errada{border-color:var(--err);background:var(--errbg);color:var(--err);opacity:.72;}
 .opt.errada .opt-l{color:var(--err);}
 .opt:disabled,.vfb:disabled{cursor:default;}
-
-/* ── FINALIZAR ── */
 .fin-box{text-align:center;margin-top:2rem;padding:1.8rem 1rem;background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);box-shadow:0 4px 18px var(--shd);}
 .fin-hint{font-size:.85rem;color:var(--light);margin-bottom:.9rem;font-family:'Roboto Condensed',sans-serif;letter-spacing:.4px;}
 .btn-fin{padding:.95rem 2.8rem;background:var(--pc);color:#fff;border:none;border-radius:var(--r);cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:3px;transition:all .2s;box-shadow:0 4px 18px rgba(0,0,0,.18);}
 .btn-fin:hover{filter:brightness(1.15);transform:translateY(-2px);}
 
-/* ── RESULTADO ── */
+/* RESULTADO */
 .rw{max-width:840px;margin:0 auto;padding:1.8rem 1.2rem 5rem;}
-.res-topo{text-align:center;margin-bottom:1.8rem;}
+.res-topo{text-align:center;margin-bottom:1.5rem;}
 .res-kicker{font-family:'Roboto Condensed',sans-serif;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:.35rem;}
 .res-titulo{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.7rem,4vw,2.5rem);letter-spacing:2px;color:var(--pc);}
-
-/* Score */
+/* Score detalhado */
 .score-box{display:flex;flex-direction:column;align-items:center;background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.8rem 1.2rem;box-shadow:0 4px 18px var(--shd);margin-bottom:1.3rem;}
 .sc-wrap{position:relative;width:155px;height:155px;margin-bottom:1rem;}
 .sc-wrap svg{width:100%;height:100%;}
@@ -147,52 +159,46 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .sc-inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;}
 .sc-pct{font-family:'Bebas Neue',sans-serif;font-size:2.4rem;line-height:1;}
 .sc-lbl{font-family:'Roboto Condensed',sans-serif;font-size:.68rem;letter-spacing:1.5px;color:var(--light);}
-.chips{display:flex;gap:.7rem;flex-wrap:wrap;justify-content:center;}
-.chip{padding:.4rem 1rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.8rem;letter-spacing:.7px;font-weight:700;display:flex;align-items:center;gap:.35rem;}
+.chips{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:.7rem;}
+.chip{padding:.38rem .9rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.78rem;letter-spacing:.7px;font-weight:700;display:flex;align-items:center;gap:.3rem;}
 .chip.ok{background:var(--okbg);color:var(--ok);}
 .chip.nok{background:var(--errbg);color:var(--err);}
+.chip.desc{background:rgba(184,132,10,.12);color:#7A5500;}
 .chip.tot{background:var(--pcbg);color:var(--pc);}
+.score-final-box{
+  background:var(--pcbg);border:1.5px solid rgba(29,62,20,.2);
+  border-radius:8px;padding:.6rem 1.4rem;text-align:center;
+}
+.score-final-label{font-family:'Roboto Condensed',sans-serif;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:.2rem;}
+.score-final-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--pc);}
+/* Regra resultado */
+.regra-res{background:rgba(139,18,18,.06);border:1.5px solid rgba(139,18,18,.15);border-left:4px solid #8B1212;border-radius:0 8px 8px 0;padding:.6rem .9rem;margin-top:.7rem;font-size:.78rem;color:#6A0808;font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;text-align:center;}
 
-/* Humor */
 .humor{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.5rem 1.4rem;text-align:center;margin-bottom:1.3rem;box-shadow:0 4px 18px var(--shd);animation:fup .5s ease;}
 @keyframes fup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 .h-em{font-size:2.3rem;margin-bottom:.45rem;display:block;}
 .h-nv{font-family:'Bebas Neue',sans-serif;font-size:1.45rem;letter-spacing:2px;margin-bottom:.45rem;}
 .h-txt{font-size:.91rem;line-height:1.75;color:var(--muted);max-width:600px;margin:0 auto;}
-
-/* Análise de temas */
 .temas-box{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.3rem 1.4rem;margin-bottom:1.3rem;box-shadow:0 2px 10px var(--shd);}
 .temas-titulo{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:2px;color:var(--pc);margin-bottom:.9rem;}
 .tema-item{display:flex;align-items:center;gap:.7rem;margin-bottom:.55rem;}
-.tema-nome{font-family:'Roboto Condensed',sans-serif;font-size:.78rem;letter-spacing:.5px;min-width:130px;color:var(--muted);}
+.tema-nome{font-family:'Roboto Condensed',sans-serif;font-size:.78rem;letter-spacing:.5px;min-width:140px;color:var(--muted);}
 .tema-track{flex:1;height:8px;background:var(--bd);border-radius:6px;overflow:hidden;}
 .tema-fill{height:100%;border-radius:6px;background:var(--err);transition:width .8s ease;}
 .tema-fill.bom{background:var(--ok);}
 .tema-fill.med{background:#B8840A;}
-.tema-pct{font-family:'Bebas Neue',sans-serif;font-size:.85rem;min-width:38px;text-align:right;}
-.tema-pct.bom{color:var(--ok);}
-.tema-pct.med{color:#B8840A;}
-.tema-pct.mal{color:var(--err);}
+.tema-pct{font-family:'Bebas Neue',sans-serif;font-size:.85rem;min-width:42px;text-align:right;}
+.tema-pct.bom{color:var(--ok);}.tema-pct.med{color:#B8840A;}.tema-pct.mal{color:var(--err);}
 .temas-dica{margin-top:.9rem;padding:.7rem .9rem;background:rgba(184,132,10,.06);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;font-size:.84rem;line-height:1.6;color:#6A4E00;}
-
-/* GABARITO — destaque */
-.gab-cta{
-  background:linear-gradient(135deg,var(--pc),var(--pc2));
-  border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.3rem;
-  text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.18);
-}
+.gab-cta{background:linear-gradient(135deg,var(--pc),var(--pc2));border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.3rem;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.18);}
 .gab-cta-txt{font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:.7rem;font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;}
 .btn-gab{padding:.85rem 2rem;background:var(--gold);color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:2.5px;transition:all .2s;box-shadow:0 3px 12px rgba(0,0,0,.2);}
 .btn-gab:hover{background:var(--gold2);transform:translateY(-1px);}
-
-/* Ações */
 .res-acts{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;margin-bottom:1.8rem;}
 .btn-ref{padding:.75rem 1.6rem;background:transparent;color:var(--pc);border:2px solid var(--pc);border-radius:8px;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:2px;transition:all .2s;}
 .btn-ref:hover{background:var(--pc);color:#fff;}
 .btn-ini{padding:.75rem 1.6rem;background:transparent;color:var(--light);border:2px solid var(--bd);border-radius:8px;cursor:pointer;font-family:'Bebas Neue',sans-serif;font-size:1.05rem;letter-spacing:2px;transition:all .2s;}
 .btn-ini:hover{border-color:var(--muted);color:var(--muted);}
-
-/* Gabarito review */
 .gab-sec{display:none;animation:fup .3s ease;}
 .gab-sec.aberta{display:block;}
 .gab-titulo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--pc);margin-bottom:.9rem;padding-top:.5rem;}
@@ -200,7 +206,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .rcard.ok{border-left:4px solid var(--ok);}
 .rcard.nok{border-left:4px solid var(--err);}
 .rcard-top{font-family:'Roboto Condensed',sans-serif;font-size:.64rem;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.3rem;}
-.rcard.ok .rcard-top{color:var(--ok);} .rcard.nok .rcard-top{color:var(--err);}
+.rcard.ok .rcard-top{color:var(--ok);}.rcard.nok .rcard-top{color:var(--err);}
 .rcard-e{font-size:.88rem;font-weight:500;line-height:1.55;color:var(--text);margin-bottom:.55rem;}
 .rcard-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.55rem;}
 .rv{padding:.22rem .6rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.73rem;}
@@ -208,82 +214,142 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .rv.sua.ok{background:var(--okbg);color:var(--ok);}
 .rv.cor{background:var(--okbg);color:var(--ok);}
 .rcard-exp{font-size:.82rem;line-height:1.65;color:var(--muted);padding:.6rem .75rem;background:rgba(184,132,10,.05);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;}
-
-/* Footer */
 .assin{text-align:center;margin-top:1.8rem;padding-top:1.1rem;border-top:1px solid var(--bd);font-size:.7rem;color:var(--light);font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;}
-.assin strong{color:var(--pc);} .assin a{color:var(--gold);}
-
+.assin strong{color:var(--pc);}.assin a{color:var(--gold);}
 @media(max-width:520px){
-  .qb{padding:1.1rem .95rem;} .qe{font-size:.9rem;}
-  .opt{font-size:.85rem;padding:.6rem .7rem;} .vfrow{flex-direction:column;}
-  .pw{padding:1.2rem .85rem 6rem;} .rw{padding:1.2rem .85rem 5rem;}
-  .sc-wrap{width:130px;height:130px;} .sc-pct{font-size:2rem;}
-  .pgrid{grid-template-columns:1fr;}
+  .qb{padding:1.1rem .95rem;}.qe{font-size:.9rem;}
+  .opt{font-size:.85rem;padding:.6rem .7rem;}.vfrow{flex-direction:column;}
+  .pw{padding:1.2rem .85rem 6rem;}.rw{padding:1.2rem .85rem 5rem;}
+  .sc-wrap{width:130px;height:130px;}.sc-pct{font-size:2rem;}
+  .tema-nome{min-width:100px;}
+}
+
+/* ── PER-PROVA BODY TINT ── */
+body[data-prova="1"]{background-color:#FFF8CC;}
+body[data-prova="2"]{background-color:#DDE8D8;}
+body[data-prova="3"]{background-color:#D8DEF0;}
+body[data-prova="4"]{background-color:#DCDCDC;}
+
+/* ── UNANSWERED HINT ── */
+.fin-hint{font-size:.82rem;font-family:'Roboto Condensed',sans-serif;letter-spacing:.4px;margin-bottom:.9rem;line-height:1.5;}
+
+/* ── QB MISSING ANSWER INDICATOR ── */
+.qb.sem-resp{border-left:3px solid var(--err);}
+
+/* ── SCORE FINAL BOX ── */
+.score-final-val{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;}
+.score-final-val.aprovado{color:var(--ok);}
+.score-final-val.reprovado{color:var(--err);}
+
+/* ── MOBILE-FIRST TWEAKS ── */
+@media(max-width:420px){
+  .hh1{font-size:1.9rem;}
+  .hdiv{margin:.6rem 0 .8rem;}
+  .hsub{font-size:.88rem;margin-bottom:.8rem;}
+  .regra-box{font-size:.8rem;padding:.75rem .9rem;}
+  .pgrid{gap:.75rem;}
+  .pc-card{padding:1rem .95rem;}
+  .pc-num{font-size:2.2rem;}
+  .pc-nome{font-size:.98rem;}
+  .pc-desc{font-size:.78rem;}
+  .pc-btn{font-size:.9rem;padding:.6rem;}
+  .hdr{padding:.7rem 1rem;}
+  .htitle{font-size:1rem;letter-spacing:2px;}
+  .badge{font-size:.62rem;padding:.18rem .45rem;}
+  .qb{padding:1rem .85rem;}
+  .qe{font-size:.88rem;line-height:1.6;}
+  .opt{font-size:.83rem;padding:.58rem .68rem;gap:.55rem;}
+  .opt-l{font-size:.88rem;}
+  .vfb{font-size:1rem;padding:.65rem;}
+  .qn{font-size:1.3rem;min-width:26px;}
+  .btn-fin{font-size:1.1rem;padding:.85rem 2rem;}
+  .sc-wrap{width:140px;height:140px;}
+  .sc-pct{font-size:1.8rem;}
+  .h-em{font-size:2rem;}
+  .h-nv{font-size:1.25rem;}
+  .h-txt{font-size:.86rem;}
+  .tema-nome{min-width:110px;font-size:.74rem;}
+  .btn-gab{font-size:1rem;padding:.75rem 1.5rem;}
+  .btn-ref,.btn-ini{font-size:.95rem;padding:.65rem 1.2rem;}
+  .chips{gap:.5rem;}
+  .chip{font-size:.74rem;padding:.35rem .75rem;}
 }
 </style>
 </head>
 <body>
-
 <div class="wm">
   <a href="https://www.instagram.com/ricardo_taira/" target="_blank" title="@ricardo_taira">
     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
     <span>@ricardo_taira</span>
   </a>
 </div>
-
-<div class="hdr" id="hdr">
+<div class="hdr" id="hdr" style="background:#0D2E0D;">
   <div class="hdr-l">
     <span class="badge">IAT · PF</span>
     <span class="htitle" id="htitle">SIMULADO IAT · PF</span>
   </div>
   <div style="display:flex;align-items:center;gap:.7rem;">
-    <div class="hmeta" id="hmeta">Simulado elaborado por<br>Ricardo Taira — IAT</div>
+    <div class="hmeta" id="hmeta">Ricardo Taira — IAT</div>
     <button class="btn-hdr-ini" id="btn-hdr-ini" onclick="irHome()">⌂ Início</button>
   </div>
 </div>
-
 <!-- HOME -->
 <div id="t-home" class="tela on">
-<div class="hw">
-  <div class="hkicker">Credenciamento · Polícia Federal</div>
-  <h1 class="hh1">SIMULADO <em>IAT · PF</em></h1>
-  <div class="hdiv"></div>
-  <p class="hsub">Simulado elaborado por <strong>Ricardo Taira — Instrutor de Armamento e Tiro (IAT)</strong>.<br>
-  Três simulados com 50 questões cada, cobrindo todo o conteúdo da prova de credenciamento IAT da Polícia Federal.</p>
-
+<div class="home-banner">
+  <div class="home-banner-inner">
+    <div class="hkicker">Credenciamento · Polícia Federal</div>
+    <h1 class="hh1">SIMULADO <em>IAT · PF</em></h1>
+    <div class="hdiv"></div>
+    <p class="hsub">Elaborado por <strong>Ricardo Taira — Instrutor de Armamento e Tiro (IAT)</strong>.<br>
+    Quatro provas com 50 questões cada, cobrindo todo o conteúdo da prova de credenciamento IAT da Polícia Federal.</p>
+    <div class="regra-box" style="background:rgba(255,222,33,.10);border-color:rgba(255,222,33,.35);border-left-color:#FFDE21;color:rgba(255,255,255,.9);">
+      ⚠️ <strong style="color:#FFDE21;">SISTEMA DE PONTUAÇÃO OFICIAL PF:</strong> Cada questão vale <strong>2 pontos</strong> (total 100). A cada 4 questões <strong>erradas</strong>, 1 acerto é descontado.<br>
+      <strong style="color:#FFDE21;">Questão em branco NÃO perde nota</strong> — só as respondidas erradas descontam. Mínimo para aprovação: <strong>70 pontos</strong>.
+    </div>
+  </div>
+</div>
+<div class="home-content">
   <div class="pgrid">
-    <div class="pc-card" data-cor="g" onclick="iniciar(1)">
+    <div class="pc-card" data-cor="t" onclick="iniciar(1)">
       <div class="pc-num">01</div>
-      <div class="pc-nome">SIMULADO 1</div>
-      <div class="pc-niv">Fácil / Médio</div>
-      <p class="pc-desc">Questões baseadas em prova real de credenciamento IAT da PF — legislação, fundamentos do tiro, armamento, munições, balística e segurança.</p>
-      <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🟢 Verde</span></div>
-      <div class="pc-autor">Questões elaboradas pela <strong>Combat Tático</strong></div>
+      <div class="pc-nome">PROVA FINAL IAT</div>
+      <div class="pc-niv">Prova aplicada em turma</div>
+      <p class="pc-desc">Prova Final aplicada em turma IAT. Balística, espingarda, credenciamento, legislação, quadro de análise e muito mais.</p>
+      <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🟡 Amarelo</span></div>
+      <div class="pc-autor">Elaborada por <strong>Fillipe Mendes Lago · Combat Tático</strong></div>
       <button class="pc-btn">INICIAR →</button>
     </div>
-    <div class="pc-card" data-cor="n" onclick="iniciar(2)">
+    <div class="pc-card" data-cor="g" onclick="iniciar(2)">
       <div class="pc-num">02</div>
       <div class="pc-nome">SIMULADO 2</div>
-      <div class="pc-niv">Intermediário</div>
-      <p class="pc-desc">Legislação aprofundada, balística interna e terminal, sistemas de funcionamento, espingarda cal.12, SINARM/SIGMA e crimes do Estatuto.</p>
-      <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🔵 Azul</span></div>
-      <div class="pc-autor">Questões elaboradas por <strong>Ricardo Taira</strong></div>
+      <div class="pc-niv">Base de estudo — Fácil/Médio</div>
+      <p class="pc-desc">Simulado fornecido como base de estudo pela Combat Tático. Legislação, fundamentos, armamento, munições e balística.</p>
+      <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🟢 Verde</span></div>
+      <div class="pc-autor">Fornecido pela <strong>Combat Tático</strong></div>
       <button class="pc-btn">INICIAR →</button>
     </div>
-    <div class="pc-card" data-cor="w" onclick="iniciar(3)">
+    <div class="pc-card" data-cor="n" onclick="iniciar(3)">
       <div class="pc-num">03</div>
       <div class="pc-nome">SIMULADO 3</div>
+      <div class="pc-niv">Intermediário</div>
+      <p class="pc-desc">Legislação aprofundada, balística interna e terminal, sistemas de funcionamento, espingarda cal.12, SINARM/SIGMA.</p>
+      <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🔵 Azul</span></div>
+      <div class="pc-autor">Elaborado por <strong>Ricardo Taira</strong></div>
+      <button class="pc-btn">INICIAR →</button>
+    </div>
+    <div class="pc-card" data-cor="w" onclick="iniciar(4)">
+      <div class="pc-num">04</div>
+      <div class="pc-nome">SIMULADO 4</div>
       <div class="pc-niv">Avançado</div>
-      <p class="pc-desc">Panes táticas, balística avançada, sistemas de percussão e recarga, credenciamento IAT, detalhes de legislação e questões que pegam até especialistas.</p>
+      <p class="pc-desc">Panes táticas, balística avançada, sistemas de percussão, credenciamento IAT, legislação detalhada — nível especialista.</p>
       <div class="pc-tags"><span class="pc-tag">📋 50 questões</span><span class="pc-tag">🔴 Vinho</span></div>
-      <div class="pc-autor">Questões elaboradas por <strong>Ricardo Taira</strong></div>
+      <div class="pc-autor">Elaborado por <strong>Ricardo Taira</strong></div>
       <button class="pc-btn">INICIAR →</button>
     </div>
   </div>
-
-  <div class="home-note">
-    ⚠️ <strong>Gabarito não oficial</strong> — confirme com Lei 10.826/03, R-105 e Decreto 9.847/2019.
-    Material didático elaborado por <strong>Ricardo Taira — IAT</strong>
+  <div class="home-note" style="margin-top:1.2rem;">
+    ⚠️ Gabarito <strong>não oficial</strong> — confirme com Lei 10.826/03, R-105 e Decreto 9.847/2019.
+    Material didático de <strong>Ricardo Taira — IAT</strong>
     (<a href="https://www.instagram.com/ricardo_taira/" target="_blank">@ricardo_taira</a>).
   </div>
 </div>
@@ -298,6 +364,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
       <span class="tb-count" id="tb-count">0 / 50</span>
     </div>
   </div>
+  <div class="regra-banner">
+    <div class="regra-banner-inner">⚠️ PONTUAÇÃO: cada questão = 2 pts &nbsp;·&nbsp; 4 ERRADAS anulam 1 certa &nbsp;·&nbsp; Branco = não perde nada</div>
+  </div>
   <div class="pw" id="pw"></div>
 </div>
 
@@ -308,7 +377,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
     <div class="res-kicker" id="res-kicker">RESULTADO FINAL</div>
     <div class="res-titulo">SUA PONTUAÇÃO</div>
   </div>
-
   <div class="score-box">
     <div class="sc-wrap">
       <svg viewBox="0 0 100 100">
@@ -317,38 +385,38 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
       </svg>
       <div class="sc-inner">
         <div class="sc-pct" id="sc-pct">0%</div>
-        <div class="sc-lbl" id="sc-frac">0 / 50</div>
+        <div class="sc-lbl" id="sc-frac">0 pts</div>
       </div>
     </div>
     <div class="chips">
       <div class="chip ok">✓ <span id="st-ok">0</span> Acertos</div>
       <div class="chip nok">✗ <span id="st-nok">0</span> Erros</div>
-      <div class="chip tot">● 50 Questões</div>
+      <div class="chip desc">− <span id="st-desc">0</span> Desconto</div>
     </div>
+    <div class="score-final-box">
+      <div class="score-final-label">PONTUAÇÃO FINAL · CRITÉRIO PF (APROVADO ≥ 70 pts)</div>
+      <div class="score-final-val" id="sc-final">—</div>
+    </div>
+    <div class="regra-res">⚠️ Cada questão = 2 pts &nbsp;·&nbsp; 4 ERRADAS = −2 pts &nbsp;·&nbsp; Branco = sem desconto &nbsp;·&nbsp; Aprovado ≥ 70 pts</div>
   </div>
-
   <div class="humor" id="humor">
     <span class="h-em" id="h-em">⏳</span>
     <div class="h-nv" id="h-nv">Calculando...</div>
     <div class="h-txt" id="h-txt"></div>
   </div>
-
   <div class="temas-box" id="temas-box">
     <div class="temas-titulo">📊 ANÁLISE POR TEMA</div>
     <div id="temas-list"></div>
     <div class="temas-dica" id="temas-dica"></div>
   </div>
-
   <div class="gab-cta">
     <div class="gab-cta-txt">🔍 Veja EXATAMENTE onde você errou — com explicação de cada questão</div>
     <button class="btn-gab" onclick="toggleGab()">📋 VER GABARITO COMENTADO</button>
   </div>
-
   <div class="res-acts">
     <button class="btn-ref" onclick="refazer()">↺ REFAZER PROVA</button>
     <button class="btn-ini" onclick="irHome()">⌂ INÍCIO</button>
   </div>
-
   <div class="gab-sec" id="gab-sec">
     <div class="gab-titulo" id="gab-titulo">📋 GABARITO COMENTADO</div>
     <div id="gab-cards"></div>
@@ -356,7 +424,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
       <button class="btn-gab" onclick="toggleGab()" style="font-size:.95rem;padding:.65rem 1.5rem;">▲ FECHAR GABARITO</button>
     </div>
   </div>
-
   <div class="assin">
     Simulado IAT · PF &nbsp;|&nbsp;
     <strong id="assin-txt">Ricardo Taira — Instrutor de Armamento e Tiro (IAT)</strong> &nbsp;|&nbsp;
@@ -364,103 +431,330 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
   </div>
 </div>
 </div>
-
 <script>
-/* ═══════════════════════════════════════════════════════
-   CONFIG DE PROVAS
-═══════════════════════════════════════════════════════ */
-const CFG = {
-  1:{nome:'SIMULADO 1',cor:'#1D3E14',cor2:'#2A5A1C',cbg:'rgba(29,62,20,.07)',kicker:'SIMULADO 1 · RESULTADO'},
-  2:{nome:'SIMULADO 2',cor:'#142850',cor2:'#1E3E78',cbg:'rgba(20,40,80,.07)',kicker:'SIMULADO 2 · RESULTADO'},
-  3:{nome:'SIMULADO 3',cor:'#6B1A1A',cor2:'#8B2222',cbg:'rgba(107,26,26,.07)',kicker:'SIMULADO 3 · RESULTADO'}
+const CFG={
+  1:{nome:'PROVA FINAL IAT',cor:'#FFDE21',cor2:'#FFE84D',cbg:'rgba(255,222,33,.12)',kicker:'PROVA FINAL IAT · RESULTADO'},
+  2:{nome:'SIMULADO 2',cor:'#14520A',cor2:'#1C6C10',cbg:'rgba(20,82,10,.09)',kicker:'SIMULADO 2 · RESULTADO'},
+  3:{nome:'SIMULADO 3',cor:'#0D2E6A',cor2:'#1A4494',cbg:'rgba(13,46,106,.09)',kicker:'SIMULADO 3 · RESULTADO'},
+  4:{nome:'SIMULADO 4',cor:'#1A1A1A',cor2:'#2E2E2E',cbg:'rgba(26,26,26,.09)',kicker:'SIMULADO 4 · RESULTADO'}
 };
-
-/* ═══════════════════════════════════════════════════════
-   TEMAS
-═══════════════════════════════════════════════════════ */
-const TEMAS = {
+const TEMAS={
   LEG:'Legislação',BAL:'Balística',ARM:'Armamento',
   FUN:'Fundamentos do Tiro',PAN:'Panes / Incidentes',
-  MUN:'Munições',SEG:'Segurança',CRE:'Credenciamento IAT'
+  MUN:'Munições',SEG:'Segurança',CRE:'Credenciamento IAT',
+  MED:'Primeiros Socorros'
 };
-
-/* ═══════════════════════════════════════════════════════
-   ZOEIRAS — 25 MENSAGENS
-═══════════════════════════════════════════════════════ */
-const ZOEIRAS = {
-  // < 30%
+const ZOEIRAS={
   abaixo30:[
-    {em:'🚨',nv:'SITUAÇÃO: CATASTRÓFICA!',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Recruta, com essa nota a PF te PRENDE, não te contrata como instrutor! 😂<br><br>Você confundiu legislação com cardápio de restaurante? Balística com astrofísica quântica? Espingarda com foguete espacial?!<br><br>Para. Respira. Abre a Lei 10.826/03 do art. 1º ao fim. Depois abre o R-105. Depois chora um pouco. Depois estuda de novo. 📚`},
-    {em:'🤦',nv:'VEREDITO: REPROVADO COM HONRAS',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Isso não é uma nota, isso é um crime ambiental. Você agrediu esta prova e ela não merecia isso. 😭<br><br>Com ${p}% o instrutor vira o aluno. E o aluno precisa de reforço urgente.<br><br>Identifique os temas em vermelho acima e trate cada um como se sua vida dependesse — porque a carreira do IAT depende. Vai! 📚`},
-    {em:'💀',nv:'NOTA: HISTÓRICA (NO MAU SENTIDO)',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Essa pontuação vai entrar para os anais do credenciamento IAT como exemplo do que NÃO fazer. 🙈<br><br>A boa notícia: o único caminho daqui é para cima. A má notícia: o caminho para cima é muito longo.<br><br>Legislação, balística, fundamentos — tudo precisa ser revisado do zero. Sem pressa, mas sem parar. Bora recruta!`}
+    {em:'🚨',nv:'SITUAÇÃO: CATASTRÓFICA!',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Recruta, com essa nota a PF te PRENDE, não te contrata como instrutor! 😂<br><br>Você confundiu legislação com cardápio? Balística com astrofísica? Sabe o que é mais assustador? Você potencialmente PERTO de uma arma com esse nível de conhecimento...<br><br>Fecha tudo. Abre a Lei 10.826/03 do art. 1º ao fim. Vai! 📚`},
+    {em:'🤦',nv:'VEREDITO: REPROVADO COM DISTINÇÃO',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Parabéns. Essa nota exige talento especial — errar tanto assim não é pra qualquer um. 😭<br><br>Com ${p}%, o instrutor virou o aluno. E esse aluno precisa de reforço URGENTE.<br><br>Estude os temas em vermelho acima como se sua vida dependesse — porque a carreira do IAT depende!`},
+    {em:'💀',nv:'HISTÓRICO: NO MAU SENTIDO',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Essa pontuação vai entrar nos anais como exemplo do que NÃO fazer antes do credenciamento. 🙈<br><br>Boa notícia: o único caminho é para cima. Má notícia: está muito longe daqui.<br><br>Zero de vergonha — tem gente que começa assim. Mas zero de desculpas — volta ao material e estuda!`}
   ],
-  // 30–39%
   n30:[
-    {em:'😱',nv:'RESULTADO: CRÍTICO!',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Não vou mentir: isso é ruim. Muito ruim. O tipo de nota que faz o examinador da PF ligar para os pais. 😅<br><br>Mas olha pelo lado bom: você pelo menos apareceu. Muita gente nem chega a tentar.<br><br>Agora vai estudar os temas em vermelho lá em cima. Cada um deles. Sem exceção. Vejo você na revanche!`},
-    {em:'🆘',nv:'SOCORRO!',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Com ${p}%, o único cargo disponível para você na PF seria como alvo nos exercícios de tiro. 😂<br><br>Sério agora: você tem potencial, senão não estaria aqui. Mas o conteúdo precisa ser estudado com muito mais profundidade.<br><br>Foca nos temas mais fracos, revisa o gabarito comentado questão a questão e volta aqui. Você consegue mais!`}
+    {em:'😱',nv:'RESULTADO: CRÍTICO!',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Não vou mentir: isso é ruim. O tipo de nota que faz o examinador da PF ligar para os seus pais. 😅<br><br>Pelo lado bom: você apareceu, tentou, e agora sabe o tamanho do buraco. Agora é tapar!<br><br>Foca nos temas vermelhos, revisa o gabarito questão a questão. Eu acredito em você — mais do que você nessa prova.`},
+    {em:'🆘',nv:'SOCORRO!',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Com ${p}% o único cargo disponível seria como alvo nos exercícios de tiro. 😂<br><br>Mas olha — você tem o material, tem o simulado, tem o gabarito comentado. Falta só usar.<br><br>Revisa os temas fracos, entende os erros conceituais, e volta aqui. Você CONSEGUE mais!`}
   ],
-  // 40–49%
   n40:[
-    {em:'😬',nv:'INSUFICIENTE — LONGE DA MÉDIA',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Você claramente leu <em>alguma coisa</em> — mas pulou exatamente as partes mais importantes (que são as que mais caem). 😬<br><br>Seus futuros alunos merecem um IAT que domine mais de 50% do conteúdo. Hoje não é o dia, mas pode ser logo.<br><br>Revisa o gabarito com atenção, anota onde errou e estuda por tema. Você tá perto do abismo — dá pra sair!`},
-    {em:'🤔',nv:'MENOS DA METADE... POXA.',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Metade das questões respondidas errado. Literalmente cara-ou-coroa daria um resultado parecido — e as moedas não estudaram nada. 😅<br><br>Isso não é crítica — é diagnóstico. Os temas lá em cima mostram onde você precisa focar.<br><br>Revisa o gabarito comentado, anota os conceitos que você não sabia, e vai estudar com foco. Dá pra virar esse jogo!`}
+    {em:'😬',nv:'INSUFICIENTE — LONGE DA MÉDIA',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Você leu <em>alguma coisa</em> — mas pulou exatamente as partes mais importantes. 😬<br><br>Seus futuros alunos merecem um IAT que domine mais de 50% do conteúdo. Hoje não é o dia.<br><br>Revisa o gabarito comentado, estuda os temas fracos por tema, e volta aqui mais preparado!`},
+    {em:'🤔',nv:'MENOS DA METADE... POXA.',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Cara-ou-coroa daria resultado parecido. E as moedas não estudaram nada. 😅<br><br>Não é crítica — é diagnóstico. Os temas lá em cima mostram onde focar.<br><br>Revisa o gabarito comentado, anota os conceitos que não sabia, e vai estudar com foco. Dá pra virar!`}
   ],
-  // 50–59%
   n50:[
-    {em:'😅',nv:'PASSOU DA METADE... MAS NÃO É ELOGIO',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Passou da metade. Parabéns... acho. 🥲<br><br>Mas "passou da metade" NÃO é elogio quando você quer ser INSTRUTOR DE ARMAMENTO E TIRO. Imagine dar aula de legislação errando 2 em cada 5 questões.<br><br>Veja os temas em vermelho e trate-os como prioridade. Você tem base — agora precisa solidificar!`},
-    {em:'🎲',nv:'NOTA DE QUEM CHUTOU BASTANTE',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Tem aquele gosto de "acertei algumas por sorte, né?" 🎲<br><br>O problema é que na prova real não tem segunda chance e a PF não aceita "chute bem-sucedido" como critério de aprovação.<br><br>Identifique os padrões de erro no gabarito, estude os conceitos por trás de cada questão e volte mais preparado!`}
+    {em:'😅',nv:'PASSOU DA METADE... MAS NÃO É ELOGIO',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — "Passou da metade" NÃO é elogio para INSTRUTOR DE ARMAMENTO E TIRO. 🥲<br><br>Imagine dar aula de legislação errando 2 em cada 5 questões. Seus alunos perceberiam.<br><br>Foca nos temas em amarelo/vermelho. Você tem base — agora solidifica!`},
+    {em:'🎲',nv:'NOTA DE QUEM CHUTOU BASTANTE',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Tem aquele gostinho de "acertei algumas por sorte, né?" 🎲<br><br>Na prova real não tem segunda chance e a PF não aceita "chute bem-sucedido" como critério.<br><br>Identifique os padrões de erro no gabarito, estude os conceitos e volte mais preparado!`}
   ],
-  // 60–69%
   n60:[
-    {em:'😐',nv:'ABAIXO DA MÉDIA DE APROVAÇÃO',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Você está <em>quase</em> na média de aprovação, mas "quase" não passa ninguém em concurso. 😐<br><br>A base está lá — você claramente estudou. Mas há lacunas importantes em alguns temas específicos.<br><br>Os temas em amarelo/vermelho precisam de atenção imediata. Uma semana a mais de revisão focada e você provavelmente vira esse jogo. Vai!`},
-    {em:'🤏',nv:'TÃO PERTO, TÃO LONGE',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Faltou pouco. Tipo, BEM pouco. Mas na prova real esse "pouco" é a diferença entre credenciado e reprovado. 😬<br><br>Você tem o conhecimento geral, mas os detalhes técnicos escapam. E são justamente esses detalhes que a PF cobra.<br><br>Revisa os temas fracos no gabarito. Você está na fase de polimento — não de reconstrução!`}
+    {em:'😐',nv:'ABAIXO DA MÉDIA DE APROVAÇÃO',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Quase na média, mas "quase" não passa ninguém em concurso. 😐<br><br>A base está lá — você claramente estudou. Mas há lacunas importantes em temas específicos.<br><br>Os temas em amarelo/vermelho precisam de atenção agora. Uma semana de revisão focada e você vira!`},
+    {em:'🤏',nv:'TÃO PERTO, TÃO LONGE',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Faltou pouco. Tipo, BEM pouco. E na prova real esse "pouco" é a diferença entre credenciado e reprovado. 😬<br><br>Você tem o conhecimento geral mas os detalhes técnicos escapam — justamente o que a PF cobra.<br><br>Revisa os temas fracos. Você está na fase de polimento, não de reconstrução!`}
   ],
-  // 70–79%
   n70:[
-    {em:'👍',nv:'NA MÉDIA — PODE MELHORAR',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Resultado sólido! Base consistente, claramente estudou. 💪<br><br>Mas olha: 70% numa simulação significa risco real na prova oficial. Um dia ruim e você pode ficar abaixo da linha.<br><br>Foca nos temas em amarelo, revisa as questões que errou com atenção aos detalhes e chegue a 80%+ antes de encarar a PF. Você está no caminho!`},
-    {em:'📈',nv:'BOM, MAS DÁ PARA MAIS',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Sabe o que separa um IAT mediano de um IAT referência? Exatamente os ${t-a} pontos que você deixou na mesa hoje. 😏<br><br>A base é boa. O conhecimento está lá. Mas alguns temas ainda têm furos que a PF vai encontrar.<br><br>Revisa o gabarito com olho crítico. Cada erro é uma oportunidade de aprendizado. Você tem potencial para muito mais!`}
+    {em:'👍',nv:'NA MÉDIA — PODE MELHORAR',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Sólido! Base consistente, claramente estudou. 💪 Mas 70% numa simulação significa risco real na oficial. Um dia ruim e você fica abaixo da linha.<br><br>Foca nos temas em amarelo, revisa as questões que errou e chegue a 80%+ antes de encarar a PF. Você está no caminho!`},
+    {em:'📈',nv:'BOM, MAS DÁ PARA MAIS',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Sabe o que separa um IAT mediano de um IAT referência? Exatamente os ${50-a} pontos que você deixou na mesa hoje. 😏<br><br>A base é boa. Mas alguns temas ainda têm furos que a PF vai encontrar.<br><br>Revisa o gabarito com olho crítico. Você tem potencial para muito mais!`}
   ],
-  // 80–89%
   n80:[
-    {em:'🎯',nv:'BOM RESULTADO! QUASE LÁ',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Excelente! Domínio sólido do conteúdo. 🔥<br><br>Pequenos deslizes em pontos específicos — do tipo que separa quem "sabe o conteúdo" de quem "domina o conteúdo".<br><br>Revisa agora mesmo as questões que errou. Com mais uma rodada focada, você vai para a prova real com muita confiança!`},
-    {em:'💪',nv:'FORTE — COM ESPAÇO PARA CRESCER',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Isso é resultado de quem estudou de verdade. Impressionante. 🎯<br><br>Mas você ainda está deixando alguns pontos na mesa — e a prova da PF vai buscar exatamente esses detalhes que escaparam.<br><br>Identifique os ${t-a} erros, entenda o conceito por trás de cada um, e você vai estar completamente blindado para a prova oficial!`}
+    {em:'🎯',nv:'BOM RESULTADO! QUASE LÁ',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Excelente! Domínio sólido. 🔥 Pequenos deslizes em pontos específicos — do tipo que separa "sabe o conteúdo" de "domina o conteúdo".<br><br>Revisa agora as questões que errou. Com mais uma rodada focada, você vai para a prova real com muita confiança!`},
+    {em:'💪',nv:'FORTE — COM ESPAÇO PARA CRESCER',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Resultado de quem estudou de verdade. 🎯 Mas você ainda está deixando pontos na mesa — e a PF vai buscar exatamente esses detalhes.<br><br>Identifique os ${50-a} erros, entenda o conceito por trás, e você estará completamente blindado!`}
   ],
-  // 90–99%
   n90:[
-    {em:'🏆',nv:'EXCELENTE! NÍVEL DE IAT DE VERDADE',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Esse é o nível que a PF quer ver! Domínio real, conhecimento sólido. 🔥<br><br>Um ou dois detalhes escaparam — provavelmente os pontos mais técnicos ou os pegadinhas de legislação que exigem memorização precisa.<br><br>Revisa esses ${t-a} erros no gabarito e você estará completamente pronto. A PF vai receber um credenciando de respeito!`},
-    {em:'🎖️',nv:'QUASE PERFEITO — IMPRESSIONANTE',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Caramba. Isso é sério. Você dominou praticamente tudo. 🏅<br><br>Os ${t-a} que escaparam são justamente aquelas questões traiçoeiras que pegariam qualquer um de surpresa. Nada grave.<br><br>Revisa rapidamente no gabarito e vai para a prova oficial com a cabeça erguida. Seus futuros alunos vão ter sorte!`},
-    {em:'😤',nv:'90%+ E AINDA ERROU?! QUE VERGONHA...',
-     txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Tá bom, tá. ${p}% é excelente. Mas você ERROU ${t-a}! Imagina a cara do ${t-a} aluno futuro quando descobrir que o instrutor deles errou questão de prova... 😂<br><br>Brincadeiras à parte: resultado excepcional. Revisa os ${t-a} erros, entende o porquê, e está pronto para o credenciamento!`}
+    {em:'🏆',nv:'EXCELENTE! NÍVEL DE IAT DE VERDADE',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Esse é o nível que a PF quer ver! Domínio real. 🔥 Um ou dois detalhes escaparam — os pontos mais técnicos ou pegadinhas de legislação.<br><br>Revisa esses ${50-a} erros e você está completamente pronto. A PF vai receber um credenciando de respeito!`},
+    {em:'🎖️',nv:'QUASE PERFEITO — IMPRESSIONANTE',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Caramba. Sério. Você dominou praticamente tudo. 🏅 Os ${50-a} que escaparam são justamente as questões traiçoeiras que pegariam qualquer um.<br><br>Revisa rapidamente no gabarito e vai para a prova oficial com a cabeça erguida. Seus alunos terão sorte!`},
+    {em:'😤',nv:'90%+ E AINDA ERROU?! QUE VERGONHA...',txt:(a,t,p)=>`<strong>${a}/${t} (${p}%)</strong> — Tá bom, tá. ${p}% é excelente. Mas você ERROU ${50-a}! Imagina a cara do aluno quando descobrir que o instrutor dele errou questão de prova... 😂<br><br>Brincadeiras à parte: resultado excepcional. Revisa os ${50-a} erros, entende o porquê, e pronto!`}
   ],
-  // 100%
   n100:[
-    {em:'🏅',nv:'100% — NOTA MÁXIMA! PERFEITO!',
-     txt:(a,t,p)=>`<strong>${t}/${t} (100%)</strong> — PERFEITO. ABSOLUTO. COMPLETO. Zero erros. Você não apenas estudou — você DOMINOU cada conceito, cada artigo de lei, cada detalhe técnico. 🎖️<br><br>Seus futuros alunos terão sorte de ter um IAT com esse nível de preparo. A PF vai receber um credenciando excepcional.<br><br>Missão cumprida, Instrutor! 🫡`},
-    {em:'🔥',nv:'100% — ISSO É NÍVEL OUTRO!',
-     txt:(a,t,p)=>`<strong>${t}/${t} (100%)</strong> — Honestamente? Impressionante. Não é todo mundo que zera 50 questões de IAT/PF. 🔥<br><br>Você está no nível em que seu conhecimento vira referência para outros candidatos. Essa é a marca de um IAT de verdade.<br><br>Quando seus alunos acertarem 100% também, vai ser porque tiveram um instrutor que deu o exemplo. Parabéns!`}
+    {em:'🏅',nv:'100% — NOTA MÁXIMA! PERFEITO!',txt:(a,t,p)=>`<strong>${t}/${t} (100%)</strong> — PERFEITO. ABSOLUTO. COMPLETO. Zero erros. Você não apenas estudou — você DOMINOU cada conceito, cada artigo, cada detalhe. 🎖️<br><br>Seus futuros alunos terão sorte de ter um IAT com esse nível. Missão cumprida, Instrutor! 🫡`},
+    {em:'🔥',nv:'100% — ISSO É NÍVEL OUTRO!',txt:(a,t,p)=>`<strong>${t}/${t} (100%)</strong> — Honestamente? Impressionante. Não é todo mundo que zera 50 questões de IAT/PF. 🔥<br><br>Quando seus alunos também zerarem, vai ser porque tiveram um instrutor que deu o exemplo. Parabéns!`}
   ]
 };
-
-/* ═══════════════════════════════════════════════════════
-   QUESTÕES — PROVA 1 (50 questões do PDF)
-═══════════════════════════════════════════════════════ */
+/* PROVA 1 — Prova Final IAT (PDF Fillipe Mendes Lago) */
 const Q1=[
+  {n:1,t:'mc',tm:'MUN',e:'Assinale a alternativa correta:',
+   o:['A percussão radial é encontrada na maioria dos revólveres.',
+      'O estojo sela a câmara de explosão em todas as direções.',
+      'A base do estojo sem aro tem apenas virola.',
+      'Os projéteis jaquetados e semijaquetados feitos de cobre tendem a se deformar, mas não fragmentar, quando se chocam com portas de automóveis e parabrisas.'],
+   r:'c',x:'O estojo sem aro (rimless) possui na base apenas a virola — ranhura circunferencial que permite ao extrator retirar o estojo. Percussão radial (rimfire) NÃO é encontrada na maioria dos revólveres (estes usam percussão central). O estojo NÃO sela em todas as direções — a frente fica aberta para o projétil.'},
+  {n:2,t:'mc',tm:'BAL',e:'Sobre balística terminal, infere-se que se trata do estudo:',
+   o:['Do movimento do projétil após sair do cano da arma até atingir o alvo.',
+      'Do movimento do projétil no interior do cano, a partir da percussão.',
+      'Do movimento do projétil, especificamente sobre os fatores externos que refletem no deslocamento do projétil.',
+      'Do movimento do projétil a partir do momento em que atinge o alvo.'],
+   r:'d',x:'Balística INTERNA: dentro do cano (percussão → saída). Balística EXTERNA: do cano até o alvo. Balística TERMINAL: do momento em que o projétil ATINGE o alvo em diante — estuda os efeitos sobre o material ou corpo atingido (cavidade permanente, temporária, fragmentação, capotamento).'},
+  {n:3,t:'mc',tm:'MUN',e:'As referências 9mm, .40S&W e .357Magnum dizem respeito:',
+   o:['Ao calibre nominal.',
+      'Ao calibre real.',
+      'Ao calibre industrial.',
+      'Ao calibre padrão.'],
+   r:'a',x:'9mm, .40S&W e .357Magnum são designações de CALIBRE NOMINAL — nome comercial/convencional da munição, que não necessariamente corresponde à medida exata do diâmetro real do projétil. Calibre real é a medida efetiva entre cheios do raiamento.'},
+  {n:4,t:'mc',tm:'CRE',e:'Um indivíduo interessado em adquirir uma pistola calibre .40S&W deve, em relação ao requisito da capacidade técnica, qual documento será considerado válido?',
+   o:['Apresentar laudo realizado com 9mm.',
+      'Apresentar laudo realizado com .380.',
+      'Apresentar laudo realizado com .45ACP.',
+      'Apresentar laudo realizado com qualquer calibre.'],
+   r:'d',x:'Para aquisição de arma de fogo curta (pistola, revólver), o laudo de capacidade técnica pode ser realizado com QUALQUER calibre de arma curta, independentemente do calibre da arma a ser adquirida. A exigência é que seja na mesma categoria (curta para curta).'},
+  {n:5,t:'mc',tm:'BAL',e:'Com relação à perfuração por projétil disparado por arma de fogo, assinale a opção INCORRETA:',
+   o:['Pode causar orifícios de entrada e saída com diâmetros distintos.',
+      'A depender da localização, pode perfurar membranas e órgãos.',
+      'Um trauma torácico característico de PAF é o pneumotórax aberto.',
+      'Independente da localização, tem a capacidade de incapacitar fisicamente um agressor.'],
+   r:'d',x:'A alternativa INCORRETA é "d". A capacidade de incapacitar um agressor DEPENDE SIM da localização do impacto — atingir uma extremidade, por exemplo, pode não incapacitar imediatamente. Somente o comprometimento do SNC (cérebro/medula) garante incapacitação imediata.'},
+  {n:6,t:'mc',tm:'MED',e:'Em uma hemorragia compressiva, podemos realizar os seguintes procedimentos, EXCETO:',
+   o:['Aplicar um torniquete.',
+      'Realizar o preenchimento do ferimento.',
+      'Utilizar agentes hemostáticos.',
+      'Usar curativo valvulado.'],
+   r:'d',x:'O curativo valvulado (chest seal) é utilizado para ferimentos no TÓRAX com pneumotórax, não para hemorragia compressiva. Para hemorragia compressiva: torniquete, preenchimento (wound packing) e agentes hemostáticos são procedimentos corretos conforme o TCCC.'},
+  {n:7,t:'mc',tm:'BAL',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. Local de contenção da combustão do propelente, as paredes da câmara são mais resistentes que o resto do cano, pois é onde ocorre o maior pico de pressão oriundo da queima da pólvora.\nII. Uma arma longa sempre terá mais energia na saída do cano que uma arma curta.\nIII. O tamanho ideal de um cano deve ser definido de acordo com a munição utilizada, considerando, inclusive, o tempo de queima do propelente utilizado.',
+   o:['Todos os itens são verdadeiros.',
+      'Apenas os itens I e II são verdadeiros.',
+      'Apenas os itens I e III são verdadeiros.',
+      'Apenas os itens II e III são verdadeiros.'],
+   r:'c',x:'I VERDADEIRO: as paredes da câmara suportam os maiores picos de pressão — são de fato mais robustas. II FALSO: uma arma longa não SEMPRE terá mais energia que uma curta — depende do calibre e do propelente; uma pistola .44 Magnum pode superar uma carabina .22LR. III VERDADEIRO: o comprimento ideal do cano considera o tempo de queima do propelente para máxima eficiência.'},
+  {n:8,t:'mc',tm:'FUN',e:'Em relação ao quadro de análise de tiro, quando um atirador CANHOTO efetua seus disparos entre 7h e 8h, estamos diante do(a):',
+   o:['Estrangulamento.',
+      'Gatilhada.',
+      'Espalmamento.',
+      'Torção de pulso.'],
+   r:'c',x:'No quadro de análise de tiro, o espalmamento para atirador CANHOTO concentra os tiros entre 7h e 8h (baixo-direita). Para o atirador DESTRO, o espalmamento concentra entre 4h e 5h (baixo-esquerda). O espalmamento ocorre quando o atirador pressiona lateralmente a arma com a palma da mão de apoio.'},
+  {n:9,t:'mc',tm:'ARM',e:'O "choke" de uma espingarda pode ser dividido em:',
+   o:['Pleno, cônico e modificado.',
+      'Pleno, cilíndrico e modificado.',
+      'Cilíndrico, modificado e restrito.',
+      'Cônico, modificado e restrito.'],
+   r:'b',x:'O choke (estrangulador/constritor) da espingarda é dividido em: CILÍNDRICO (sem constrição — maior abertura da carga), MODIFICADO (constrição intermediária) e PLENO (maior constrição — menor abertura, maior alcance). Cada tipo define o padrão de dispersão dos projéteis.'},
+  {n:10,t:'mc',tm:'CRE',e:'No laudo de capacidade técnica para aquisição de uma arma de fogo LONGA, de alma RAIADA, assinale a alternativa correta referente ao tempo do exercício:',
+   o:['30 segundos.',
+      '25 segundos.',
+      '20 segundos.',
+      '15 segundos.'],
+   r:'a',x:'Para arma longa de alma raiada, o tempo de cada série no laudo de capacidade técnica é de 30 SEGUNDOS. Para arma curta (pistola/revólver): tempos distintos por série. Para arma longa de alma lisa (espingarda): parâmetros específicos. Memorize os diferentes tempos por categoria.'},
+  {n:11,t:'mc',tm:'CRE',e:'Em relação à atuação do IAT credenciado, assinale a alternativa correta:',
+   o:['Deve comunicar à PF, em até três dias úteis de antecedência, a realização do teste de capacidade técnica.',
+      'Poderá adquirir até 20 armas de fogo para aplicação de testes de capacidade técnica.',
+      'Não precisa informar à unidade da PF competente as desistências, pois como a atividade não ocorreu, não há que se falar em fiscalização.',
+      'Não pode utilizar arma de fogo importada para aplicar o teste de capacidade técnica, devendo utilizar arma de fabricação nacional.'],
+   r:'a',x:'Conforme a IN nº 111 da PF, o IAT credenciado DEVE comunicar à unidade da PF competente, com até 3 DIAS ÚTEIS de antecedência, a realização do teste de capacidade técnica. As demais alternativas estão incorretas — o limite é 5 armas (não 20), desistências devem ser informadas, e armas importadas são permitidas.'},
+  {n:12,t:'mc',tm:'FUN',e:'Conforme o quadro de análise de tiro, quando um atirador DESTRO está apresentando o que se chama "espalmamento", seus disparos ocorrem:',
+   o:['Entre 1h e 2h.',
+      'Entre 4h e 5h.',
+      'Entre 10h e 11h.',
+      'Entre 7h e 8h.'],
+   r:'b',x:'Para atirador DESTRO, o espalmamento concentra os tiros entre 4h e 5h (baixo-direita para o destro). Antecipação do recuo = 7h-8h. Estrangulamento = 6h (direto para baixo). Gatilhada = 3h-4h. Espalmamento do canhoto = 7h-8h. O espelhamento é importante no diagnóstico.'},
+  {n:13,t:'mc',tm:'BAL',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. Tem por função prover o movimento de rotação do projétil, dando estabilidade dinâmica.\nII. É qualquer corpo passível de ser arremessado.\nIII. A queima é iniciada ao entrar em contato com alguma chama, causando por consequência uma explosão de gases em alta velocidade, arremessando o projétil à frente.',
+   o:['Raiamento, projétil e pólvora.',
+      'Raiamento, projétil e espoleta.',
+      'Cano, espoleta e projétil.',
+      'Cano, projétil e pólvora.'],
+   r:'a',x:'(I) RAIAMENTO → provê rotação giroscópica ao projétil. (II) PROJÉTIL → qualquer corpo passível de arremesso. (III) PÓLVORA → substância que ao ser iniciada por chama gera gases de alta pressão que expelem o projétil. Espoleta é o componente que INICIA a deflagração — não é quem queima e gera os gases propulsores.'},
+  {n:14,t:'mc',tm:'CRE',e:'Conforme a IN nº 111, para fins de credenciamento de IAT, estão dispensados de apresentar o laudo de capacidade psicológica:',
+   o:['Integrantes das Forças Armadas e dos órgãos de segurança pública.',
+      'Todos os integrantes dos órgãos citados no art. 6º da Lei nº 10.826/2003.',
+      'Apenas os integrantes dos órgãos policiais, sejam civis ou militares.',
+      'Militares das Forças Armadas, integrantes dos órgãos policiais e integrantes das guardas municipais.'],
+   r:'a',x:'Conforme a IN nº 111, são dispensados do laudo de capacidade psicológica para o credenciamento de IAT os integrantes das FORÇAS ARMADAS e dos ÓRGÃOS DE SEGURANÇA PÚBLICA — desde que apresentem documentação comprobatória de sua vinculação e que já passam por avaliações psicológicas periódicas em suas instituições.'},
+  {n:15,t:'mc',tm:'LEG',e:'O guia de trânsito conferido pelo Exército:',
+   o:['Garante ao CAC o direito de transportar seu acervo de modo que nenhuma arma esteja carregada.',
+      'Garante ao CAC o direito de transportar seu acervo de modo que apenas uma arma de porte esteja carregada.',
+      'Garante ao CAC o direito de transportar seu acervo de modo que uma arma de porte ou uma arma portátil esteja carregada.',
+      'Não estabelece nenhum direito especial ao CAC, pois não compete ao Exército a concessão de porte de arma.'],
+   r:'b',x:'O Guia de Tráfego emitido pelo Exército garante ao CAC o direito de transportar seu acervo, permitindo que APENAS UMA ARMA DE PORTE esteja carregada durante o transporte. As demais armas devem estar desmuniciadas e acondicionadas adequadamente. Não autoriza porte — é documento de transporte.'},
+  {n:16,t:'mc',tm:'LEG',e:'Em relação à classificação das munições:',
+   o:['Elas utilizam parâmetro diferente em relação à classificação da arma de fogo.',
+      'Elas utilizam o mesmo parâmetro de classificação das armas de fogo, quando se trata de munição de uso permitido.',
+      'Elas utilizam o mesmo parâmetro de classificação das armas de fogo, quando se trata de munição de uso restrito.',
+      'Elas utilizam o mesmo parâmetro de classificação das armas de fogo, em qualquer caso.'],
+   r:'d',x:'As munições seguem o MESMO parâmetro de classificação das armas de fogo EM QUALQUER CASO — uso permitido, uso restrito ou uso exclusivo das Forças Armadas. A classificação é espelhada: munição de arma de uso permitido = uso permitido; munição de arma de uso restrito = uso restrito.'},
+  {n:17,t:'mc',tm:'LEG',e:'Conforme a Lei nº 10.826/2003, se o proprietário de arma de fogo descuidar de sua arma e permitir que seu filho, com 17 anos de idade e legalmente emancipado, se apodere de sua arma de fogo, responderá:',
+   o:['Por omissão de cautela.',
+      'Por porte ilegal de arma de fogo.',
+      'Por posse irregular de arma de fogo.',
+      'Essa conduta não é tipificada como crime na legislação.'],
+   r:'a',x:'OMISSÃO DE CAUTELA (art. 13, parágrafo único, Lei 10.826/03): o proprietário que não tomar as devidas cautelas para impedir que menor de 18 anos — inclusive emancipado, pois a emancipação civil não altera a menoridade para fins penais — tenha acesso à arma de fogo, responde por esse crime.'},
+  {n:18,t:'mc',tm:'ARM',e:'Sobre a espingarda CBC PUMP, qual a peça responsável por destravar o movimento da telha?',
+   o:['Trava de segurança.',
+      'Localizador esquerdo longo.',
+      'Liberador da trava da corrediça.',
+      'Localizador direito.'],
+   r:'c',x:'O LIBERADOR DA TRAVA DA CORREDIÇA (ou acionador da trava da corrediça) é a peça que, ao ser pressionada, libera o mecanismo que permite o movimento da telha (corrediça) da espingarda pump-action CBC. Após o disparo, aciona-se essa peça para realizar o próximo ciclo de recarga manual.'},
+  {n:19,t:'mc',tm:'LEG',e:'As armas de fogo apreendidas, quando finalizados os procedimentos de elaboração de laudo pericial e quando não mais interessarem à persecução penal, podem ser doadas ao órgão de segurança pública ou à Força Armada responsável pela apreensão, desde que haja manifestação expressa:',
+   o:['No prazo de 10 dias.',
+      'No prazo de 15 dias.',
+      'No prazo de 20 dias.',
+      'No prazo de 30 dias.'],
+   r:'a',x:'Conforme a Lei 10.826/03, após finalizados os procedimentos periciais, as armas apreendidas podem ser doadas ao órgão de segurança pública ou Força Armada responsável pela apreensão, desde que haja manifestação expressa no prazo de 10 DIAS.'},
+  {n:20,t:'mc',tm:'CRE',e:'Em relação à aplicação do teste de capacidade técnica, de acordo com a IN nº 111:',
+   o:['As armas de fogo e a munição podem ser do IAT ou do candidato.',
+      'As armas de fogo e a munição devem ser de propriedade do candidato.',
+      'As armas de fogo e a munição devem ser do IAT.',
+      'Não há nenhuma regulamentação quanto a esse tema na legislação.'],
+   r:'c',x:'Conforme a IN nº 111 da PF, tanto as ARMAS DE FOGO quanto as MUNIÇÕES utilizadas no teste de capacidade técnica DEVEM SER DE PROPRIEDADE DO IAT credenciado. Não é permitido ao candidato usar sua própria arma, garantindo padronização e controle do processo.'},
+  {n:21,t:'mc',tm:'LEG',e:'Conforme a legislação vigente, arma de fogo de porte é:',
+   o:['Arma de fogo de dimensões e peso reduzidos que pode ser disparada pelo atirador sem auxílio de terceiros, podendo ser transportada em um coldre.',
+      'Arma de fogo de dimensões e peso reduzidos que pode ser disparada pelo atirador com apenas uma de suas mãos.',
+      'Arma de fogo de dimensões e peso reduzidos que pode ser transportada pelo atirador com apenas uma de suas mãos.',
+      'Arma de fogo de dimensões e peso reduzidos que pode ser transportada pelo atirador em um coldre.'],
+   r:'a',x:'A definição legal de arma de fogo de PORTE é: dimensões e peso reduzidos, que pode ser disparada por um único atirador sem auxílio de terceiros, e que pode ser transportada em um coldre. A chave é a combinação das três características — não apenas o transporte ou apenas o disparo com uma mão.'},
+  {n:22,t:'mc',tm:'LEG',e:'Quando a arma de fogo, regularmente constante de um sistema, é vinculada a um proprietário (pessoa física ou jurídica), estamos falando de:',
+   o:['Cadastro.',
+      'Registro.',
+      'Averbação.',
+      'Apostilamento.'],
+   r:'d',x:'APOSTILAMENTO: é o ato de vincular a arma (já registrada no sistema) a um proprietário específico. REGISTRO: ato de incluir a arma no sistema. CADASTRO: ato de incluir dados. AVERBAÇÃO: anotação de dados adicionais ao registro. O apostilamento é o "casamento" da arma com o dono.'},
+  {n:23,t:'mc',tm:'ARM',e:'O diâmetro entre os cheios:',
+   o:['É o calibre nominal.',
+      'É o calibre real.',
+      'Pode ser o calibre real ou o calibre nominal, a depender da arma.',
+      'É uma medida utilizada apenas pelo fabricante.'],
+   r:'b',x:'O CALIBRE REAL é medido entre os CHEIOS (partes salientes do raiamento que imprimem as estrias no projétil). É a medida efetiva do diâmetro interno do cano. O diâmetro entre os VAZIOS (entre as estrias) é maior. O calibre nominal é a designação comercial, não necessariamente a medida exata.'},
+  {n:24,t:'mc',tm:'LEG',e:'O titular do porte de arma de fogo, na categoria defesa pessoal, que estiver portando a arma em estado de embriaguez:',
+   o:['Terá o porte cassado.',
+      'Terá o porte suspenso pelo prazo mínimo de 90 dias.',
+      'Terá o porte suspenso pelo prazo mínimo de 120 dias.',
+      'Terá o porte suspenso pelo prazo mínimo de 180 dias.'],
+   r:'a',x:'Conforme a Lei 10.826/03, o porte PERDE AUTOMATICAMENTE SUA EFICÁCIA (é cassado) quando o portador for detido ou abordado em estado de embriaguez. Não é suspensão temporária — é cassação imediata. O portador precisará requerer nova autorização. Não existe prazo de suspensão — é cassação direta.'},
+  {n:25,t:'mc',tm:'CRE',e:'Em relação à aplicação do teste de capacidade técnica, de acordo com a IN nº 111:',
+   o:['É autorizado o uso de munições recarregadas.',
+      'Para o cidadão comum, pode ser feita com arma de fogo de uso restrito.',
+      'Deve ocorrer após a emissão do laudo de capacidade psicológica.',
+      'Exige do candidato o percentual mínimo de 70% para aprovação.'],
+   r:'d',x:'A IN nº 111 exige percentual mínimo de 70% de acertos para aprovação no teste de capacidade técnica. Munições recarregadas são PROIBIDAS. Para cidadão comum, a prova usa arma de USO PERMITIDO (não restrito). Não há obrigatoriedade de sequência com o laudo psicológico.'},
+  {n:26,t:'mc',tm:'LEG',e:'Possuem porte de arma por legislação própria:',
+   o:['Guardas Municipais.',
+      'Auditores da Receita Federal.',
+      'Guardas portuários.',
+      'Fiscais do IBAMA.'],
+   r:'b',x:'Os AUDITORES-FISCAIS DA RECEITA FEDERAL possuem porte de arma por legislação específica (Lei 10.593/2002 e outras). Guardas Municipais têm porte condicionado ao município e à Lei 10.826/03. Guardas portuários e fiscais do IBAMA não possuem porte por legislação própria como regra geral.'},
+  {n:27,t:'mc',tm:'MUN',e:'Conforme a "Síntese de Temas para Avaliação de Capacidade Técnica", as munições são classificadas em:',
+   o:['Letal, não letal, industrial e de manejo.',
+      'Letal, não letal, artesanal e industrial.',
+      'Letal, menos letal, industrial e de manejo.',
+      'Letal, menos letal, artesanal e de manejo.'],
+   r:'c',x:'Conforme a Síntese de Temas da PF, as munições são classificadas em: LETAL (projétil convencional com alta capacidade de causar morte), MENOS LETAL (rubber slug, bean bag — para controle sem letalidade), INDUSTRIAL (uso em ferramentas) e DE MANEJO (sem projétil — treinamento/desmontagem).'},
+  {n:28,t:'mc',tm:'MUN',e:'Comparando os projéteis de chumbo e os projéteis encamisados, pode-se afirmar que os projéteis de chumbo:',
+   o:['Causam maior desgaste do cano.',
+      'Apresentam maior deformação ao atingir o alvo.',
+      'Possuem penetração idêntica aos projéteis encamisados.',
+      'Apresentam menor risco de intoxicação em estande fechado.'],
+   r:'a',x:'Projéteis de CHUMBO puro causam MAIOR DESGASTE do cano (leading — acúmulo de chumbo nas estrias). Também apresentam maior risco de intoxicação por vapores de chumbo em estande fechado. Projéteis encamisados (FMJ/JHP) têm jaqueta metálica que protege o cano e reduz o leading.'},
+  {n:29,t:'mc',tm:'ARM',e:'De acordo com a "Síntese de Temas para Avaliação de Capacidade Técnica", qual a função do dedal serrilhado:',
+   o:['Travar o tambor, impedindo que ele saia da armação durante os disparos.',
+      'Afrouxar o tambor quando este estiver com o giro desregulado.',
+      'Liberar a abertura do tambor.',
+      'Todos os itens são falsos.'],
+   r:'c',x:'O DEDAL SERRILHADO (ou alavanca de abertura do tambor) tem a função de LIBERAR A ABERTURA DO TAMBOR do revólver, permitindo que ele gire para fora da armação para reabastecimento ou extração dos estojos. É acionado com o polegar da mão que empunha.'},
+  {n:30,t:'mc',tm:'ARM',e:'Em relação à espingarda 12GA, a peça que, quando acionada, permite a retirada do ferrolho, uma das etapas da desmontagem da arma, é:',
+   o:['Transportador.',
+      'Localizador direito.',
+      'Hastes da corrediça.',
+      'Bujão do depósito.'],
+   r:'d',x:'O BUJÃO DO DEPÓSITO (ou tampa do magazine) é a peça que, quando removida, libera o mecanismo e permite a retirada do ferrolho durante a desmontagem da espingarda 12GA. É rosqueado na extremidade do cano/depósito tubular e sua remoção é etapa essencial da desmontagem.'},
+  {n:31,t:'mc',tm:'BAL',e:'A flutuabilidade do cano:',
+   o:['Interfere na balística externa.',
+      'Interfere na balística interna.',
+      'Interfere na balística terminal.',
+      'Não tem qualquer interferência para a balística.'],
+   r:'a',x:'A flutuabilidade do cano — capacidade do cano de vibrar livremente sem contato com a coronha/guarda-mão — interfere na BALÍSTICA EXTERNA. Quando o cano vibra de forma consistente a cada disparo, os tiros são mais precisos. É fator considerado no projeto de fuzis de precisão.'},
+  {n:32,t:'mc',tm:'CRE',e:'Em relação ao porte de arma, o IAT credenciado:',
+   o:['Não possui porte de arma, devendo submeter-se às mesmas regras do cidadão comum.',
+      'Possui porte somente quando estiver no exercício da atividade de IAT, devendo cumprir as demais diretrizes da PF.',
+      'Possui porte de arma irrestrito por força do credenciamento.',
+      'Não possui porte, mas detém porte de trânsito válido exclusivamente quando em deslocamento para aplicação do teste.'],
+   r:'b',x:'O IAT credenciado possui PORTE restrito ao exercício da atividade de IAT — apenas quando estiver aplicando testes ou ministrando treinamentos autorizados. Fora dessa condição, sujeita-se às regras comuns de porte. Não é porte irrestrito e não é simples porte de trânsito.'},
+  {n:33,t:'mc',tm:'CRE',e:'A nota mínima exigida para aprovação na fase de desmontagem e montagem de arma de fogo é de:',
+   o:['80 pontos.','70 pontos.','75 pontos.','90 pontos.'],
+   r:'b',x:'A nota mínima para aprovação na fase de DESMONTAGEM E MONTAGEM é de 70 PONTOS (70%). Abaixo disso, o candidato é reprovado nessa fase específica. A mesma nota mínima de 70% se aplica ao percentual de acertos no exercício de tiro. Memorize: 70% é o padrão de aprovação.'},
+  {n:34,t:'mc',tm:'CRE',e:'Na aplicação do teste de capacidade técnica, na categoria porte institucional de arma longa:\n\nI. Se a arma for de alma lisa, a distância do alvo é de 15 metros.\nII. Se a arma for de alma raiada, o tempo para cada série de disparos é de 30 segundos.\nIII. Tanto para a arma de alma lisa como para a arma de alma raiada, a quantidade de disparos é a mesma.',
+   o:['Apenas o item I é verdadeiro.','Apenas o item II é verdadeiro.','Apenas o item III é verdadeiro.','Todos os itens são verdadeiros.'],
+   r:'d',x:'TODOS VERDADEIROS. I: Para arma longa de alma LISA (espingarda), distância de 15 metros. II: Para arma longa de alma RAIADA, cada série tem 30 segundos. III: A quantidade de disparos por série é a mesma para ambas as categorias. Conforme a regulamentação da IN nº 111.'},
+  {n:35,t:'mc',tm:'MUN',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. A carga de projeção tem por finalidade gerar a pressão necessária para o lançamento do estojo.\nII. Podemos afirmar que a carga de projeção de base simples utilizada atualmente é composta de nitroglicerina.\nIII. O cartucho deve sempre ocupar toda a câmara de explosão para que se obtenha maior alcance útil do disparo.',
+   o:['Apenas os itens I e II são verdadeiros.','Todos os itens são falsos.','Apenas o item III é verdadeiro.','Todos os itens são verdadeiros.'],
+   r:'b',x:'TODOS FALSOS. I: a carga de projeção (pólvora) gera pressão para lançar o PROJÉTIL, não o estojo. II: a pólvora de BASE SIMPLES é composta de NITROCELULOSE — nitroglicerina é o componente da base dupla. III: o cartucho NÃO deve ocupar toda a câmara — há o headspace necessário; ocupar toda a câmara geraria pressão excessiva.'},
+  {n:36,t:'mc',tm:'LEG',e:'Para o cidadão comum, são requisitos para a emissão do certificado de registro de arma de fogo, EXCETO:',
+   o:['Comprovar, a cada 10 anos, capacidade técnica para manuseio de arma de fogo.',
+      'Ter, no mínimo, 25 anos de idade.',
+      'Possuir residência própria e ocupação lícita.',
+      'Declarar a efetiva necessidade.'],
+   r:'c',x:'"Possuir residência própria" NÃO é requisito para o Certificado de Registro. O cidadão pode ter residência alugada — basta comprovar residência fixa. Os requisitos reais incluem: 25 anos, ocupação lícita, idoneidade moral, capacidade técnica, aptidão psicológica e declarar necessidade.'},
+  {n:37,t:'mc',tm:'CRE',e:'O teste de capacidade técnica para registro de um revólver calibre 357Magnum utiliza qual modelo de alvo?',
+   o:['Silhueta humanoide.','Fogo central.','4 Cores.','Padrão IPSC.'],
+   r:'a',x:'O teste de capacidade técnica utiliza ALVO SILHUETA HUMANOIDE (na versão definida pela regulamentação da PF). É o alvo padrão adotado para avaliação de habilidade de tiro na perspectiva de defesa — a silhueta representa um corpo humano e os pontos de acerto são avaliados com base nela.'},
+  {n:38,t:'mc',tm:'CRE',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. O IAT credenciado que aplicar o teste de capacidade técnica não pode, para o mesmo candidato, ministrar instrução.\nII. Uma arma longa sempre terá maior energia na saída do cano que uma arma curta.\nIII. O IAT pertencente aos quadros da Polícia Federal não pode receber qualquer remuneração em razão do desempenho das avaliações previstas na IN nº 111.',
+   o:['Todos os itens são verdadeiros.','Os itens I e III são verdadeiros.','Os itens I e II são verdadeiros.','Os itens II e III são verdadeiros.'],
+   r:'b',x:'I VERDADEIRO: vedação expressa — o IAT que aplica o teste NÃO pode ter ministrado instrução para o mesmo candidato (conflito de interesses). II FALSO: arma longa não SEMPRE tem mais energia (depende do calibre). III VERDADEIRO: IAT servidor da PF não pode receber remuneração pelas avaliações — é vedação funcional.'},
+  {n:39,t:'mc',tm:'CRE',e:'Um dos documentos obrigatórios para inscrição no credenciamento de IAT é o certificado de habilitação em curso de instrutor de tiro. A carga horária mínima exigida desse curso é de:',
+   o:['90h/a.','80h/a.','100h/a.','120h/a.'],
+   r:'c',x:'A carga horária mínima exigida para o curso de instrutor de tiro cujo certificado é aceito para fins de credenciamento de IAT pela PF é de 100 HORAS/AULA. Cursos com carga horária inferior a 100h/a não satisfazem o requisito, independentemente da instituição que os ofertou.'},
+  {n:40,t:'mc',tm:'ARM',e:'A arma portátil, de alma raiada, semiautomática, é classificada como:',
+   o:['De uso proibido.','De uso restrito.','De uso permitido.','De uso permitido ou de uso restrito, a depender do comprimento do cano.'],
+   r:'b',x:'Arma PORTÁTIL (longa), de alma RAIADA, SEMIAUTOMÁTICA é classificada como de USO RESTRITO. Exemplos: fuzis, carabinas semiautomáticas de calibre de fuzil. Civis não podem possuí-las sem autorização especial. O comprimento do cano pode alterar a classificação de uso permitido para restrito, mas não o contrário nesse caso.'},
+  {n:41,t:'mc',tm:'CRE',e:'No teste prático com arma curta para fins de credenciamento de IAT, o candidato deve atingir, no mínimo, os seguintes índices de acerto para o revólver e para a pistola, respectivamente:',
+   o:['60% e 60%.','70% e 60%.','60% e 70%.','70% e 70%.'],
+   r:'b',x:'Para credenciamento de IAT no teste prático com arma curta: REVÓLVER exige mínimo de 70% de acertos; PISTOLA exige mínimo de 60% de acertos. A diferença se justifica pela maior dificuldade de manejo do revólver na prova. Memorize: 70% revólver, 60% pistola.'},
+  {n:42,t:'mc',tm:'LEG',e:'De acordo com a legislação vigente, possuem porte de arma:',
+   o:['Vigilantes.','Agentes do DETRAN.','Policiais legislativos das Assembleias Legislativas dos Estados.','Advogados.'],
+   r:'c',x:'Os POLICIAIS LEGISLATIVOS das Assembleias Legislativas dos Estados possuem porte de arma por previsão legal específica. Vigilantes possuem porte apenas em serviço (não é porte pessoal livre). Agentes do DETRAN e advogados, em regra, não possuem porte por legislação própria.'},
+  {n:43,t:'mc',tm:'CRE',e:'Os instrutores de armamento e tiro candidatos ao credenciamento serão submetidos a:',
+   o:['5 testes.','6 testes.','4 testes.','3 testes.'],
+   r:'b',x:'Conforme a IN nº 111, os candidatos ao credenciamento de IAT são submetidos a 6 TESTES: (1) Prova teórica, (2) Desmontagem/montagem de pistola, (3) Desmontagem/montagem de revólver, (4) Prova prática de tiro com pistola, (5) Prova prática de tiro com revólver, (6) Desmontagem/montagem de arma longa.'},
+  {n:44,t:'mc',tm:'BAL',e:'A Balística é a Ciência que estuda as armas de fogo, o alcance e a direção dos projéteis por elas expelidos e os efeitos que produzem. Segundo esse conceito pode ser dividida em:',
+   o:['Balística, Material Bélico e Engenharia de Armamento.',
+      'Balística Científica, Balística Clássica e Balística Moderna.',
+      'Balística Interna, Balística Externa e Balística de Efeitos.',
+      'Balística, Balística de Armaria e Balística de Perícia.'],
+   r:'c',x:'A Balística é dividida em: INTERNA (fenômenos dentro do cano), EXTERNA (comportamento do projétil no espaço livre, da saída do cano até o alvo) e TERMINAL/DE EFEITOS (efeitos ao atingir o alvo). Às vezes referida como Interna, Externa e Terminal. A alternativa "c" usa "Efeitos" como sinônimo de Terminal.'},
+  {n:45,t:'mc',tm:'ARM',e:'Quanto ao sistema de carregamento:',
+   o:['Carregador / Tambor.','Retrocarga / Antecarga.','Provedor / Câmaras.','Culatra / Antecarga.'],
+   r:'b',x:'Os sistemas de carregamento (alimentação) de armas de fogo são classificados em: RETROCARGA (breech loading — carregamento pela culatra, sistema moderno) e ANTECARGA (muzzle loading — carregamento pela boca do cano, sistema histórico). A maioria das armas modernas usa retrocarga.'},
+  {n:46,t:'mc',tm:'ARM',e:'Podemos dizer que a CARABINA é:',
+   o:['Arma de fogo longa, de porte e alma raiada ou lisa.',
+      'Arma de fogo longa, de assalto e alma raiada.',
+      'Arma de fogo longa, portátil e alma raiada.',
+      'Arma de fogo longa, de porte e alma raiada.'],
+   r:'c',x:'A CARABINA é definida como arma de fogo LONGA, PORTÁTIL (transportada por um único homem) e de ALMA RAIADA — distinguindo-se da espingarda (alma lisa) e dos fuzis de assalto (que são portáteis e raiados, mas classificados separadamente). É intermediária entre a pistola/revólver e o fuzil.'},
+  {n:47,t:'mc',tm:'BAL',e:'São movimentos de um projétil expelido por arma RAIADA:',
+   o:['Rotação - Precessão – Nutação (ao sair do cano da arma).',
+      'Compensação - Passo - Deflagração (diferente de detonação).',
+      'Choque - Giro (Direito / Esquerdo) - Poder de parada.',
+      'Rotação - Dextrógiro / Sinistrógiro – Explosão (Inicial).'],
+   r:'a',x:'Os três movimentos do projétil disparado por arma raiada são: ROTAÇÃO (giro em torno do próprio eixo, pelo raiamento), PRECESSÃO (oscilação cônica ao redor do eixo de trajetória) e NUTAÇÃO (oscilação rápida dentro da precessão). Os três ocorrem simultaneamente após a saída do cano.'},
+  {n:48,t:'mc',tm:'BAL',e:'Qual dos fatores abaixo pode influenciar na balística EXTERNA:',
+   o:['Passo de raiamento do cano.',
+      'Alinhamento da munição no cano.',
+      'Velocidade e posição do vento.',
+      'Consistência dos picos de pressão da carga propelente na câmara.'],
+   r:'c',x:'VENTO (velocidade e posição) é fator de BALÍSTICA EXTERNA — age sobre o projétil após sair do cano, desviando-o lateralmente ou afetando sua velocidade. Passo do raiamento, alinhamento da munição no cano e picos de pressão na câmara são fatores de BALÍSTICA INTERNA — ocorrem dentro da arma.'},
+  {n:49,t:'mc',tm:'BAL',e:'Quanto ao passo do raiamento, assinale a alternativa CORRETA:',
+   o:['É a distância necessária para que o projétil complete uma volta sobre seu eixo.',
+      'O passo do raiamento é sempre constante durante toda a extensão do cano.',
+      'O projétil sempre deverá realizar a volta completa sobre seu eixo dentro do cano.',
+      'Um cano com passo de raiamento de 1:7" deverá obrigatoriamente ter 7" de comprimento.'],
+   r:'a',x:'PASSO DO RAIAMENTO: é a distância linear necessária para que o projétil complete UMA VOLTA COMPLETA sobre seu próprio eixo. Expresso como 1:X" (onde X é a distância em polegadas para uma volta). Não precisa completar a volta dentro do cano. O cano com passo 1:7" não precisa ter exatamente 7" — pode ser maior.'},
+  {n:50,t:'mc',tm:'CRE',e:'Assinale a alternativa INCORRETA:',
+   o:['Os valores cobrados pelo psicólogo credenciado para emissão do laudo de aptidão psicológica é definido pelo Conselho Federal de Psicologia.',
+      'A autorização para porte de arma de fogo aos responsáveis pela segurança de cidadãos estrangeiros em visita ou sediados no Brasil é competência do Ministério da Justiça.',
+      'O registro das armas de fogo de uso restrito pode ser feito tanto no SINARM como no SIGMA.',
+      'Na comprovação da capacidade técnica, o valor cobrado pelo instrutor de armamento e tiro não poderá exceder R$90,00, acrescido do custo da munição e da utilização do estande de tiro.'],
+   r:'d',x:'A alternativa INCORRETA é "d". O valor cobrado pelo IAT para a comprovação de capacidade técnica não tem teto fixado em R$90,00 pela legislação vigente — essa limitação não consta na IN nº 111 nem na Lei 10.826/03. As demais alternativas estão corretas: CFP define honorários do psicólogo, MJ autoriza porte para segurança de estrangeiros, e armas restritas podem ser no SINARM ou SIGMA.'}
+];
+const Q2=[
   {n:1,t:'mc',tm:'SEG',e:'Quanto às regras de segurança é correto afirmar que:',
    o:['Treinamentos de tiro só devem ser ministrados em estandes vistoriados pelo Exército.',
       'Treinamentos de tiro só devem ser ministrados em estandes credenciados pelo Exército e PF.',
@@ -614,7 +908,7 @@ const Q1=[
 /* ═══════════════════════════════════════════════════════
    QUESTÕES — PROVA 2 (50 questões — Simulado 2)
 ═══════════════════════════════════════════════════════ */
-const Q2=[
+const Q3=[
   {n:1,t:'mc',tm:'LEG',e:'Sobre o crime do art. 14 da Lei 10.826/03 (porte ilegal de arma de uso permitido), é correto afirmar:',
    o:['A pena é de reclusão de 3 a 6 anos.',
       'O crime é caracterizado por portar arma de uso permitido sem autorização em local público ou equivalente.',
@@ -784,7 +1078,7 @@ const Q2=[
 /* ═══════════════════════════════════════════════════════
    QUESTÕES — PROVA 3 (50 questões — Simulado 3)
 ═══════════════════════════════════════════════════════ */
-const Q3=[
+const Q4=[
   {n:1,t:'mc',tm:'BAL',e:'O fenômeno do "keyholing" (marcas elípticas no alvo) indica:',
    o:['Que o projétil está girando rápido demais — excesso de estabilidade giroscópica.',
       'Que o projétil chegou ao alvo tombado lateralmente, sem estabilidade rotacional.',
@@ -947,21 +1241,11 @@ const Q3=[
    r:'c',x:'O IAT NÃO pode emitir o Certificado de Registro (CR). O CR é documento emitido EXCLUSIVAMENTE pela POLÍCIA FEDERAL. O IAT atesta a capacidade técnica do candidato (laudo de aprovação), mas o CR é ato administrativo privativo da PF — nunca do instrutor.'}
 ];
 
-const BANCO = {1:Q1, 2:Q2, 3:Q3};
 
-/* ═══════════════════════════════════════════════════════
-   ESTADO
-═══════════════════════════════════════════════════════ */
+const BANCO={1:Q1,2:Q2,3:Q3,4:Q4};
 let PA=null,RESP=[],RESP_SET=new Set();
 
-/* ═══════════════════════════════════════════════════════
-   TELAS E COR
-═══════════════════════════════════════════════════════ */
-function show(id){
-  document.querySelectorAll('.tela').forEach(t=>t.classList.remove('on'));
-  document.getElementById(id).classList.add('on');
-  window.scrollTo(0,0);
-}
+function show(id){document.querySelectorAll('.tela').forEach(t=>t.classList.remove('on'));document.getElementById(id).classList.add('on');window.scrollTo(0,0);}
 
 function setCor(p){
   const c=CFG[p];
@@ -969,15 +1253,37 @@ function setCor(p){
   document.documentElement.style.setProperty('--pc2',c.cor2);
   document.documentElement.style.setProperty('--pcbg',c.cbg);
   document.getElementById('hdr').style.background=c.cor;
+  // Yellow prova needs dark header text
+  const darkText=p===1?'#2A1E00':'#fff';
+  document.getElementById('htitle').style.color=darkText;
+  document.querySelector('.badge').style.color=darkText;
+  document.querySelector('.hmeta').style.color=p===1?'rgba(42,30,0,.55)':'rgba(255,255,255,.5)';
+  document.getElementById('btn-hdr-ini').style.color=darkText;
+  document.getElementById('btn-hdr-ini').style.borderColor=p===1?'rgba(42,30,0,.25)':'rgba(255,255,255,.2)';
+  document.getElementById('btn-hdr-ini').style.background=p===1?'rgba(42,30,0,.10)':'rgba(255,255,255,.12)';
   document.querySelector('.wm svg').style.fill=c.cor;
   document.querySelector('.wm span').style.color=c.cor;
+  // tint body bg per prova
+  const tints={1:'rgba(122,92,0,.06)',2:'rgba(20,82,10,.06)',3:'rgba(13,46,106,.06)',4:'rgba(26,26,26,.06)'};
+  document.body.style.backgroundColor='';
+  document.body.style.backgroundImage='';
+  // overlay via pseudo - use a data attr approach
+  document.body.setAttribute('data-prova',p);
 }
 
 function irHome(){
-  setCor(1);
-  document.getElementById('htitle').textContent='SIMULADO IAT · PF';
-  document.getElementById('hmeta').textContent='Simulado elaborado por\nRicardo Taira — IAT';
+  // Reset header to dark green for home
+  const hdr=document.getElementById('hdr');
+  hdr.style.background='#0D2E0D';
+  document.getElementById('htitle').style.color='#fff';
+  document.querySelector('.badge').style.color='#fff';
+  document.querySelector('.hmeta').style.color='rgba(255,255,255,.5)';
   document.getElementById('btn-hdr-ini').style.display='none';
+  document.getElementById('htitle').textContent='SIMULADO IAT · PF';
+  document.getElementById('hmeta').textContent='Ricardo Taira — IAT';
+  document.querySelector('.wm svg').style.fill='#0D2E0D';
+  document.querySelector('.wm span').style.color='#0D2E0D';
+  document.body.removeAttribute('data-prova');
   show('t-home');
 }
 
@@ -985,15 +1291,15 @@ function iniciar(p){
   PA=p;RESP=new Array(50).fill(null);RESP_SET=new Set();
   setCor(p);
   document.getElementById('htitle').textContent=CFG[p].nome;
-  document.getElementById('hmeta').textContent=p===1?'Questões elaboradas pela Combat Tático':'Ricardo Taira — IAT';
+  const meta = p===1?'Elaborada por Fillipe Mendes Lago · Combat Tático':
+               p===2?'Fornecido pela Combat Tático':
+               'Ricardo Taira — IAT';
+  document.getElementById('hmeta').textContent=meta;
   document.getElementById('btn-hdr-ini').style.display='block';
   renderProva();show('t-prova');
 }
 function refazer(){iniciar(PA);}
 
-/* ═══════════════════════════════════════════════════════
-   RENDER PROVA
-═══════════════════════════════════════════════════════ */
 function renderProva(){
   const Q=BANCO[PA],LM=['a','b','c','d'];
   document.getElementById('pw').innerHTML=
@@ -1032,93 +1338,104 @@ function renderProva(){
   atuTop();
 }
 
-/* ═══════════════════════════════════════════════════════
-   SELECIONAR
-═══════════════════════════════════════════════════════ */
 function sel(qn,letra){
   RESP[qn-1]=letra;
   document.getElementById(`qb-${qn}`).querySelectorAll('.opt,.vfb').forEach(b=>b.classList.remove('sel'));
   const b=document.getElementById(`opt-${qn}-${letra}`);
   if(b)b.classList.add('sel');
-  RESP_SET.add(qn);
-  atuTop();
+  RESP_SET.add(qn);atuTop();
 }
 
 function atuTop(){
   const n=RESP_SET.size,t=BANCO[PA].length;
-  document.getElementById('tb-count').textContent=`${n} / ${t}`;
+  document.getElementById('tb-count').textContent=n+' / '+t;
   document.getElementById('tb-fill').style.width=(n/t*100)+'%';
   const h=document.getElementById('fin-hint');
-  if(h) h.textContent=n<t?`Faltam ${t-n} questão(ões) sem resposta.`:'✅ Todas respondidas! Pode finalizar.';
+  if(!h) return;
+  if(n<t){
+    const faltam=[];
+    RESP.forEach((r,i)=>{if(r===null) faltam.push(i+1);});
+    const exibe=faltam.length<=10?'Q'+faltam.join(', Q'):'Q'+faltam.slice(0,10).join(', Q')+' +...';
+    h.innerHTML='<span style="color:var(--err);font-weight:700;">'+faltam.length+' sem resposta:</span> '+exibe;
+  } else {
+    h.textContent='✅ Todas respondidas! Pode finalizar.';
+  }
 }
 
-/* ═══════════════════════════════════════════════════════
-   FINALIZAR
-═══════════════════════════════════════════════════════ */
 function finalizar(){
-  const nao=RESP.filter(r=>r===null).length;
-  if(nao>0&&!confirm(`Você ainda tem ${nao} questão(ões) sem resposta.\nFinalizar? (em branco = errada)`)) return;
+  const semResp=[];
+  RESP.forEach((r,i)=>{if(r===null) semResp.push(i+1);});
+  if(semResp.length>0){
+    const lista=semResp.join(', ');
+    if(!confirm('⚠️ Questões SEM RESPOSTA ('+semResp.length+'):\n\nQ'+lista.replace(/, /g,'\nQ')+'\n\n✅ BRANCO NÃO PERDE NOTA — mas você pode ainda responder!\nDeseja finalizar mesmo assim?')) return;
+  }
   mostrarRes();
 }
 
-/* ═══════════════════════════════════════════════════════
-   RESULTADO
-═══════════════════════════════════════════════════════ */
 function mostrarRes(){
   const Q=BANCO[PA];
-  let ok=0;
-  Q.forEach((q,i)=>{ if(RESP[i]&&RESP[i].toLowerCase()===q.r.toLowerCase()) ok++; });
-  const pct=Math.round(ok/50*100);
+  let acertos=0, errados=0;
+  Q.forEach((q,i)=>{
+    if(RESP[i]&&RESP[i].toLowerCase()===q.r.toLowerCase()) acertos++;
+    else if(RESP[i]&&RESP[i].toLowerCase()!==q.r.toLowerCase()) errados++;
+    // branco (null) = não conta nem como erro nem como acerto
+  });
+  // 2 pts por questão, 4 ERRADAS anulam 1 acerto (= 2 pts de desconto)
+  // BRANCO: não perde nada
+  const ptsBrutos=acertos*2;
+  const desconto=Math.floor(errados/4)*2;
+  const pontuacao=Math.max(0,ptsBrutos-desconto);
+  const erros=errados; // só para exibição
+  const pct=pontuacao; // já é 0-100
+
   document.getElementById('res-kicker').textContent=CFG[PA].kicker;
-  document.getElementById('sc-pct').textContent=pct+'%';
-  document.getElementById('sc-frac').textContent=`${ok} / 50`;
-  document.getElementById('st-ok').textContent=ok;
-  document.getElementById('st-nok').textContent=50-ok;
-  document.getElementById('assin-txt').textContent=PA===1?'Questões elaboradas pela Combat Tático | Ricardo Taira — IAT':'Ricardo Taira — Instrutor de Armamento e Tiro (IAT)';
+  document.getElementById('sc-pct').textContent=pontuacao+' pts';
+  document.getElementById('sc-frac').textContent=pontuacao+'/100';
+  document.getElementById('st-ok').textContent=acertos;
+  document.getElementById('st-nok').textContent=errados;
+  document.getElementById('st-desc').textContent=desconto;
+  document.getElementById('sc-final').textContent=pontuacao>=70?'✅ APROVADO — '+pontuacao+' pts':'❌ REPROVADO — '+pontuacao+' pts';
+
+  const assinArr=['Elaborada por Fillipe Mendes Lago · Combat Tático','Fornecido pela Combat Tático · Ricardo Taira — IAT','Ricardo Taira — Instrutor de Armamento e Tiro (IAT)','Ricardo Taira — Instrutor de Armamento e Tiro (IAT)'];
+  document.getElementById('assin-txt').textContent=assinArr[PA-1];
 
   const ring=document.getElementById('sc-ring');
-  const corR=pct>=70?CFG[PA].cor:(pct>=50?'#B8840A':'#8B1212');
+  const corR=pontuacao>=70?CFG[PA].cor:(pontuacao>=50?'#B8840A':'#8B1212');
   ring.style.stroke=corR;
   document.getElementById('sc-pct').style.color=corR;
+  const sfEl=document.getElementById('sc-final');
+  sfEl.className='score-final-val '+(pontuacao>=70?'aprovado':'reprovado');
   const circ=2*Math.PI*42;
   ring.style.strokeDasharray=circ;ring.style.strokeDashoffset=circ;
-  setTimeout(()=>{ring.style.strokeDashoffset=circ*(1-pct/100);},300);
+  setTimeout(()=>{ring.style.strokeDashoffset=circ*(1-pontuacao/100);},300);
 
-  renderHumor(pct,ok);
+  renderHumor(pontuacao,acertos);
   renderTemas(Q);
   renderGabarito(Q);
   document.getElementById('gab-sec').classList.remove('aberta');
   show('t-res');
 }
 
-/* ═══════════════════════════════════════════════════════
-   HUMOR — 25 MENSAGENS ALEATÓRIAS
-═══════════════════════════════════════════════════════ */
-function renderHumor(pct,ok){
+function renderHumor(pts,ok){
   let pool;
-  if(pct===100) pool=ZOEIRAS.n100;
-  else if(pct>=90) pool=ZOEIRAS.n90;
-  else if(pct>=80) pool=ZOEIRAS.n80;
-  else if(pct>=70) pool=ZOEIRAS.n70;
-  else if(pct>=60) pool=ZOEIRAS.n60;
-  else if(pct>=50) pool=ZOEIRAS.n50;
-  else if(pct>=40) pool=ZOEIRAS.n40;
-  else if(pct>=30) pool=ZOEIRAS.n30;
+  if(pts>=100) pool=ZOEIRAS.n100;
+  else if(pts>=90) pool=ZOEIRAS.n90;
+  else if(pts>=80) pool=ZOEIRAS.n80;
+  else if(pts>=70) pool=ZOEIRAS.n70;
+  else if(pts>=60) pool=ZOEIRAS.n60;
+  else if(pts>=50) pool=ZOEIRAS.n50;
+  else if(pts>=40) pool=ZOEIRAS.n40;
+  else if(pts>=30) pool=ZOEIRAS.n30;
   else pool=ZOEIRAS.abaixo30;
-
   const idx=Math.floor(Math.random()*pool.length);
   const msg=pool[idx];
   document.getElementById('h-em').textContent=msg.em;
   document.getElementById('h-nv').textContent=msg.nv;
-  document.getElementById('h-nv').style.color=pct>=70?CFG[PA].cor:(pct>=50?'#B8840A':'#8B1212');
-  document.getElementById('h-txt').innerHTML=msg.txt(ok,50,pct);
+  document.getElementById('h-nv').style.color=pts>=70?CFG[PA].cor:(pts>=50?'#B8840A':'#8B1212');
+  document.getElementById('h-txt').innerHTML=msg.txt(ok,50,pts);
 }
 
-/* ═══════════════════════════════════════════════════════
-   ANÁLISE POR TEMA
-═══════════════════════════════════════════════════════ */
 function renderTemas(Q){
-  // Contar erros por tema
   const erros={},total={};
   Q.forEach((q,i)=>{
     const tm=q.tm;
@@ -1126,39 +1443,26 @@ function renderTemas(Q){
     const acertou=RESP[i]&&RESP[i].toLowerCase()===q.r.toLowerCase();
     if(!acertou) erros[tm]=(erros[tm]||0)+1;
   });
-
-  // Calcular % de erro por tema
-  const temaList=Object.keys(total).map(tm=>({
-    tm, nome:TEMAS[tm]||tm,
-    errs:erros[tm]||0, tot:total[tm],
+  const lista=Object.keys(total).map(tm=>({
+    tm,nome:TEMAS[tm]||tm,
+    errs:erros[tm]||0,tot:total[tm],
     pctErr:Math.round(((erros[tm]||0)/total[tm])*100)
   })).sort((a,b)=>b.pctErr-a.pctErr);
-
-  // Render barras
-  document.getElementById('temas-list').innerHTML=temaList.map(t=>{
+  document.getElementById('temas-list').innerHTML=lista.map(t=>{
     const cls=t.pctErr<=30?'bom':(t.pctErr<=60?'med':'');
-    const pctCls=t.pctErr<=30?'bom':(t.pctErr<=60?'med':'mal');
+    const pCls=t.pctErr<=30?'bom':(t.pctErr<=60?'med':'mal');
     return `<div class="tema-item">
       <div class="tema-nome">${t.nome}</div>
       <div class="tema-track"><div class="tema-fill ${cls}" style="width:${t.pctErr}%"></div></div>
-      <div class="tema-pct ${pctCls}">${t.pctErr}% erro</div>
+      <div class="tema-pct ${pCls}">${t.pctErr}% erro</div>
     </div>`;
   }).join('');
-
-  // Dica dos temas mais fracos
-  const piores=temaList.filter(t=>t.pctErr>50).slice(0,3);
-  let dica='';
-  if(piores.length===0){
-    dica='✅ Domínio consistente em todos os temas! Continue revisando para manter o nível.';
-  } else {
-    dica='📚 <strong>Foco de estudo:</strong> '+piores.map(t=>`<strong>${t.nome}</strong> (${t.errs} de ${t.tot} erros)`).join(', ')+'. Revise o gabarito comentado abaixo nestes temas antes de tentar novamente.';
-  }
-  document.getElementById('temas-dica').innerHTML=dica;
+  const piores=lista.filter(t=>t.pctErr>50).slice(0,3);
+  document.getElementById('temas-dica').innerHTML=piores.length===0?
+    '✅ Domínio consistente em todos os temas! Continue revisando.':
+    '📚 <strong>Foco de estudo:</strong> '+piores.map(t=>`<strong>${t.nome}</strong> (${t.errs}/${t.tot} erros)`).join(', ')+'. Revise o gabarito comentado abaixo nesses temas.';
 }
 
-/* ═══════════════════════════════════════════════════════
-   GABARITO
-═══════════════════════════════════════════════════════ */
 function toggleGab(){
   const s=document.getElementById('gab-sec');
   s.classList.toggle('aberta');
@@ -1179,9 +1483,8 @@ function renderGabarito(Q){
       suaL=r?(r==='V'?'VERDADEIRO':'FALSO'):'(não respondida)';
       corL=q.r==='V'?'VERDADEIRO':'FALSO';
     }
-    const tema=TEMAS[q.tm]||q.tm;
     return `<div class="rcard ${ok?'ok':'nok'}">
-      <div class="rcard-top">${ok?'✓ ACERTO':'✗ ERRO'} · Q${q.n} · ${tema}</div>
+      <div class="rcard-top">${ok?'✓ ACERTO':'✗ ERRO'} · Q${q.n} · ${TEMAS[q.tm]||q.tm}</div>
       <div class="rcard-e">${q.e.replace(/\n/g,'<br>')}</div>
       <div class="rcard-chips">
         <span class="rv sua ${ok?'ok':''}">Sua resposta: ${suaL}</span>
