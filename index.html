@@ -13,7 +13,7 @@
   --text:#14100A;--muted:#3A3020;--light:#7A6A50;
   --bd:#D0C8B0;
   --ok:#155A1E;--okbg:#E8F5EA;
-  --err:#8B1212;--errbg:#FCEAEA;
+  --err:#C62828;--errbg:#FCEAEA;
   --shd:rgba(20,16,10,.10);--r:10px;
   --pc:#C49000;--pc2:#E0A800;--pcbg:rgba(255,222,33,.13);
 }
@@ -60,11 +60,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 /* REGRA PONTUAÇÃO — HOME */
 .regra-box{
   background:rgba(139,18,18,.06);border:1.5px solid rgba(139,18,18,.18);
-  border-left:4px solid #8B1212;border-radius:0 var(--r) var(--r) 0;
+  border-left:4px solid #C62828;border-radius:0 var(--r) var(--r) 0;
   padding:.85rem 1rem;margin-bottom:1.8rem;
   font-size:.84rem;color:#6A0808;line-height:1.6;
 }
-.regra-box strong{color:#8B1212;}
+.regra-box strong{color:#C62828;}
 .pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:.9rem;}
 @media(max-width:900px){.pgrid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:500px){.pgrid{grid-template-columns:1fr;}}
@@ -112,7 +112,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .tb-count{font-family:'Bebas Neue',sans-serif;font-size:1rem;color:var(--pc);letter-spacing:1px;white-space:nowrap;}
 /* REGRA BANNER — DENTRO DA PROVA */
 .regra-banner{background:rgba(139,18,18,.07);border-bottom:2px solid rgba(139,18,18,.18);padding:.42rem 0;}
-.regra-banner-inner{max-width:840px;margin:0 auto;padding:0 1.2rem;font-family:'Roboto Condensed',sans-serif;font-size:.72rem;letter-spacing:.8px;color:#8B1212;text-align:center;}
+.regra-banner-inner{max-width:840px;margin:0 auto;padding:0 1.2rem;font-family:'Roboto Condensed',sans-serif;font-size:.72rem;letter-spacing:.8px;color:#C62828;text-align:center;}
 .regra-banner{background:rgba(139,18,18,.07);border-bottom:2px solid rgba(139,18,18,.18);padding:.42rem 0;}
 
 /* PROVA */
@@ -162,7 +162,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .chips{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:.7rem;}
 .chip{padding:.38rem .9rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.78rem;letter-spacing:.7px;font-weight:700;display:flex;align-items:center;gap:.3rem;}
 .chip.ok{background:var(--okbg);color:var(--ok);}
-.chip.nok{background:var(--errbg);color:var(--err);}
+.chip.nok{background:#FCEAEA;color:#C62828;font-weight:600;}
 .chip.desc{background:rgba(184,132,10,.12);color:#7A5500;}
 .chip.tot{background:var(--pcbg);color:var(--pc);}
 .score-final-box{
@@ -172,7 +172,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .score-final-label{font-family:'Roboto Condensed',sans-serif;font-size:.65rem;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:.2rem;}
 .score-final-val{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;color:var(--pc);}
 /* Regra resultado */
-.regra-res{background:rgba(139,18,18,.06);border:1.5px solid rgba(139,18,18,.15);border-left:4px solid #8B1212;border-radius:0 8px 8px 0;padding:.6rem .9rem;margin-top:.7rem;font-size:.78rem;color:#6A0808;font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;text-align:center;}
+.regra-res{background:rgba(139,18,18,.06);border:1.5px solid rgba(139,18,18,.15);border-left:4px solid #C62828;border-radius:0 8px 8px 0;padding:.6rem .9rem;margin-top:.7rem;font-size:.78rem;color:#6A0808;font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;text-align:center;}
 
 .humor{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.5rem 1.4rem;text-align:center;margin-bottom:1.3rem;box-shadow:0 4px 18px var(--shd);animation:fup .5s ease;}
 @keyframes fup{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
@@ -188,7 +188,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .tema-fill.bom{background:var(--ok);}
 .tema-fill.med{background:#B8840A;}
 .tema-pct{font-family:'Bebas Neue',sans-serif;font-size:.85rem;min-width:42px;text-align:right;}
-.tema-pct.bom{color:var(--ok);}.tema-pct.med{color:#B8840A;}.tema-pct.mal{color:var(--err);}
+.tema-pct.bom{color:var(--ok);}.tema-pct.med{color:#B8840A;}.tema-pct.mal{color:#C62828;font-weight:700;}
 .temas-dica{margin-top:.9rem;padding:.7rem .9rem;background:rgba(184,132,10,.06);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;font-size:.84rem;line-height:1.6;color:#6A4E00;}
 .gab-cta{background:linear-gradient(135deg,var(--pc),var(--pc2));border-radius:var(--r);padding:1.4rem 1.5rem;margin-bottom:1.3rem;text-align:center;box-shadow:0 4px 18px rgba(0,0,0,.18);}
 .gab-cta-txt{font-size:.88rem;color:rgba(255,255,255,.8);margin-bottom:.7rem;font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;}
@@ -206,7 +206,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .rcard.ok{border-left:4px solid var(--ok);}
 .rcard.nok{border-left:4px solid var(--err);}
 .rcard-top{font-family:'Roboto Condensed',sans-serif;font-size:.64rem;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.3rem;}
-.rcard.ok .rcard-top{color:var(--ok);}.rcard.nok .rcard-top{color:var(--err);}
+.rcard.ok .rcard-top{color:var(--ok);}.rcard.nok .rcard-top{color:#C62828;font-weight:700;}
 .rcard-e{font-size:.88rem;font-weight:500;line-height:1.55;color:var(--text);margin-bottom:.55rem;}
 .rcard-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.55rem;}
 .rv{padding:.22rem .6rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.73rem;}
@@ -237,9 +237,9 @@ body[data-prova="4"]{background-color:#DCDCDC;}
 .qb.sem-resp{border-left:3px solid var(--err);}
 
 /* ── SCORE FINAL BOX ── */
-.score-final-val{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;}
+.score-final-val{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;}
 .score-final-val.aprovado{color:var(--ok);}
-.score-final-val.reprovado{color:var(--err);}
+.score-final-val.reprovado{color:#C62828;text-shadow:0 1px 3px rgba(198,40,40,0.25);}
 
 /* ── MOBILE-FIRST TWEAKS ── */
 @media(max-width:420px){
@@ -509,7 +509,7 @@ const Q1=[
       'Apresentar laudo realizado com .380.',
       'Apresentar laudo realizado com .45ACP.',
       'Apresentar laudo realizado com qualquer calibre.'],
-   r:'d',x:'Para aquisição de arma de fogo curta (pistola, revólver), o laudo de capacidade técnica pode ser realizado com QUALQUER calibre de arma curta, independentemente do calibre da arma a ser adquirida. A exigência é que seja na mesma categoria (curta para curta).'},
+   r:'d',x:'Para aquisição de arma de fogo curta (pistola, revólver), conforme a IN 111 original, o laudo pode ser realizado com arma curta na mesma categoria. ATENÇÃO: com o Decreto 11.615/2023, há interpretações de que se deve usar o menor calibre permitido (.380). Verifique a orientação da CONAT vigente. A exigência é que seja na mesma categoria (curta para curta).'},
   {n:5,t:'mc',tm:'BAL',e:'Com relação à perfuração por projétil disparado por arma de fogo, assinale a opção INCORRETA:',
    o:['Pode causar orifícios de entrada e saída com diâmetros distintos.',
       'A depender da localização, pode perfurar membranas e órgãos.',
@@ -551,7 +551,7 @@ const Q1=[
       'Poderá adquirir até 20 armas de fogo para aplicação de testes de capacidade técnica.',
       'Não precisa informar à unidade da PF competente as desistências, pois como a atividade não ocorreu, não há que se falar em fiscalização.',
       'Não pode utilizar arma de fogo importada para aplicar o teste de capacidade técnica, devendo utilizar arma de fabricação nacional.'],
-   r:'a',x:'Conforme a IN nº 111 da PF, o IAT credenciado DEVE comunicar à unidade da PF competente, com até 3 DIAS ÚTEIS de antecedência, a realização do teste de capacidade técnica. As demais alternativas estão incorretas — o limite é 5 armas (não 20), desistências devem ser informadas, e armas importadas são permitidas.'},
+   r:'a',x:'Conforme a IN nº 111 da PF, o IAT credenciado DEVE comunicar à unidade da PF competente, com até 3 DIAS ÚTEIS de antecedência, a realização do teste de capacidade técnica. As demais alternativas estão incorretas — o limite é 10 armas (IN 111 Art.16 §1º), não 20, desistências devem ser informadas, e armas importadas são permitidas.'},
   {n:12,t:'mc',tm:'FUN',e:'Conforme o quadro de análise de tiro, quando um atirador DESTRO está apresentando o que se chama "espalmamento", seus disparos ocorrem:',
    o:['Entre 1h e 2h.',
       'Entre 4h e 5h.',
@@ -701,7 +701,7 @@ const Q1=[
    r:'b',x:'I VERDADEIRO: vedação expressa — o IAT que aplica o teste NÃO pode ter ministrado instrução para o mesmo candidato (conflito de interesses). II FALSO: arma longa não SEMPRE tem mais energia (depende do calibre). III VERDADEIRO: IAT servidor da PF não pode receber remuneração pelas avaliações — é vedação funcional.'},
   {n:39,t:'mc',tm:'CRE',e:'Um dos documentos obrigatórios para inscrição no credenciamento de IAT é o certificado de habilitação em curso de instrutor de tiro. A carga horária mínima exigida desse curso é de:',
    o:['90h/a.','80h/a.','100h/a.','120h/a.'],
-   r:'c',x:'A carga horária mínima exigida para o curso de instrutor de tiro cujo certificado é aceito para fins de credenciamento de IAT pela PF é de 100 HORAS/AULA. Cursos com carga horária inferior a 100h/a não satisfazem o requisito, independentemente da instituição que os ofertou.'},
+   r:'c',x:'A IN 111 Art.19 IV estabelece a grade curricular mínima. ATENÇÃO: editais recentes da PF (2025, ex: PB) citam carga mínima de 80h/a. Verifique o edital vigente na sua região — a resposta pode variar conforme a interpretação da banca. Cursos com carga horária inferior a 100h/a não satisfazem o requisito, independentemente da instituição que os ofertou.'},
   {n:40,t:'mc',tm:'ARM',e:'A arma portátil, de alma raiada, semiautomática, é classificada como:',
    o:['De uso proibido.','De uso restrito.','De uso permitido.','De uso permitido ou de uso restrito, a depender do comprimento do cano.'],
    r:'b',x:'Arma PORTÁTIL (longa), de alma RAIADA, SEMIAUTOMÁTICA é classificada como de USO RESTRITO. Exemplos: fuzis, carabinas semiautomáticas de calibre de fuzil. Civis não podem possuí-las sem autorização especial. O comprimento do cano pode alterar a classificação de uso permitido para restrito, mas não o contrário nesse caso.'},
@@ -752,7 +752,7 @@ const Q1=[
       'A autorização para porte de arma de fogo aos responsáveis pela segurança de cidadãos estrangeiros em visita ou sediados no Brasil é competência do Ministério da Justiça.',
       'O registro das armas de fogo de uso restrito pode ser feito tanto no SINARM como no SIGMA.',
       'Na comprovação da capacidade técnica, o valor cobrado pelo instrutor de armamento e tiro não poderá exceder R$90,00, acrescido do custo da munição e da utilização do estande de tiro.'],
-   r:'d',x:'A alternativa INCORRETA é "d". O valor cobrado pelo IAT para a comprovação de capacidade técnica não tem teto fixado em R$90,00 pela legislação vigente — essa limitação não consta na IN nº 111 nem na Lei 10.826/03. As demais alternativas estão corretas: CFP define honorários do psicólogo, MJ autoriza porte para segurança de estrangeiros, e armas restritas podem ser no SINARM ou SIGMA.'}
+   r:'d',x:'A alternativa INCORRETA é "d". A alternativa está INCORRETA porque o valor citado está errado: o teto real é R$80,00 (oitenta reais), conforme Art. 11-A, §2º da Lei 10.826/03. O valor de R$90,00 mencionado na alternativa não corresponde à legislação. As demais alternativas estão corretas: CFP define honorários do psicólogo, MJ autoriza porte para segurança de estrangeiros, e armas restritas podem ser no SINARM ou SIGMA.'}
 ];
 const Q2=[
   {n:1,t:'mc',tm:'SEG',e:'Quanto às regras de segurança é correto afirmar que:',
@@ -1356,7 +1356,7 @@ function atuTop(){
     const faltam=[];
     RESP.forEach((r,i)=>{if(r===null) faltam.push(i+1);});
     const exibe=faltam.length<=10?'Q'+faltam.join(', Q'):'Q'+faltam.slice(0,10).join(', Q')+' +...';
-    h.innerHTML='<span style="color:var(--err);font-weight:700;">'+faltam.length+' sem resposta:</span> '+exibe;
+    h.innerHTML='<span style="color:#C62828;font-weight:700;font-size:0.95rem;">'+faltam.length+' sem resposta:</span> '+exibe;
   } else {
     h.textContent='✅ Todas respondidas! Pode finalizar.';
   }
@@ -1400,7 +1400,7 @@ function mostrarRes(){
   document.getElementById('assin-txt').textContent=assinArr[PA-1];
 
   const ring=document.getElementById('sc-ring');
-  const corR=pontuacao>=70?CFG[PA].cor:(pontuacao>=50?'#B8840A':'#8B1212');
+  const corR=pontuacao>=70?CFG[PA].cor:(pontuacao>=50?'#B8840A':'#C62828');
   ring.style.stroke=corR;
   document.getElementById('sc-pct').style.color=corR;
   const sfEl=document.getElementById('sc-final');
@@ -1431,7 +1431,7 @@ function renderHumor(pts,ok){
   const msg=pool[idx];
   document.getElementById('h-em').textContent=msg.em;
   document.getElementById('h-nv').textContent=msg.nv;
-  document.getElementById('h-nv').style.color=pts>=70?CFG[PA].cor:(pts>=50?'#B8840A':'#8B1212');
+  document.getElementById('h-nv').style.color=pts>=70?CFG[PA].cor:(pts>=50?'#B8840A':'#C62828');
   document.getElementById('h-txt').innerHTML=msg.txt(ok,50,pts);
 }
 
