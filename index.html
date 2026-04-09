@@ -201,19 +201,30 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .btn-ini:hover{border-color:var(--muted);color:var(--muted);}
 .gab-sec{display:none;animation:fup .3s ease;}
 .gab-sec.aberta{display:block;}
-.gab-titulo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:var(--pc);margin-bottom:.9rem;padding-top:.5rem;}
-.rcard{background:var(--card);border:1.5px solid var(--bd);border-radius:var(--r);padding:1.1rem 1.2rem;margin-bottom:.75rem;box-shadow:0 2px 8px var(--shd);}
-.rcard.ok{border-left:4px solid var(--ok);}
-.rcard.nok{border-left:4px solid var(--err);}
+.gab-titulo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:2px;color:#F5F0E8;margin-bottom:.9rem;padding:.7rem 1rem;background:#2A1E00;border-radius:8px;text-align:center;}
+.gab-sec{background:#F5F0E8;border-radius:12px;padding:1.2rem;margin-top:1rem;}
+.rcard{background:#FFFFFF;border:1.5px solid var(--bd);border-radius:var(--r);padding:1.1rem 1.2rem;margin-bottom:.75rem;box-shadow:0 2px 8px var(--shd);}
+.rcard.ok{border-left:6px solid var(--ok);background:#FAFFF5;}
+.rcard.nok{border-left:6px solid #C62828;background:#FFFAFA;}
 .rcard-top{font-family:'Roboto Condensed',sans-serif;font-size:.64rem;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.3rem;}
-.rcard.ok .rcard-top{color:var(--ok);}.rcard.nok .rcard-top{color:#C62828;font-weight:700;}
+.rcard.ok .rcard-top{color:#155A1E;font-weight:700;font-size:.72rem;background:rgba(21,90,30,.08);padding:.3rem .6rem;border-radius:4px;display:inline-block;}
+.rcard.nok .rcard-top{color:#C62828;font-weight:700;font-size:.72rem;background:rgba(198,40,40,.08);padding:.3rem .6rem;border-radius:4px;display:inline-block;}
 .rcard-e{font-size:.88rem;font-weight:500;line-height:1.55;color:var(--text);margin-bottom:.55rem;}
 .rcard-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.55rem;}
 .rv{padding:.22rem .6rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.73rem;}
 .rv.sua{background:var(--errbg);color:var(--err);}
 .rv.sua.ok{background:var(--okbg);color:var(--ok);}
 .rv.cor{background:var(--okbg);color:var(--ok);}
-.rcard-exp{font-size:.82rem;line-height:1.65;color:var(--muted);padding:.6rem .75rem;background:rgba(184,132,10,.05);border-left:3px solid var(--gold);border-radius:0 6px 6px 0;}
+.rcard-exp{font-size:.84rem;line-height:1.7;color:#2A1E00;padding:.8rem 1rem;background:#FFF9E6;border-left:4px solid var(--gold);border-radius:0 8px 8px 0;margin-top:.4rem;}
+
+/* ── GABARITO NOVO — QUESTÃO COMPLETA ── */
+.gab-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:.7rem;}
+.gab-opt{padding:.6rem .85rem;border-radius:8px;font-size:.85rem;line-height:1.5;border:2px solid var(--bd);background:#FFFFFF;color:var(--text);}
+.gab-opt-correta{border-color:#155A1E;background:#E8F5EA;color:#0D3D12;font-weight:600;border-width:2.5px;box-shadow:0 1px 4px rgba(21,90,30,.15);}
+.gab-opt-errou{border-color:#C62828;background:#FCEAEA;color:#8B1A1A;text-decoration:line-through;opacity:.8;border-width:2.5px;}
+.gab-badge{display:inline-block;font-size:.6rem;letter-spacing:1.5px;padding:3px 10px;border-radius:20px;margin-left:8px;font-weight:700;vertical-align:middle;text-decoration:none !important;}
+.gab-badge-ok{background:#155A1E;color:#FFFFFF;}
+.gab-badge-err{background:#C62828;color:#FFFFFF;}
 .assin{text-align:center;margin-top:1.8rem;padding-top:1.1rem;border-top:1px solid var(--bd);font-size:.7rem;color:var(--light);font-family:'Roboto Condensed',sans-serif;letter-spacing:.5px;}
 .assin strong{color:var(--pc);}.assin a{color:var(--gold);}
 @media(max-width:520px){
@@ -491,19 +502,19 @@ const Q1=[
       'O estojo sela a câmara de explosão em todas as direções.',
       'A base do estojo sem aro tem apenas virola.',
       'Os projéteis jaquetados e semijaquetados feitos de cobre tendem a se deformar, mas não fragmentar, quando se chocam com portas de automóveis e parabrisas.'],
-   r:'c',x:'✅ O estojo sem aro (rimless) possui na base apenas a virola — ranhura circunferencial que permite ao extrator retirar o estojo. Percussão radial (rimfire) NÃO é encontrada na maioria dos revólveres (estes usam percussão central). O estojo NÃO sela em todas as direções — a frente fica aberta para o projétil.'},
+   r:'c',x:'✅ CORRETA: C — O estojo sem aro (rimless) possui na base apenas a VIROLA (ranhura circunferencial para o extrator). ❌ A) ERRADA: percussão radial (rimfire) é usada em .22LR, NÃO na maioria dos revólveres — revólveres usam percussão CENTRAL. ❌ B) ERRADA: o estojo NÃO sela em todas as direções — a parte frontal é aberta para o projétil. ❌ D) ERRADA: projéteis jaquetados de cobre podem SIM fragmentar dependendo da velocidade e do obstáculo — ranhura circunferencial que permite ao extrator retirar o estojo. Percussão radial (rimfire) NÃO é encontrada na maioria dos revólveres (estes usam percussão central). O estojo NÃO sela em todas as direções — a frente fica aberta para o projétil.'},
   {n:2,t:'mc',tm:'BAL',e:'Sobre balística terminal, infere-se que se trata do estudo:',
    o:['Do movimento do projétil após sair do cano da arma até atingir o alvo.',
       'Do movimento do projétil no interior do cano, a partir da percussão.',
       'Do movimento do projétil, especificamente sobre os fatores externos que refletem no deslocamento do projétil.',
       'Do movimento do projétil a partir do momento em que atinge o alvo.'],
-   r:'d',x:'✅ Balística INTERNA: dentro do cano (percussão → saída). Balística EXTERNA: do cano até o alvo. Balística TERMINAL: do momento em que o projétil ATINGE o alvo em diante — estuda os efeitos sobre o material ou corpo atingido (cavidade permanente, temporária, fragmentação, capotamento).'},
+   r:'d',x:'✅ CORRETA: D — Balística TERMINAL estuda os efeitos do projétil A PARTIR do momento em que atinge o alvo (cavidade permanente, temporária, fragmentação, transferência de energia). ❌ A) ERRADA: descreve balística EXTERNA (do cano ao alvo). ❌ B) ERRADA: descreve balística INTERNA (dentro do cano). ❌ C) ERRADA: fatores externos que afetam o deslocamento é balística EXTERNA. Fonte: Cartilha PF/CONAT — divisão clássica: Interna, Externa e Terminal (ou de Efeitos) → saída). Balística EXTERNA: do cano até o alvo. Balística TERMINAL: do momento em que o projétil ATINGE o alvo em diante — estuda os efeitos sobre o material ou corpo atingido (cavidade permanente, temporária, fragmentação, capotamento).'},
   {n:3,t:'mc',tm:'MUN',e:'As referências 9mm, .40S&W e .357Magnum dizem respeito:',
    o:['Ao calibre nominal.',
       'Ao calibre real.',
       'Ao calibre industrial.',
       'Ao calibre padrão.'],
-   r:'a',x:'✅ 9mm, .40S&W e .357Magnum são designações de CALIBRE NOMINAL — nome comercial/convencional da munição, que não necessariamente corresponde à medida exata do diâmetro real do projétil. Calibre real é a medida efetiva entre cheios do raiamento.'},
+   r:'a',x:'✅ CORRETA: A — São designações de CALIBRE NOMINAL (nome comercial/convencional). ❌ B) ERRADA: calibre real é a medida efetiva entre os cheios do raiamento — difere do nominal. ❌ C) ERRADA: "calibre industrial" não é terminologia oficial. ❌ D) ERRADA: "calibre padrão" não é classificação técnica reconhecida. O calibre nominal é a designação comercial que NÃO necessariamente corresponde à medida real do diâmetro do projétil — nome comercial/convencional da munição, que não necessariamente corresponde à medida exata do diâmetro real do projétil. Calibre real é a medida efetiva entre cheios do raiamento.'},
   {n:4,t:'mc',tm:'CRE',e:'Um indivíduo interessado em adquirir uma pistola calibre .40S&W deve, em relação ao requisito da capacidade técnica, qual documento será considerado válido?',
    o:['Apresentar laudo realizado com 9mm.',
       'Apresentar laudo realizado com .380.',
@@ -521,13 +532,13 @@ const Q1=[
       'Realizar o preenchimento do ferimento.',
       'Utilizar agentes hemostáticos.',
       'Usar curativo valvulado.'],
-   r:'d',x:'✅ O curativo valvulado (chest seal) é utilizado para ferimentos no TÓRAX com pneumotórax, não para hemorragia compressiva. Para hemorragia compressiva: torniquete, preenchimento (wound packing) e agentes hemostáticos são procedimentos corretos conforme o TCCC.'},
+   r:'d',x:'❌ INCORRETA: D — Curativo valvulado (chest seal) é para ferimentos TORÁCICOS com pneumotórax, NÃO para hemorragia compressiva. ✅ A) CORRETA: torniquete é procedimento padrão TCCC para hemorragia em extremidades. ✅ B) CORRETA: preenchimento (wound packing) é técnica para ferimentos profundos. ✅ C) CORRETA: agentes hemostáticos (ex: QuikClot, Celox) aceleram coagulação em ferimentos compressíveis com pneumotórax, não para hemorragia compressiva. Para hemorragia compressiva: torniquete, preenchimento (wound packing) e agentes hemostáticos são procedimentos corretos conforme o TCCC.'},
   {n:7,t:'mc',tm:'BAL',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. Local de contenção da combustão do propelente, as paredes da câmara são mais resistentes que o resto do cano, pois é onde ocorre o maior pico de pressão oriundo da queima da pólvora.\nII. Uma arma longa sempre terá mais energia na saída do cano que uma arma curta.\nIII. O tamanho ideal de um cano deve ser definido de acordo com a munição utilizada, considerando, inclusive, o tempo de queima do propelente utilizado.',
    o:['Todos os itens são verdadeiros.',
       'Apenas os itens I e II são verdadeiros.',
       'Apenas os itens I e III são verdadeiros.',
       'Apenas os itens II e III são verdadeiros.'],
-   r:'c',x:'✅ I VERDADEIRO: as paredes da câmara suportam os maiores picos de pressão — são de fato mais robustas. II FALSO: uma arma longa não SEMPRE terá mais energia que uma curta — depende do calibre e do propelente; uma pistola .44 Magnum pode superar uma carabina .22LR. III VERDADEIRO: o comprimento ideal do cano considera o tempo de queima do propelente para máxima eficiência.'},
+   r:'c',x:'✅ CORRETA: C (I e III verdadeiros). I) VERDADEIRO: a câmara tem paredes mais espessas pois suporta o pico máximo de pressão da queima do propelente. III) VERDADEIRO: o comprimento ideal do cano deve considerar o tempo de queima do propelente — cano curto demais desperdiça energia, longo demais adiciona atrito. ❌ II) FALSO: arma longa NÃO sempre terá mais energia que arma curta — uma pistola .44 Magnum pode superar uma carabina .22LR. Depende do calibre e da carga — são de fato mais robustas. II FALSO: uma arma longa não SEMPRE terá mais energia que uma curta — depende do calibre e do propelente; uma pistola .44 Magnum pode superar uma carabina .22LR. III VERDADEIRO: o comprimento ideal do cano considera o tempo de queima do propelente para máxima eficiência.'},
   {n:8,t:'mc',tm:'FUN',e:'Em relação ao quadro de análise de tiro, quando um atirador CANHOTO efetua seus disparos entre 7h e 8h, estamos diante do(a):',
    o:['Estrangulamento.',
       'Gatilhada.',
@@ -539,19 +550,19 @@ const Q1=[
       'Pleno, cilíndrico e modificado.',
       'Cilíndrico, modificado e restrito.',
       'Cônico, modificado e restrito.'],
-   r:'b',x:'✅ O choke (estrangulador/constritor) da espingarda é dividido em: CILÍNDRICO (sem constrição — maior abertura da carga), MODIFICADO (constrição intermediária) e PLENO (maior constrição — menor abertura, maior alcance). Cada tipo define o padrão de dispersão dos projéteis.'},
+   r:'b',x:'✅ CORRETA: B (Pleno, Cilíndrico e Modificado). CILÍNDRICO: sem constrição, máxima abertura da carga. MODIFICADO: constrição intermediária, equilíbrio entre alcance e dispersão. PLENO (Full): maior constrição, menor abertura, maior alcance. ❌ A) ERRADA: "cônico" não é terminologia padrão de choke. ❌ C) ERRADA: "restrito" não é tipo de choke. ❌ D) ERRADA: combina termos incorretos (sem constrição — maior abertura da carga), MODIFICADO (constrição intermediária) e PLENO (maior constrição — menor abertura, maior alcance). Cada tipo define o padrão de dispersão dos projéteis.'},
   {n:10,t:'mc',tm:'CRE',e:'No laudo de capacidade técnica para aquisição de uma arma de fogo LONGA, de alma RAIADA, assinale a alternativa correta referente ao tempo do exercício:',
    o:['30 segundos.',
       '25 segundos.',
       '20 segundos.',
       '15 segundos.'],
-   r:'a',x:'✅ Para arma longa de alma raiada, o tempo de cada série no laudo de capacidade técnica é de 30 SEGUNDOS. Para arma curta (pistola/revólver): tempos distintos por série. Para arma longa de alma lisa (espingarda): parâmetros específicos. Memorize os diferentes tempos por categoria.'},
+   r:'a',x:'✅ CORRETA: A (30 segundos). Conforme Anexo I da IN 111/2017, para arma longa de alma raiada, cada série tem 30 segundos. ❌ B) 25 segundos: tempo incorreto para esta categoria. ❌ C) 20 segundos: este é o tempo para arma CURTA em algumas séries. ❌ D) 15 segundos: tempo insuficiente para a categoria. Memorize: arma longa raiada = 30 segundos por série. Para arma curta (pistola/revólver): tempos distintos por série. Para arma longa de alma lisa (espingarda): parâmetros específicos. Memorize os diferentes tempos por categoria.'},
   {n:11,t:'mc',tm:'CRE',e:'Em relação à atuação do IAT credenciado, assinale a alternativa correta:',
    o:['Deve comunicar à PF, em até três dias úteis de antecedência, a realização do teste de capacidade técnica.',
       'Poderá adquirir até 20 armas de fogo para aplicação de testes de capacidade técnica.',
       'Não precisa informar à unidade da PF competente as desistências, pois como a atividade não ocorreu, não há que se falar em fiscalização.',
       'Não pode utilizar arma de fogo importada para aplicar o teste de capacidade técnica, devendo utilizar arma de fabricação nacional.'],
-   r:'a',x:'✅ Conforme a IN nº 111 da PF, o IAT credenciado DEVE comunicar à unidade da PF competente, com até 3 DIAS ÚTEIS de antecedência, a realização do teste de capacidade técnica. As demais alternativas estão incorretas — o limite é 10 armas (IN 111 Art.16 §1º), não 20, desistências devem ser informadas, e armas importadas são permitidas.'},
+   r:'a',x:'✅ CORRETA: A — IN 111/2017, Art.3º §8º: o IAT deve comunicar com pelo menos 3 DIAS ÚTEIS de antecedência. ❌ B) ERRADA: o limite é 10 armas (Art.16 §1º), não 20. ❌ C) ERRADA: desistências DEVEM ser informadas à PF. ❌ D) ERRADA: armas importadas PODEM ser utilizadas — não há vedação quanto à origem nacional de antecedência, a realização do teste de capacidade técnica. As demais alternativas estão incorretas — o limite é 10 armas (IN 111 Art.16 §1º), não 20, desistências devem ser informadas, e armas importadas são permitidas.'},
   {n:12,t:'mc',tm:'FUN',e:'Conforme o quadro de análise de tiro, quando um atirador DESTRO está apresentando o que se chama "espalmamento", seus disparos ocorrem:',
    o:['Entre 1h e 2h.',
       'Entre 4h e 5h.',
@@ -569,7 +580,7 @@ const Q1=[
       'Todos os integrantes dos órgãos citados no art. 6º da Lei nº 10.826/2003.',
       'Apenas os integrantes dos órgãos policiais, sejam civis ou militares.',
       'Militares das Forças Armadas, integrantes dos órgãos policiais e integrantes das guardas municipais.'],
-   r:'a',x:'✅ Conforme a IN nº 111, são dispensados do laudo de capacidade psicológica para o credenciamento de IAT os integrantes das FORÇAS ARMADAS e dos ÓRGÃOS DE SEGURANÇA PÚBLICA — desde que apresentem documentação comprobatória de sua vinculação e que já passam por avaliações psicológicas periódicas em suas instituições.'},
+   r:'a',x:'✅ CORRETA: A — Integrantes das Forças Armadas e dos órgãos de segurança pública são dispensados, pois já passam por avaliações psicológicas periódicas em suas instituições (IN 111, Art.6º §4º). ❌ B) ERRADA: nem todos do Art.6º da Lei 10.826 são dispensados. ❌ C) ERRADA: é mais amplo que apenas policiais. ❌ D) ERRADA: guardas municipais não estão no mesmo grupo de dispensa para o credenciamento de IAT os integrantes das FORÇAS ARMADAS e dos ÓRGÃOS DE SEGURANÇA PÚBLICA — desde que apresentem documentação comprobatória de sua vinculação e que já passam por avaliações psicológicas periódicas em suas instituições.'},
   {n:15,t:'mc',tm:'LEG',e:'O guia de trânsito conferido pelo Exército:',
    o:['Garante ao CAC o direito de transportar seu acervo de modo que nenhuma arma esteja carregada.',
       'Garante ao CAC o direito de transportar seu acervo de modo que apenas uma arma de porte esteja carregada.',
@@ -581,109 +592,109 @@ const Q1=[
       'Elas utilizam o mesmo parâmetro de classificação das armas de fogo, quando se trata de munição de uso permitido.',
       'Elas utilizam o mesmo parâmetro de classificação das armas de fogo, quando se trata de munição de uso restrito.',
       'Elas utilizam o mesmo parâmetro de classificação das armas de fogo, em qualquer caso.'],
-   r:'d',x:'✅ As munições seguem o MESMO parâmetro de classificação das armas de fogo EM QUALQUER CASO — uso permitido, uso restrito ou uso exclusivo das Forças Armadas. A classificação é espelhada: munição de arma de uso permitido = uso permitido; munição de arma de uso restrito = uso restrito.'},
+   r:'d',x:'✅ CORRETA: D — Munição de arma de uso permitido = uso permitido. Munição de arma de uso restrito = uso restrito. A classificação é espelhada em QUALQUER caso. ❌ A) ERRADA: não usam parâmetro diferente. ❌ B) ERRADA: não é apenas para uso permitido. ❌ C) ERRADA: não é apenas para uso restrito. Fundamento: Art.11 e Art.12 do Decreto 11.615/2023 — uso permitido, uso restrito ou uso exclusivo das Forças Armadas. A classificação é espelhada: munição de arma de uso permitido = uso permitido; munição de arma de uso restrito = uso restrito.'},
   {n:17,t:'mc',tm:'LEG',e:'Conforme a Lei nº 10.826/2003, se o proprietário de arma de fogo descuidar de sua arma e permitir que seu filho, com 17 anos de idade e legalmente emancipado, se apodere de sua arma de fogo, responderá:',
    o:['Por omissão de cautela.',
       'Por porte ilegal de arma de fogo.',
       'Por posse irregular de arma de fogo.',
       'Essa conduta não é tipificada como crime na legislação.'],
-   r:'a',x:'✅ OMISSÃO DE CAUTELA (art. 13, parágrafo único, Lei 10.826/03): o proprietário que não tomar as devidas cautelas para impedir que menor de 18 anos — inclusive emancipado, pois a emancipação civil não altera a menoridade para fins penais — tenha acesso à arma de fogo, responde por esse crime.'},
+   r:'a',x:'✅ CORRETA: A — Omissão de cautela (Art.13, parágrafo único, Lei 10.826/03). A emancipação CIVIL não altera a menoridade para fins PENAIS — menor de 18 anos continua sendo menor. O proprietário responde por omissão de cautela. ❌ B) ERRADA: porte ilegal se aplica a quem porta arma, não ao proprietário. ❌ C) ERRADA: posse irregular é quando a arma não tem registro. ❌ D) ERRADA: a conduta É tipificada como crime: o proprietário que não tomar as devidas cautelas para impedir que menor de 18 anos — inclusive emancipado, pois a emancipação civil não altera a menoridade para fins penais — tenha acesso à arma de fogo, responde por esse crime.'},
   {n:18,t:'mc',tm:'ARM',e:'Sobre a espingarda CBC PUMP, qual a peça responsável por destravar o movimento da telha?',
    o:['Trava de segurança.',
       'Localizador esquerdo longo.',
       'Liberador da trava da corrediça.',
       'Localizador direito.'],
-   r:'c',x:'✅ O LIBERADOR DA TRAVA DA CORREDIÇA (ou acionador da trava da corrediça) é a peça que, ao ser pressionada, libera o mecanismo que permite o movimento da telha (corrediça) da espingarda pump-action CBC. Após o disparo, aciona-se essa peça para realizar o próximo ciclo de recarga manual.'},
+   r:'c',x:'✅ CORRETA: C — O liberador da trava da corrediça é a peça que, quando pressionada, libera o mecanismo que permite o movimento da telha (corrediça). Após o disparo, aciona-se esta peça para realizar o ciclo de recarga. ❌ A) ERRADA: trava de segurança impede o disparo, não destravar a telha. ❌ B) ERRADA: localizador esquerdo longo tem função de posicionamento do ferrolho. ❌ D) ERRADA: localizador direito não é responsável por liberar a corrediça (ou acionador da trava da corrediça) é a peça que, ao ser pressionada, libera o mecanismo que permite o movimento da telha (corrediça) da espingarda pump-action CBC. Após o disparo, aciona-se essa peça para realizar o próximo ciclo de recarga manual.'},
   {n:19,t:'mc',tm:'LEG',e:'As armas de fogo apreendidas, quando finalizados os procedimentos de elaboração de laudo pericial e quando não mais interessarem à persecução penal, podem ser doadas ao órgão de segurança pública ou à Força Armada responsável pela apreensão, desde que haja manifestação expressa:',
    o:['No prazo de 10 dias.',
       'No prazo de 15 dias.',
       'No prazo de 20 dias.',
       'No prazo de 30 dias.'],
-   r:'a',x:'✅ Conforme a Lei 10.826/03, após finalizados os procedimentos periciais, as armas apreendidas podem ser doadas ao órgão de segurança pública ou Força Armada responsável pela apreensão, desde que haja manifestação expressa no prazo de 10 DIAS.'},
+   r:'a',x:'✅ CORRETA: A (10 dias). Conforme Lei 10.826/03, armas apreendidas podem ser doadas ao órgão de segurança responsável pela apreensão, desde que manifestação expressa no prazo de 10 DIAS. ❌ B) 15 dias: prazo incorreto. ❌ C) 20 dias: prazo incorreto. ❌ D) 30 dias: prazo incorreto. Memorize: 10 dias para doação de arma apreendida, as armas apreendidas podem ser doadas ao órgão de segurança pública ou Força Armada responsável pela apreensão, desde que haja manifestação expressa no prazo de 10 DIAS.'},
   {n:20,t:'mc',tm:'CRE',e:'Em relação à aplicação do teste de capacidade técnica, de acordo com a IN nº 111:',
    o:['As armas de fogo e a munição podem ser do IAT ou do candidato.',
       'As armas de fogo e a munição devem ser de propriedade do candidato.',
       'As armas de fogo e a munição devem ser do IAT.',
       'Não há nenhuma regulamentação quanto a esse tema na legislação.'],
-   r:'c',x:'✅ Conforme a IN nº 111 da PF, tanto as ARMAS DE FOGO quanto as MUNIÇÕES utilizadas no teste de capacidade técnica DEVEM SER DE PROPRIEDADE DO IAT credenciado. Não é permitido ao candidato usar sua própria arma, garantindo padronização e controle do processo.'},
+   r:'c',x:'✅ CORRETA: C — IN 111/2017, Art.3º §1º: "O IAT deverá providenciar a arma de fogo e a munição para a realização dos testes." O §4º prevê que EXCEPCIONALMENTE o candidato pode usar arma própria, com justificativa e guia de trânsito da PF. Mas a REGRA é arma e munição do IAT. ❌ A) ERRADA: não pode ser do IAT OU do candidato — a regra é do IAT. ❌ B) ERRADA: não devem ser do candidato. ❌ D) ERRADA: há regulamentação clara na IN 111 utilizadas no teste de capacidade técnica DEVEM SER DE PROPRIEDADE DO IAT credenciado. Não é permitido ao candidato usar sua própria arma, garantindo padronização e controle do processo.'},
   {n:21,t:'mc',tm:'LEG',e:'Conforme a legislação vigente, arma de fogo de porte é:',
    o:['Arma de fogo de dimensões e peso reduzidos que pode ser disparada pelo atirador sem auxílio de terceiros, podendo ser transportada em um coldre.',
       'Arma de fogo de dimensões e peso reduzidos que pode ser disparada pelo atirador com apenas uma de suas mãos.',
       'Arma de fogo de dimensões e peso reduzidos que pode ser transportada pelo atirador com apenas uma de suas mãos.',
       'Arma de fogo de dimensões e peso reduzidos que pode ser transportada pelo atirador em um coldre.'],
-   r:'a',x:'✅ A definição legal de arma de fogo de PORTE é: dimensões e peso reduzidos, que pode ser disparada por um único atirador sem auxílio de terceiros, e que pode ser transportada em um coldre. A chave é a combinação das três características — não apenas o transporte ou apenas o disparo com uma mão.'},
+   r:'a',x:'✅ CORRETA: A — Arma de porte: dimensões e peso reduzidos + pode ser disparada por um atirador sem auxílio de terceiros + pode ser transportada em coldre. A chave é a combinação das TRÊS características. ❌ B) ERRADA: falta a menção ao coldre. ❌ C) ERRADA: foca apenas no transporte, falta o disparo. ❌ D) ERRADA: foca apenas no transporte em coldre, falta o disparo. Fonte: Art.2º, VI do Decreto 11.615/2023: dimensões e peso reduzidos, que pode ser disparada por um único atirador sem auxílio de terceiros, e que pode ser transportada em um coldre. A chave é a combinação das três características — não apenas o transporte ou apenas o disparo com uma mão.'},
   {n:22,t:'mc',tm:'LEG',e:'Quando a arma de fogo, regularmente constante de um sistema, é vinculada a um proprietário (pessoa física ou jurídica), estamos falando de:',
    o:['Cadastro.',
       'Registro.',
       'Averbação.',
       'Apostilamento.'],
-   r:'d',x:'✅ APOSTILAMENTO: é o ato de vincular a arma (já registrada no sistema) a um proprietário específico. REGISTRO: ato de incluir a arma no sistema. CADASTRO: ato de incluir dados. AVERBAÇÃO: anotação de dados adicionais ao registro. O apostilamento é o "casamento" da arma com o dono.'},
+   r:'d',x:'✅ CORRETA: D (Apostilamento). Apostilamento é o ato de VINCULAR a arma (já registrada no sistema) a um proprietário específico — o "casamento" da arma com o dono. ❌ A) ERRADA: cadastro é incluir dados no sistema. ❌ B) ERRADA: registro é incluir a arma no sistema. ❌ C) ERRADA: averbação é anotar dados adicionais ao registro (já registrada no sistema) a um proprietário específico. REGISTRO: ato de incluir a arma no sistema. CADASTRO: ato de incluir dados. AVERBAÇÃO: anotação de dados adicionais ao registro. O apostilamento é o "casamento" da arma com o dono.'},
   {n:23,t:'mc',tm:'ARM',e:'O diâmetro entre os cheios:',
    o:['É o calibre nominal.',
       'É o calibre real.',
       'Pode ser o calibre real ou o calibre nominal, a depender da arma.',
       'É uma medida utilizada apenas pelo fabricante.'],
-   r:'b',x:'✅ O CALIBRE REAL é medido entre os CHEIOS (partes salientes do raiamento que imprimem as estrias no projétil). É a medida efetiva do diâmetro interno do cano. O diâmetro entre os VAZIOS (entre as estrias) é maior. O calibre nominal é a designação comercial, não necessariamente a medida exata.'},
+   r:'b',x:'✅ CORRETA: B (Calibre real). O diâmetro entre os CHEIOS (partes salientes do raiamento) = calibre REAL. O diâmetro entre os VAZIOS é maior. O calibre nominal é a designação comercial. ❌ A) ERRADA: calibre nominal é o nome comercial, não a medida entre cheios. ❌ C) ERRADA: não depende da arma — é sempre entre cheios. ❌ D) ERRADA: não é apenas do fabricante, é medida técnica universal (partes salientes do raiamento que imprimem as estrias no projétil). É a medida efetiva do diâmetro interno do cano. O diâmetro entre os VAZIOS (entre as estrias) é maior. O calibre nominal é a designação comercial, não necessariamente a medida exata.'},
   {n:24,t:'mc',tm:'LEG',e:'O titular do porte de arma de fogo, na categoria defesa pessoal, que estiver portando a arma em estado de embriaguez:',
    o:['Terá o porte cassado.',
       'Terá o porte suspenso pelo prazo mínimo de 90 dias.',
       'Terá o porte suspenso pelo prazo mínimo de 120 dias.',
       'Terá o porte suspenso pelo prazo mínimo de 180 dias.'],
-   r:'a',x:'✅ Conforme a Lei 10.826/03, o porte PERDE AUTOMATICAMENTE SUA EFICÁCIA (é cassado) quando o portador for detido ou abordado em estado de embriaguez. Não é suspensão temporária — é cassação imediata. O portador precisará requerer nova autorização. Não existe prazo de suspensão — é cassação direta.'},
+   r:'a',x:'✅ CORRETA: A (porte cassado). Lei 10.826/03: portar arma em estado de embriaguez = CASSAÇÃO imediata do porte. Não é suspensão temporária — é cassação definitiva, precisando requerer nova autorização. ❌ B) ERRADA: não é suspensão de 90 dias. ❌ C) ERRADA: não é suspensão de 120 dias. ❌ D) ERRADA: não é suspensão de 180 dias. Não existe prazo de suspensão — é cassação direta quando o portador for detido ou abordado em estado de embriaguez. Não é suspensão temporária — é cassação imediata. O portador precisará requerer nova autorização. Não existe prazo de suspensão — é cassação direta.'},
   {n:25,t:'mc',tm:'CRE',e:'Em relação à aplicação do teste de capacidade técnica, de acordo com a IN nº 111:',
    o:['É autorizado o uso de munições recarregadas.',
       'Para o cidadão comum, pode ser feita com arma de fogo de uso restrito.',
       'Deve ocorrer após a emissão do laudo de capacidade psicológica.',
       'Exige do candidato o percentual mínimo de 70% para aprovação.'],
-   r:'d',x:'✅ A IN nº 111 exige percentual mínimo de 70% de acertos para aprovação no teste de capacidade técnica para CREDENCIAMENTO de IAT. ⚠️ ATENÇÃO: Para testes de civis (aquisição/registro), o Anexo I da IN 111 exige 60%. A questão se refere ao teste para fins de credenciamento, onde 70% é o padrão. Munições recarregadas são PROIBIDAS. Para cidadão comum, a prova usa arma de USO PERMITIDO (não restrito). Não há obrigatoriedade de sequência com o laudo psicológico.'},
+   r:'d',x:'✅ CORRETA: D (70%). Para o CREDENCIAMENTO de IAT, o padrão é 70% de aprovação. ⚠️ ATENÇÃO EM PROVA: Para testes de CIVIS (aquisição/registro/porte), o Anexo I da IN 111 exige 60%. A diferença é crucial — verifique se a questão fala de credenciamento (70%) ou de teste de civis (60%). ❌ A) ERRADA: munições recarregadas são PROIBIDAS. ❌ B) ERRADA: cidadão comum usa arma de uso permitido, não restrito. ❌ C) ERRADA: não há obrigatoriedade de sequência com laudo psicológico de IAT. ⚠️ ATENÇÃO: Para testes de civis (aquisição/registro), o Anexo I da IN 111 exige 60%. A questão se refere ao teste para fins de credenciamento, onde 70% é o padrão. Munições recarregadas são PROIBIDAS. Para cidadão comum, a prova usa arma de USO PERMITIDO (não restrito). Não há obrigatoriedade de sequência com o laudo psicológico.'},
   {n:26,t:'mc',tm:'LEG',e:'Possuem porte de arma por legislação própria:',
    o:['Guardas Municipais.',
       'Auditores da Receita Federal.',
       'Guardas portuários.',
       'Fiscais do IBAMA.'],
-   r:'b',x:'✅ Os AUDITORES-FISCAIS DA RECEITA FEDERAL possuem porte de arma por legislação específica (Lei 10.593/2002 e outras). Guardas Municipais têm porte condicionado ao município e à Lei 10.826/03. Guardas portuários e fiscais do IBAMA não possuem porte por legislação própria como regra geral.'},
+   r:'b',x:'✅ CORRETA: B — Auditores-Fiscais da RFB possuem porte por legislação própria (Lei 10.593/2002 e complementares). ❌ A) ERRADA: vigilantes possuem porte apenas EM SERVIÇO, não pessoal. ❌ C) ERRADA: guardas portuários não possuem porte por legislação própria como regra. ❌ D) ERRADA: advogados não possuem porte por legislação própria (Lei 10.593/2002 e outras). Guardas Municipais têm porte condicionado ao município e à Lei 10.826/03. Guardas portuários e fiscais do IBAMA não possuem porte por legislação própria como regra geral.'},
   {n:27,t:'mc',tm:'MUN',e:'Conforme a "Síntese de Temas para Avaliação de Capacidade Técnica", as munições são classificadas em:',
    o:['Letal, não letal, industrial e de manejo.',
       'Letal, não letal, artesanal e industrial.',
       'Letal, menos letal, industrial e de manejo.',
       'Letal, menos letal, artesanal e de manejo.'],
-   r:'c',x:'✅ Conforme a Síntese de Temas da PF, as munições são classificadas em: LETAL (projétil convencional com alta capacidade de causar morte), MENOS LETAL (rubber slug, bean bag — para controle sem letalidade), INDUSTRIAL (uso em ferramentas) e DE MANEJO (sem projétil — treinamento/desmontagem).'},
+   r:'c',x:'✅ CORRETA: C (Letal, menos letal, industrial e de manejo). Conforme Cartilha PF/CONAT: LETAL (projétil convencional), MENOS LETAL (rubber, bean bag), INDUSTRIAL (ferramentas), MANEJO (sem projétil, treinamento). ❌ A) ERRADA: "não letal" é termo incorreto — o correto é MENOS letal. ❌ B) ERRADA: "artesanal" não é classificação oficial. ❌ D) ERRADA: "artesanal" não é classificação oficial. ⚠️ ATENÇÃO EM PROVA: a PF usa "menos letal", nunca "não letal" (projétil convencional com alta capacidade de causar morte), MENOS LETAL (rubber slug, bean bag — para controle sem letalidade), INDUSTRIAL (uso em ferramentas) e DE MANEJO (sem projétil — treinamento/desmontagem).'},
   {n:28,t:'mc',tm:'MUN',e:'Comparando os projéteis de chumbo e os projéteis encamisados, pode-se afirmar que os projéteis de chumbo:',
    o:['Causam maior desgaste do cano.',
       'Apresentam maior deformação ao atingir o alvo.',
       'Possuem penetração idêntica aos projéteis encamisados.',
       'Apresentam menor risco de intoxicação em estande fechado.'],
-   r:'a',x:'✅ Projéteis de CHUMBO puro causam MAIOR DESGASTE do cano (leading — acúmulo de chumbo nas estrias). Também apresentam maior risco de intoxicação por vapores de chumbo em estande fechado. Projéteis encamisados (FMJ/JHP) têm jaqueta metálica que protege o cano e reduz o leading.'},
+   r:'a',x:'✅ CORRETA: A — Projéteis de chumbo causam MAIOR DESGASTE pelo fenômeno de LEADING (depósito de chumbo nas estrias do raiamento). Também geram maior risco de intoxicação por vapores em estande fechado. ❌ B) ERRADA: projéteis de chumbo deformam-se MAIS, não menos que encamisados, mas a questão pede comparação de DESGASTE DO CANO. ❌ C) ERRADA: penetração NÃO é idêntica. ❌ D) ERRADA: chumbo apresenta MAIOR risco de intoxicação, não menor — acúmulo de chumbo nas estrias). Também apresentam maior risco de intoxicação por vapores de chumbo em estande fechado. Projéteis encamisados (FMJ/JHP) têm jaqueta metálica que protege o cano e reduz o leading.'},
   {n:29,t:'mc',tm:'ARM',e:'De acordo com a "Síntese de Temas para Avaliação de Capacidade Técnica", qual a função do dedal serrilhado:',
    o:['Travar o tambor, impedindo que ele saia da armação durante os disparos.',
       'Afrouxar o tambor quando este estiver com o giro desregulado.',
       'Liberar a abertura do tambor.',
       'Todos os itens são falsos.'],
-   r:'c',x:'✅ O DEDAL SERRILHADO (ou alavanca de abertura do tambor) tem a função de LIBERAR A ABERTURA DO TAMBOR do revólver, permitindo que ele gire para fora da armação para reabastecimento ou extração dos estojos. É acionado com o polegar da mão que empunha.'},
+   r:'c',x:'✅ CORRETA: C — O dedal serrilhado LIBERA A ABERTURA do tambor do revólver, permitindo que gire para fora da armação para reabastecimento ou extração dos estojos. ❌ A) ERRADA: quem trava o tambor é a lingueta de retenção. ❌ B) ERRADA: o dedal não regula o giro. ❌ D) ERRADA: pelo menos o item C é verdadeiro tem a função de LIBERAR A ABERTURA DO TAMBOR do revólver, permitindo que ele gire para fora da armação para reabastecimento ou extração dos estojos. É acionado com o polegar da mão que empunha.'},
   {n:30,t:'mc',tm:'ARM',e:'Em relação à espingarda 12GA, a peça que, quando acionada, permite a retirada do ferrolho, uma das etapas da desmontagem da arma, é:',
    o:['Transportador.',
       'Localizador direito.',
       'Hastes da corrediça.',
       'Bujão do depósito.'],
-   r:'d',x:'✅ O BUJÃO DO DEPÓSITO (ou tampa do magazine) é a peça que, quando removida, libera o mecanismo e permite a retirada do ferrolho durante a desmontagem da espingarda 12GA. É rosqueado na extremidade do cano/depósito tubular e sua remoção é etapa essencial da desmontagem.'},
+   r:'d',x:'✅ CORRETA: D (Bujão do depósito). É a peça rosqueada na extremidade do tubo magazine que, quando removida, permite a retirada do cano e consequentemente do ferrolho durante a desmontagem. ❌ A) ERRADA: transportador tem função de elevar o cartucho. ❌ B) ERRADA: localizador direito posiciona o ferrolho. ❌ C) ERRADA: hastes da corrediça transmitem o movimento da telha ao ferrolho é a peça que, quando removida, libera o mecanismo e permite a retirada do ferrolho durante a desmontagem da espingarda 12GA. É rosqueado na extremidade do cano/depósito tubular e sua remoção é etapa essencial da desmontagem.'},
   {n:31,t:'mc',tm:'BAL',e:'A flutuabilidade do cano:',
    o:['Interfere na balística externa.',
       'Interfere na balística interna.',
       'Interfere na balística terminal.',
       'Não tem qualquer interferência para a balística.'],
-   r:'a',x:'✅ A flutuabilidade do cano — capacidade do cano de vibrar livremente sem contato com a coronha/guarda-mão — interfere na BALÍSTICA EXTERNA. Quando o cano vibra de forma consistente a cada disparo, os tiros são mais precisos. É fator considerado no projeto de fuzis de precisão.'},
+   r:'a',x:'✅ CORRETA: A (balística externa). A flutuabilidade (free-floating) permite que o cano vibre de forma consistente a cada disparo, melhorando a precisão — fator de BALÍSTICA EXTERNA pois afeta o comportamento do projétil após sair do cano. ❌ B) ERRADA: balística interna é dentro do cano. ❌ C) ERRADA: balística terminal é no alvo. ❌ D) ERRADA: tem interferência significativa na precisão — capacidade do cano de vibrar livremente sem contato com a coronha/guarda-mão — interfere na BALÍSTICA EXTERNA. Quando o cano vibra de forma consistente a cada disparo, os tiros são mais precisos. É fator considerado no projeto de fuzis de precisão.'},
   {n:32,t:'mc',tm:'CRE',e:'Em relação ao porte de arma, o IAT credenciado:',
    o:['Não possui porte de arma, devendo submeter-se às mesmas regras do cidadão comum.',
       'Possui porte somente quando estiver no exercício da atividade de IAT, devendo cumprir as demais diretrizes da PF.',
       'Possui porte de arma irrestrito por força do credenciamento.',
       'Não possui porte, mas detém porte de trânsito válido exclusivamente quando em deslocamento para aplicação do teste.'],
-   r:'b',x:'✅ O IAT credenciado possui PORTE restrito ao exercício da atividade de IAT — apenas quando estiver aplicando testes ou ministrando treinamentos autorizados. Fora dessa condição, sujeita-se às regras comuns de porte. Não é porte irrestrito e não é simples porte de trânsito.'},
+   r:'b',x:'✅ CORRETA: B — O IAT tem porte RESTRITO ao exercício da atividade de IAT. Fora da atividade, segue regras comuns. IN 111/2017 e Decreto 11.615/2023. ❌ A) ERRADA: o IAT POSSUI porte, mas limitado à atividade. ❌ C) ERRADA: não é porte irrestrito. ❌ D) ERRADA: não é simples porte de trânsito — é porte funcional durante a atividade de IAT — apenas quando estiver aplicando testes ou ministrando treinamentos autorizados. Fora dessa condição, sujeita-se às regras comuns de porte. Não é porte irrestrito e não é simples porte de trânsito.'},
   {n:33,t:'mc',tm:'CRE',e:'A nota mínima exigida para aprovação na fase de desmontagem e montagem de arma de fogo é de:',
    o:['80 pontos.','70 pontos.','75 pontos.','90 pontos.'],
-   r:'b',x:'✅ A nota mínima para aprovação na fase de DESMONTAGEM E MONTAGEM é de 70 PONTOS (70%). Abaixo disso, o candidato é reprovado nessa fase específica. A mesma nota mínima de 70% se aplica ao percentual de acertos no exercício de tiro. Memorize: 70% é o padrão de aprovação.'},
+   r:'b',x:'✅ CORRETA: B (70 pontos / 7,0). Anexo VII da IN 111/2017: nota mínima 7,0 para aprovação na desmontagem/montagem. ❌ A) 80 pontos: acima do exigido. ❌ C) 75 pontos: valor incorreto. ❌ D) 90 pontos: acima do exigido. Memorize: 7,0 é o padrão em todas as fases do credenciamento (70%). Abaixo disso, o candidato é reprovado nessa fase específica. A mesma nota mínima de 70% se aplica ao percentual de acertos no exercício de tiro. Memorize: 70% é o padrão de aprovação.'},
   {n:34,t:'mc',tm:'CRE',e:'Na aplicação do teste de capacidade técnica, na categoria porte institucional de arma longa:\n\nI. Se a arma for de alma lisa, a distância do alvo é de 15 metros.\nII. Se a arma for de alma raiada, o tempo para cada série de disparos é de 30 segundos.\nIII. Tanto para a arma de alma lisa como para a arma de alma raiada, a quantidade de disparos é a mesma.',
    o:['Apenas o item I é verdadeiro.','Apenas o item II é verdadeiro.','Apenas o item III é verdadeiro.','Todos os itens são verdadeiros.'],
-   r:'d',x:'✅ TODOS VERDADEIROS. I: Para arma longa de alma LISA (espingarda), distância de 15 metros. II: Para arma longa de alma RAIADA, cada série tem 30 segundos. III: A quantidade de disparos por série é a mesma para ambas as categorias. Conforme a regulamentação da IN nº 111.'},
+   r:'d',x:'✅ CORRETA: D (todos verdadeiros). I) Alma lisa → 15 metros (Anexo I IN 111). II) Alma raiada → 30 segundos por série (Anexo I IN 111). III) Quantidade de disparos é a mesma para ambas as categorias. ❌ A, B, C: excluem itens que são verdadeiros. II: Para arma longa de alma RAIADA, cada série tem 30 segundos. III: A quantidade de disparos por série é a mesma para ambas as categorias. Conforme a regulamentação da IN nº 111.'},
   {n:35,t:'mc',tm:'MUN',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. A carga de projeção tem por finalidade gerar a pressão necessária para o lançamento do estojo.\nII. Podemos afirmar que a carga de projeção de base simples utilizada atualmente é composta de nitroglicerina.\nIII. O cartucho deve sempre ocupar toda a câmara de explosão para que se obtenha maior alcance útil do disparo.',
    o:['Apenas os itens I e II são verdadeiros.','Todos os itens são falsos.','Apenas o item III é verdadeiro.','Todos os itens são verdadeiros.'],
    r:'b',x:'❌ TODOS FALSOS. I: a carga de projeção (pólvora) gera pressão para lançar o PROJÉTIL, não o estojo. II: a pólvora de BASE SIMPLES é composta de NITROCELULOSE — nitroglicerina é o componente da base dupla. III: o cartucho NÃO deve ocupar toda a câmara — há o headspace necessário; ocupar toda a câmara geraria pressão excessiva.'},
@@ -692,43 +703,43 @@ const Q1=[
       'Ter, no mínimo, 25 anos de idade.',
       'Possuir residência própria e ocupação lícita.',
       'Declarar a efetiva necessidade.'],
-   r:'c',x:'✅ "Possuir residência própria" NÃO é requisito para o Certificado de Registro. O cidadão pode ter residência alugada — basta comprovar residência fixa. Os requisitos reais incluem: 25 anos, ocupação lícita, idoneidade moral, capacidade técnica, aptidão psicológica e declarar necessidade.'},
+   r:'c',x:'❌ INCORRETA: C — "Possuir residência própria" NÃO é requisito. O cidadão pode ter residência ALUGADA — basta comprovar residência FIXA (não precisa ser própria). A alternativa mistura "própria" com "fixa". ✅ A) CORRETA: capacidade técnica a cada 10 anos é requisito. ✅ B) CORRETA: 25 anos é idade mínima. ✅ D) CORRETA: declarar efetiva necessidade é obrigatório. Fundamento: Art.4º Lei 10.826/03 para o Certificado de Registro. O cidadão pode ter residência alugada — basta comprovar residência fixa. Os requisitos reais incluem: 25 anos, ocupação lícita, idoneidade moral, capacidade técnica, aptidão psicológica e declarar necessidade.'},
   {n:37,t:'mc',tm:'CRE',e:'O teste de capacidade técnica para registro de um revólver calibre 357Magnum utiliza qual modelo de alvo?',
    o:['Silhueta humanoide.','Fogo central.','4 Cores.','Padrão IPSC.'],
-   r:'a',x:'✅ O teste de capacidade técnica utiliza ALVO SILHUETA HUMANOIDE (na versão definida pela regulamentação da PF). É o alvo padrão adotado para avaliação de habilidade de tiro na perspectiva de defesa — a silhueta representa um corpo humano e os pontos de acerto são avaliados com base nela.'},
+   r:'a',x:'✅ CORRETA: A (Silhueta humanoide). Conforme Anexo I da IN 111/2017, o alvo padrão para testes de capacidade técnica é a silhueta humanoide (padrão SAT/ANP/PF). ❌ B) ERRADA: fogo central é alvo de precisão, não de capacidade técnica para registro. ❌ C) ERRADA: 4 cores é usado em credenciamento de IAT, não em teste de civis. ❌ D) ERRADA: IPSC é alvo de competição, não de avaliação PF (na versão definida pela regulamentação da PF). É o alvo padrão adotado para avaliação de habilidade de tiro na perspectiva de defesa — a silhueta representa um corpo humano e os pontos de acerto são avaliados com base nela.'},
   {n:38,t:'mc',tm:'CRE',e:'Analise as afirmativas abaixo e assinale a alternativa correta:\n\nI. O IAT credenciado que aplicar o teste de capacidade técnica não pode, para o mesmo candidato, ministrar instrução.\nII. Uma arma longa sempre terá maior energia na saída do cano que uma arma curta.\nIII. O IAT pertencente aos quadros da Polícia Federal não pode receber qualquer remuneração em razão do desempenho das avaliações previstas na IN nº 111.',
    o:['Todos os itens são verdadeiros.','Os itens I e III são verdadeiros.','Os itens I e II são verdadeiros.','Os itens II e III são verdadeiros.'],
-   r:'b',x:'✅ I VERDADEIRO: vedação expressa — o IAT que aplica o teste NÃO pode ter ministrado instrução para o mesmo candidato (conflito de interesses). II FALSO: arma longa não SEMPRE tem mais energia (depende do calibre). III VERDADEIRO: IAT servidor da PF não pode receber remuneração pelas avaliações — é vedação funcional.'},
+   r:'b',x:'✅ CORRETA: B (I e III verdadeiros). I) VERDADEIRO: IN 111 Art.3º §2º, V — vedado ao IAT que aplica o teste ter ministrado instrução para o MESMO candidato (conflito de interesses). III) VERDADEIRO: IAT servidor da PF não pode receber remuneração pelas avaliações — vedação funcional. ❌ II) FALSO: arma longa NÃO sempre tem mais energia — depende do calibre/carga — o IAT que aplica o teste NÃO pode ter ministrado instrução para o mesmo candidato (conflito de interesses). II FALSO: arma longa não SEMPRE tem mais energia (depende do calibre). III VERDADEIRO: IAT servidor da PF não pode receber remuneração pelas avaliações — é vedação funcional.'},
   {n:39,t:'mc',tm:'CRE',e:'Um dos documentos obrigatórios para inscrição no credenciamento de IAT é o certificado de habilitação em curso de instrutor de tiro. A carga horária mínima exigida desse curso é de:',
    o:['90h/a.','80h/a.','100h/a.','120h/a.'],
    r:'b',x:'✅ O edital de credenciamento IAT da PF/PB (2025) estabelece textualmente: "Deve constar no certificado a carga horária do curso (mínimo de 80 h/a)". A IN 111 Art.19 IV não fixa um número exato no corpo da norma — delega para a grade curricular. Editais recentes da PF em diversas regiões adotam 80h/a como mínimo. ⚠️ CABE RECURSO: algumas bancas e cursos (como Projeto IAT) consideram 100h/a. Se a banca seguir a IN 111 sem considerar os editais recentes, poderia aceitar 100h/a (alternativa C). Fundamente seu recurso com o edital vigente da sua região.'},
   {n:40,t:'mc',tm:'ARM',e:'A arma portátil, de alma raiada, semiautomática, é classificada como:',
    o:['De uso proibido.','De uso restrito.','De uso permitido.','De uso permitido ou de uso restrito, a depender do comprimento do cano.'],
-   r:'b',x:'✅ Arma PORTÁTIL (longa), de alma RAIADA, SEMIAUTOMÁTICA é classificada como de USO RESTRITO. Exemplos: fuzis, carabinas semiautomáticas de calibre de fuzil. Civis não podem possuí-las sem autorização especial. O comprimento do cano pode alterar a classificação de uso permitido para restrito, mas não o contrário nesse caso.'},
+   r:'b',x:'✅ CORRETA: B (Uso restrito). Conforme Decreto 11.615/2023, Art.12: armas portáteis, longas, de alma raiada, semiautomáticas são de USO RESTRITO. Exemplos: fuzis e carabinas semiautomáticas. ❌ A) ERRADA: uso proibido se aplica a automáticas militares. ❌ C) ERRADA: semiautomáticas longas raiadas NÃO são de uso permitido. ❌ D) ERRADA: o comprimento do cano não altera a classificação neste caso. Exemplos: fuzis, carabinas semiautomáticas de calibre de fuzil. Civis não podem possuí-las sem autorização especial. O comprimento do cano pode alterar a classificação de uso permitido para restrito, mas não o contrário nesse caso.'},
   {n:41,t:'mc',tm:'CRE',e:'No teste prático com arma curta para fins de credenciamento de IAT, o candidato deve atingir, no mínimo, os seguintes índices de acerto para o revólver e para a pistola, respectivamente:',
    o:['60% e 60%.','70% e 60%.','60% e 70%.','70% e 70%.'],
    r:'d',x:'✅ O Anexo VII da IN 111/2017 (Regulamento para Credenciamento de IAT) estabelece nota mínima de 7,0 (70%) como padrão de aprovação nas verificações práticas. Não há distinção de percentual entre revólver e pistola — ambos exigem 70% de aproveitamento mínimo. O padrão de 70% é consistente com a prova teórica e com a desmontagem/montagem. A alternativa B (70%/60%) não possui respaldo na IN 111 publicada.'},
   {n:42,t:'mc',tm:'LEG',e:'De acordo com a legislação vigente, possuem porte de arma:',
    o:['Vigilantes.','Agentes do DETRAN.','Policiais legislativos das Assembleias Legislativas dos Estados.','Advogados.'],
-   r:'c',x:'✅ Os POLICIAIS LEGISLATIVOS das Assembleias Legislativas dos Estados possuem porte de arma por previsão legal específica. Vigilantes possuem porte apenas em serviço (não é porte pessoal livre). Agentes do DETRAN e advogados, em regra, não possuem porte por legislação própria.'},
+   r:'c',x:'✅ CORRETA: C — Policiais Legislativos possuem porte por previsão legal específica (Lei 10.826/03 Art.6º). ❌ A) ERRADA: vigilantes têm porte apenas EM SERVIÇO. ❌ B) ERRADA: agentes do DETRAN não possuem porte por legislação própria. ❌ D) ERRADA: advogados não possuem porte por legislação própria dos Estados possuem porte de arma por previsão legal específica. Vigilantes possuem porte apenas em serviço (não é porte pessoal livre). Agentes do DETRAN e advogados, em regra, não possuem porte por legislação própria.'},
   {n:43,t:'mc',tm:'CRE',e:'Os instrutores de armamento e tiro candidatos ao credenciamento serão submetidos a:',
    o:['5 testes.','6 testes.','4 testes.','3 testes.'],
-   r:'b',x:'✅ Conforme a IN nº 111, os candidatos ao credenciamento de IAT são submetidos a 6 TESTES: (1) Prova teórica, (2) Desmontagem/montagem de pistola, (3) Desmontagem/montagem de revólver, (4) Prova prática de tiro com pistola, (5) Prova prática de tiro com revólver, (6) Desmontagem/montagem de arma longa.'},
+   r:'b',x:'✅ CORRETA: B (6 testes). Anexo VII IN 111: (1) Prova teórica, (2) Desmontagem/montagem pistola, (3) Desmontagem/montagem revólver, (4) Prova prática tiro pistola, (5) Prova prática tiro revólver, (6) Desmontagem/montagem arma longa. ❌ A) 5 testes: insuficiente. ❌ C) 4 testes: insuficiente. ❌ D) 3 testes: insuficiente: (1) Prova teórica, (2) Desmontagem/montagem de pistola, (3) Desmontagem/montagem de revólver, (4) Prova prática de tiro com pistola, (5) Prova prática de tiro com revólver, (6) Desmontagem/montagem de arma longa.'},
   {n:44,t:'mc',tm:'BAL',e:'A Balística é a Ciência que estuda as armas de fogo, o alcance e a direção dos projéteis por elas expelidos e os efeitos que produzem. Segundo esse conceito pode ser dividida em:',
    o:['Balística, Material Bélico e Engenharia de Armamento.',
       'Balística Científica, Balística Clássica e Balística Moderna.',
       'Balística Interna, Balística Externa e Balística de Efeitos.',
       'Balística, Balística de Armaria e Balística de Perícia.'],
-   r:'c',x:'✅ A Balística é dividida em: INTERNA (fenômenos dentro do cano), EXTERNA (comportamento do projétil no espaço livre, da saída do cano até o alvo) e TERMINAL/DE EFEITOS (efeitos ao atingir o alvo). Às vezes referida como Interna, Externa e Terminal. A alternativa "c" usa "Efeitos" como sinônimo de Terminal.'},
+   r:'c',x:'✅ CORRETA: C (Interna, Externa e de Efeitos). Balística Interna (dentro do cano), Externa (do cano ao alvo), Terminal/de Efeitos (no alvo). "Efeitos" é sinônimo aceito de "Terminal". ❌ A) ERRADA: não é essa divisão. ❌ B) ERRADA: "Científica/Clássica/Moderna" não é divisão reconhecida. ❌ D) ERRADA: "Armaria/Perícia" não são subdivisões da balística (fenômenos dentro do cano), EXTERNA (comportamento do projétil no espaço livre, da saída do cano até o alvo) e TERMINAL/DE EFEITOS (efeitos ao atingir o alvo). Às vezes referida como Interna, Externa e Terminal. A alternativa "c" usa "Efeitos" como sinônimo de Terminal.'},
   {n:45,t:'mc',tm:'ARM',e:'Quanto ao sistema de carregamento:',
    o:['Carregador / Tambor.','Retrocarga / Antecarga.','Provedor / Câmaras.','Culatra / Antecarga.'],
-   r:'b',x:'✅ Os sistemas de carregamento (alimentação) de armas de fogo são classificados em: RETROCARGA (breech loading — carregamento pela culatra, sistema moderno) e ANTECARGA (muzzle loading — carregamento pela boca do cano, sistema histórico). A maioria das armas modernas usa retrocarga.'},
+   r:'b',x:'✅ CORRETA: B (Retrocarga/Antecarga). RETROCARGA (breech loading): carregamento pela culatra — sistema moderno. ANTECARGA (muzzle loading): carregamento pela boca do cano — sistema histórico. ❌ A) ERRADA: carregador/tambor são componentes, não sistemas. ❌ C) ERRADA: provedor/câmaras não é classificação correta. ❌ D) ERRADA: culatra/antecarga mistura termos incorretamente (breech loading — carregamento pela culatra, sistema moderno) e ANTECARGA (muzzle loading — carregamento pela boca do cano, sistema histórico). A maioria das armas modernas usa retrocarga.'},
   {n:46,t:'mc',tm:'ARM',e:'Podemos dizer que a CARABINA é:',
    o:['Arma de fogo longa, de porte e alma raiada ou lisa.',
       'Arma de fogo longa, de assalto e alma raiada.',
       'Arma de fogo longa, portátil e alma raiada.',
       'Arma de fogo longa, de porte e alma raiada.'],
-   r:'c',x:'✅ A CARABINA é definida como arma de fogo LONGA, PORTÁTIL (transportada por um único homem) e de ALMA RAIADA — distinguindo-se da espingarda (alma lisa) e dos fuzis de assalto (que são portáteis e raiados, mas classificados separadamente). É intermediária entre a pistola/revólver e o fuzil.'},
+   r:'c',x:'✅ CORRETA: C — Carabina: arma de fogo LONGA + PORTÁTIL (um homem) + ALMA RAIADA. ❌ A) ERRADA: "de porte" é para armas curtas. ❌ B) ERRADA: "de assalto" não é a classificação de carabina. ❌ D) ERRADA: "de porte" é para armas curtas, não longas (transportada por um único homem) e de ALMA RAIADA — distinguindo-se da espingarda (alma lisa) e dos fuzis de assalto (que são portáteis e raiados, mas classificados separadamente). É intermediária entre a pistola/revólver e o fuzil.'},
   {n:47,t:'mc',tm:'BAL',e:'São movimentos de um projétil expelido por arma RAIADA:',
    o:['Rotação - Precessão – Nutação (ao sair do cano da arma).',
       'Compensação - Passo - Deflagração (diferente de detonação).',
@@ -746,7 +757,7 @@ const Q1=[
       'O passo do raiamento é sempre constante durante toda a extensão do cano.',
       'O projétil sempre deverá realizar a volta completa sobre seu eixo dentro do cano.',
       'Um cano com passo de raiamento de 1:7" deverá obrigatoriamente ter 7" de comprimento.'],
-   r:'a',x:'✅ PASSO DO RAIAMENTO: é a distância linear necessária para que o projétil complete UMA VOLTA COMPLETA sobre seu próprio eixo. Expresso como 1:X" (onde X é a distância em polegadas para uma volta). Não precisa completar a volta dentro do cano. O cano com passo 1:7" não precisa ter exatamente 7" — pode ser maior.'},
+   r:'a',x:'✅ CORRETA: A — Passo do raiamento é a distância linear para o projétil completar UMA VOLTA sobre seu eixo (ex: 1:7" = uma volta a cada 7 polegadas). ❌ B) ERRADA: o passo pode ser progressivo (varia ao longo do cano). ❌ C) ERRADA: o projétil NÃO precisa completar a volta dentro do cano. ❌ D) ERRADA: cano com passo 1:7" NÃO precisa ter exatamente 7" — pode ser maior para que o projétil complete UMA VOLTA COMPLETA sobre seu próprio eixo. Expresso como 1:X" (onde X é a distância em polegadas para uma volta). Não precisa completar a volta dentro do cano. O cano com passo 1:7" não precisa ter exatamente 7" — pode ser maior.'},
   {n:50,t:'mc',tm:'CRE',e:'Assinale a alternativa INCORRETA:',
    o:['Os valores cobrados pelo psicólogo credenciado para emissão do laudo de aptidão psicológica é definido pelo Conselho Federal de Psicologia.',
       'A autorização para porte de arma de fogo aos responsáveis pela segurança de cidadãos estrangeiros em visita ou sediados no Brasil é competência do Ministério da Justiça.',
@@ -772,13 +783,13 @@ const Q2=[
       'Revólveres, carabinas e espingardas.',
       'Espingardas, carabinas e morteiros.',
       'Revólveres, pistolas e canhões.'],
-   r:'a',x:'✅ Fuzis, carabinas e espingardas são armas LONGAS e PORTÁTEIS. Revólveres e pistolas são armas CURTAS (de porte). Morteiros e canhões são NÃO PORTÁTEIS — exigem mais de um homem ou veículo.'},
+   r:'a',x:'✅ CORRETA: A — Fuzis, carabinas e espingardas são TODAS armas LONGAS e PORTÁTEIS (transportadas por uma pessoa). ❌ B) ERRADA: revólveres são armas CURTAS de porte (Art.2º VI Decreto 11.615/2023), não longas portáteis — NÃO cabe recurso, pois revólver é inequivocamente arma curta. ❌ C) ERRADA: morteiros são armas NÃO PORTÁTEIS (exigem veículo ou mais de uma pessoa). ❌ D) ERRADA: revólveres e pistolas são curtas; canhões são não portáteis.'},
   {n:4,t:'mc',tm:'MUN',e:'Sobre munições podemos afirmar:',
    o:['Projéteis jaquetados de cobre tendem a se deformar mas não fragmentar ao chocar-se em para-brisas.',
       'A base dos estojos sem aro tem apenas virola.',
       'O estojo sela a câmara de explosão em todas as direções.',
       'A boca do estojo não metálico pode receber fechamento em estrela ou cápsula.'],
-   r:'b',x:'✅ O estojo sem aro (rimless) possui na base apenas a virola — ranhura circunferencial para o extrator. Não há aro saliente como nos estojos rimmed. Configuração padrão nos calibres de pistola modernos.'},
+   r:'b',x:'✅ CORRETA: C — O estojo sem aro (rimless) possui na base apenas a VIROLA (ranhura circunferencial para o extrator). ❌ A) ERRADA: percussão radial (rimfire) é usada em .22LR, NÃO na maioria dos revólveres — revólveres usam percussão CENTRAL. ❌ B) ERRADA: o estojo NÃO sela em todas as direções — a parte frontal é aberta para o projétil. ❌ D) ERRADA: projéteis jaquetados de cobre podem SIM fragmentar dependendo da velocidade e do obstáculo — ranhura circunferencial para o extrator. Não há aro saliente como nos estojos rimmed. Configuração padrão nos calibres de pistola modernos.'},
   {n:5,t:'mc',tm:'LEG',e:'Assinale a alternativa correta sobre armamento e legislação:',
    o:['A percussão radial é encontrada na maioria dos revólveres.',
       'São de uso restrito somente armas de pressão por gás comprimido com calibre superior a 6mm.',
@@ -896,7 +907,7 @@ const Q2=[
   {n:46,t:'vf',tm:'LEG',e:'Segundo o Decreto 3.665/2000, são de uso restrito dispositivos de pontaria que empregam luz ou outro meio de marcar o alvo.',
    r:'F',x:'❌ FALSO (gabarito não oficial). A classificação de dispositivos de pontaria a laser/luz no R-105 é objeto de debate regulamentar. Confirme sempre a portaria vigente do Exército.'},
   {n:47,t:'vf',tm:'ARM',e:'O sistema "Blowback" é o sistema de operação para cartuchos de baixa potência, entre os calibres .22LR e o .380 ACP.',
-   r:'F',x:'❌ FALSO. Embora o blowback opere em calibres de baixa potência, a delimitação ".22LR a .380 ACP" é tecnicamente imprecisa. O .380 ACP pode operar em blowback retardado dependendo do projeto.'},
+   r:'F',x:'❌ FALSO. A afirmação delimita blowback APENAS entre .22LR e .380ACP, o que é impreciso. O blowback simples (direct blowback) funciona em calibres de BAIXA potência (.22LR, .25ACP, .32ACP, .380ACP), mas existem variações: blowback RETARDADO opera em calibres maiores (9mm, .45ACP). Além disso, o .380ACP pode usar tanto blowback simples quanto retardado. A frase limita incorretamente o sistema a uma faixa de calibres. ⚠️ CABE RECURSO: a afirmação central (blowback = baixa potência) está correta, apenas a delimitação exata dos calibres é imprecisa.'},
   {n:48,t:'vf',tm:'LEG',e:'O Certificado de Registro (CR) autoriza manter a arma na residência ou no local de trabalho, desde que seja o titular ou responsável legal pelo estabelecimento.',
    r:'F',x:'❌ FALSO (gabarito não oficial). A Lei 10.826/03 prevê que o CR autoriza manter a arma na residência. A extensão ao local de trabalho tem condicionantes específicas que tornam a assertiva como escrita incorreta.'},
   {n:49,t:'vf',tm:'CRE',e:'O teste de capacitação técnica para registro de arma curta é composto de prova teórica e prova prática com 10 disparos a 5m e 10 disparos a 7m em 20 segundos (cada 5 tiros) ou 40 segundos (cada 10 tiros).',
@@ -1054,7 +1065,7 @@ const Q3=[
       'Pressão excessiva dos dedos médio e anular no punho.',
       'Empunhadura fraca (limp-wristing).',
       'Foco no alvo ao invés da massa de mira.'],
-   r:'b',x:'✅ Agrupamento em 4h-5h (baixo-direita) para atirador destro indica pressão excessiva dos dedos MÉDIO e ANULAR no punho. Esses dedos espremem a arma para baixo-direita. Antecipação do recuo = 7h-8h. Puxão do gatilho para fora = 3h-4h.'},
+   r:'b',x:'✅ CORRETA: B — Conforme quadro de análise de tiro (alvo PF/ANP), agrupamento entre 4h-5h para DESTRO = posição 4 = ESTRANGULAMENTO. Causado por pressão excessiva dos dedos médio e anular no punho. ❌ A) ERRADA: antecipação do recuo fica entre 10h-11h (posição 8). ❌ C) ERRADA: limp-wristing geraria padrão diferente. ❌ D) ERRADA: foco no alvo não gera esse padrão específico no punho. Esses dedos espremem a arma para baixo-direita. Antecipação do recuo = 7h-8h. Puxão do gatilho para fora = 3h-4h.'},
   {n:48,t:'mc',tm:'CRE',e:'Para o credenciamento de IAT junto à Polícia Federal, é INCORRETO afirmar que o candidato deve:',
    o:['Ser maior de 25 anos para porte de arma para defesa pessoal.',
       'Ter aprovação em avaliação de aptidão psicológica.',
@@ -1198,7 +1209,7 @@ const Q4=[
   {n:39,t:'vf',tm:'FUN',e:'Para corrigir o erro de antecipação do recuo, o atirador deve concentrar-se no acionamento suave e progressivo do gatilho, surpreedendo a própria mente.',
    r:'V',x:'✅ VERDADEIRO. A antecipação do recuo é reação psicomotora — o atirador inconscientemente empurra a arma antes do disparo. A correção é o acionamento SURPRESA do gatilho (não saber exatamente quando vai disparar), pressão suave e progressiva, e exercícios com cartucho inerte (snap cap) intercalado aleatoriamente.'},
   {n:40,t:'vf',tm:'ARM',e:'Uma pistola Glock 17 calibre 9mm é classificada como arma de porte de uso permitido.',
-   r:'V',x:'✅ VERDADEIRO. A Glock 17 cal. 9mm é arma CURTA (pistola), portátil, calibre 9mm Parabellum — classificada como de USO PERMITIDO. O cidadão civil que cumpra os requisitos da Lei 10.826/03 pode registrar e, com autorização da PF, portar.'},
+   r:'F',x:'❌ FALSO (LEGISLAÇÃO ATUALIZADA). Pelo Decreto 11.615/2023, Art.12, III, o calibre 9mm Parabellum possui energia superior a 407 joules na boca do cano, sendo classificado como USO RESTRITO. A Glock 17 9mm é arma de porte, mas de USO RESTRITO — cidadão comum NÃO pode adquiri-la para defesa pessoal. Apenas atiradores desportivos nível 3 e forças de segurança. Portaria Conjunta C EX/DG-PF nº 2/2023 confirma: 9mm = restrito. ⚠️ CABE RECURSO: se a banca usar legislação anterior ao Decreto 11.615/2023 (quando 9mm era permitido), a resposta seria V.'},
   {n:41,t:'vf',tm:'LEG',e:'O silenciador (supressor de som) é classificado como acessório de uso restrito no Brasil, vedado a civis.',
    r:'V',x:'✅ VERDADEIRO. O silenciador/supressor é acessório de USO RESTRITO conforme o R-105. Uso por civis é vedado — apenas forças de segurança e militares em situações específicas autorizadas. Posse ou porte irregular configura crime.'},
   {n:42,t:'vf',tm:'BAL',e:'O arrasto aerodinâmico (drag) e a gravidade são as duas principais forças que atuam sobre o projétil durante a balística externa.',
@@ -1339,6 +1350,13 @@ function renderProva(){
 }
 
 function sel(qn,letra){
+  // TOGGLE: se clicar na mesma resposta, desmarca (anula)
+  if(RESP[qn-1]===letra){
+    RESP[qn-1]=null;
+    document.getElementById(`qb-${qn}`).querySelectorAll('.opt,.vfb').forEach(b=>b.classList.remove('sel'));
+    RESP_SET.delete(qn);atuTop();
+    return;
+  }
   RESP[qn-1]=letra;
   document.getElementById(`qb-${qn}`).querySelectorAll('.opt,.vfb').forEach(b=>b.classList.remove('sel'));
   const b=document.getElementById(`opt-${qn}-${letra}`);
@@ -1475,22 +1493,55 @@ function renderGabarito(Q){
   document.getElementById('gab-cards').innerHTML=Q.map((q,i)=>{
     const r=RESP[i];
     const ok=r&&r.toLowerCase()===q.r.toLowerCase();
-    let suaL=r||'(não respondida)',corL='';
-    if(q.t==='mc'){
-      if(r){const ix=LM.indexOf(r.toLowerCase());suaL=ix>=0?`${r.toUpperCase()}) ${q.o[ix]}`:r;}
-      const ci=LM.indexOf(q.r.toLowerCase());corL=ci>=0?`${q.r.toUpperCase()}) ${q.o[ci]}`:q.r;
-    } else {
-      suaL=r?(r==='V'?'VERDADEIRO':'FALSO'):'(não respondida)';
-      corL=q.r==='V'?'VERDADEIRO':'FALSO';
+    
+    // Build options display for MC
+    let optsHTML='';
+    if(q.t==='mc' && q.o){
+      optsHTML='<div class="gab-opts">';
+      q.o.forEach((opt,j)=>{
+        const letra=LM[j];
+        const isCorreta=letra===q.r.toLowerCase();
+        const isSua=r&&letra===r.toLowerCase();
+        let cls='gab-opt';
+        if(isCorreta) cls+=' gab-opt-correta';
+        if(isSua && !isCorreta) cls+=' gab-opt-errou';
+        let badge='';
+        if(isCorreta && isSua) badge='<span class="gab-badge gab-badge-ok">✅ SUA RESPOSTA · CORRETA</span>';
+        else if(isCorreta) badge='<span class="gab-badge gab-badge-ok">✅ RESPOSTA CORRETA</span>';
+        else if(isSua) badge='<span class="gab-badge gab-badge-err">❌ SUA RESPOSTA</span>';
+        optsHTML+=`<div class="${cls}"><strong>${letra.toUpperCase()})</strong> ${opt} ${badge}</div>`;
+      });
+      optsHTML+='</div>';
+    } else if(q.t==='vf'){
+      const corVF=q.r==='V'?'VERDADEIRO':'FALSO';
+      const suaVF=r?(r==='V'?'VERDADEIRO':'FALSO'):'NÃO RESPONDIDA';
+      optsHTML='<div class="gab-opts">';
+      ['V','F'].forEach(vf=>{
+        const label=vf==='V'?'VERDADEIRO':'FALSO';
+        const isCorreta=vf===q.r;
+        const isSua=r&&vf===r;
+        let cls='gab-opt';
+        if(isCorreta) cls+=' gab-opt-correta';
+        if(isSua && !isCorreta) cls+=' gab-opt-errou';
+        let badge='';
+        if(isCorreta && isSua) badge='<span class="gab-badge gab-badge-ok">✅ SUA RESPOSTA · CORRETA</span>';
+        else if(isCorreta) badge='<span class="gab-badge gab-badge-ok">✅ RESPOSTA CORRETA</span>';
+        else if(isSua) badge='<span class="gab-badge gab-badge-err">❌ SUA RESPOSTA</span>';
+        optsHTML+=`<div class="${cls}"><strong>${label}</strong> ${badge}</div>`;
+      });
+      optsHTML+='</div>';
     }
+    
+    // Status bar
+    const statusClass=ok?'gab-status-ok':'gab-status-err';
+    const statusIcon=ok?'✓ VOCÊ ACERTOU':'✗ VOCÊ ERROU';
+    const statusExtra=!r?' · NÃO RESPONDIDA':'';
+    
     return `<div class="rcard ${ok?'ok':'nok'}">
-      <div class="rcard-top">${ok?'✓ ACERTO':'✗ ERRO'} · Q${q.n} · ${TEMAS[q.tm]||q.tm}</div>
+      <div class="rcard-top">${statusIcon}${statusExtra} · Q${q.n} · ${TEMAS[q.tm]||q.tm}</div>
       <div class="rcard-e">${q.e.replace(/\n/g,'<br>')}</div>
-      <div class="rcard-chips">
-        <span class="rv sua ${ok?'ok':''}">Sua resposta: ${suaL}</span>
-        ${!ok?`<span class="rv cor">Correta: ${corL}</span>`:''}
-      </div>
-      <div class="rcard-exp">💡 ${q.x}</div>
+      ${optsHTML}
+      <div class="rcard-exp">💡 <strong>EXPLICAÇÃO:</strong><br>${q.x.replace(/✅/g,'<br>✅').replace(/❌/g,'<br>❌').replace(/⚠️/g,'<br>⚠️')}</div>
     </div>`;
   }).join('');
 }
