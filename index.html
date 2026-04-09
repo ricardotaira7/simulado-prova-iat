@@ -206,9 +206,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--bg);
 .rcard{background:#FFFFFF;border:1.5px solid var(--bd);border-radius:var(--r);padding:1.1rem 1.2rem;margin-bottom:.75rem;box-shadow:0 2px 8px var(--shd);}
 .rcard.ok{border-left:6px solid var(--ok);background:#FAFFF5;}
 .rcard.nok{border-left:6px solid #C62828;background:#FFFAFA;}
+.rcard.branco{border-left:6px solid #9E9E9E;background:#F5F5F5;}
 .rcard-top{font-family:'Roboto Condensed',sans-serif;font-size:.64rem;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:.3rem;}
 .rcard.ok .rcard-top{color:#155A1E;font-weight:700;font-size:.72rem;background:rgba(21,90,30,.08);padding:.3rem .6rem;border-radius:4px;display:inline-block;}
 .rcard.nok .rcard-top{color:#C62828;font-weight:700;font-size:.72rem;background:rgba(198,40,40,.08);padding:.3rem .6rem;border-radius:4px;display:inline-block;}
+.rcard.branco .rcard-top{color:#616161;font-weight:700;font-size:.72rem;background:rgba(158,158,158,.1);padding:.3rem .6rem;border-radius:4px;display:inline-block;}
 .rcard-e{font-size:.88rem;font-weight:500;line-height:1.55;color:var(--text);margin-bottom:.55rem;}
 .rcard-chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:.55rem;}
 .rv{padding:.22rem .6rem;border-radius:30px;font-family:'Roboto Condensed',sans-serif;font-size:.73rem;}
@@ -1492,7 +1494,13 @@ function renderGabarito(Q){
   document.getElementById('gab-titulo').textContent='📋 GABARITO COMENTADO — '+CFG[PA].nome;
   document.getElementById('gab-cards').innerHTML=Q.map((q,i)=>{
     const r=RESP[i];
+    const isBlank=!r;
     const ok=r&&r.toLowerCase()===q.r.toLowerCase();
+    
+    // 3 states: ok (acertou), nok (errou), branco (não respondeu)
+    let cardClass='branco', statusIcon='○ EM BRANCO · NÃO PERDE NOTA';
+    if(!isBlank && ok){ cardClass='ok'; statusIcon='✓ VOCÊ ACERTOU'; }
+    if(!isBlank && !ok){ cardClass='nok'; statusIcon='✗ VOCÊ ERROU'; }
     
     // Build options display for MC
     let optsHTML='';
@@ -1507,14 +1515,13 @@ function renderGabarito(Q){
         if(isSua && !isCorreta) cls+=' gab-opt-errou';
         let badge='';
         if(isCorreta && isSua) badge='<span class="gab-badge gab-badge-ok">✅ SUA RESPOSTA · CORRETA</span>';
+        else if(isCorreta && isBlank) badge='<span class="gab-badge gab-badge-ok">✅ RESPOSTA CORRETA</span>';
         else if(isCorreta) badge='<span class="gab-badge gab-badge-ok">✅ RESPOSTA CORRETA</span>';
         else if(isSua) badge='<span class="gab-badge gab-badge-err">❌ SUA RESPOSTA</span>';
         optsHTML+=`<div class="${cls}"><strong>${letra.toUpperCase()})</strong> ${opt} ${badge}</div>`;
       });
       optsHTML+='</div>';
     } else if(q.t==='vf'){
-      const corVF=q.r==='V'?'VERDADEIRO':'FALSO';
-      const suaVF=r?(r==='V'?'VERDADEIRO':'FALSO'):'NÃO RESPONDIDA';
       optsHTML='<div class="gab-opts">';
       ['V','F'].forEach(vf=>{
         const label=vf==='V'?'VERDADEIRO':'FALSO';
@@ -1532,13 +1539,8 @@ function renderGabarito(Q){
       optsHTML+='</div>';
     }
     
-    // Status bar
-    const statusClass=ok?'gab-status-ok':'gab-status-err';
-    const statusIcon=ok?'✓ VOCÊ ACERTOU':'✗ VOCÊ ERROU';
-    const statusExtra=!r?' · NÃO RESPONDIDA':'';
-    
-    return `<div class="rcard ${ok?'ok':'nok'}">
-      <div class="rcard-top">${statusIcon}${statusExtra} · Q${q.n} · ${TEMAS[q.tm]||q.tm}</div>
+    return `<div class="rcard ${cardClass}">
+      <div class="rcard-top">${statusIcon} · Q${q.n} · ${TEMAS[q.tm]||q.tm}</div>
       <div class="rcard-e">${q.e.replace(/\n/g,'<br>')}</div>
       ${optsHTML}
       <div class="rcard-exp">💡 <strong>EXPLICAÇÃO:</strong><br>${q.x.replace(/✅/g,'<br>✅').replace(/❌/g,'<br>❌').replace(/⚠️/g,'<br>⚠️')}</div>
